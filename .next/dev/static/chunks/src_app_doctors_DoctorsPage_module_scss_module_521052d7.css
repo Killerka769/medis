@@ -1,0 +1,116 @@
+/* [project]/src/app/doctors/DoctorsPage.module.scss.module.css [app-client] (css) */
+.DoctorsPage-module-scss-module__gDTGkq__page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__title {
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__subtitle {
+  color: var(--color-text-muted);
+  font-size: 16px;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  display: grid;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__card {
+  border: 1px solid var(--color-border);
+  background: #fff;
+  border-radius: 20px;
+  flex-direction: column;
+  text-decoration: none;
+  transition: all .2s;
+  display: flex;
+  overflow: hidden;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px #1e5f9e1a;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__imageWrap {
+  background: var(--color-primary-light);
+  height: 300px;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__imageWrap img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__placeholder {
+  width: 100%;
+  height: 100%;
+  color: var(--color-primary);
+  opacity: .3;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  font-weight: 700;
+  display: flex;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__info {
+  flex-direction: column;
+  flex: 1;
+  padding: 24px;
+  display: flex;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__name {
+  color: var(--color-text);
+  margin-bottom: 6px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__spec {
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__exp {
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__btn {
+  background: var(--color-primary-light);
+  width: 100%;
+  color: var(--color-primary);
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  margin-top: auto;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all .2s;
+}
+
+.DoctorsPage-module-scss-module__gDTGkq__card:hover .DoctorsPage-module-scss-module__gDTGkq__btn {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/*# sourceMappingURL=src_app_doctors_DoctorsPage_module_scss_module_521052d7.css.map*/

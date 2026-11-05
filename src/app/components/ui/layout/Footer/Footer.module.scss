@@ -1,0 +1,166 @@
+.footer {
+    background: #1e293b; /* Темно-синий/серый */
+    color: #f8fafc;
+    padding: 60px 0 20px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .colTitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+  
+  .link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+  
+    &:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  }
+  
+  .phone {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 4px;
+  }
+  
+  .schedule {
+    font-size: 14px;
+    color: #94a3b8;
+  }
+  
+  .address {
+    font-size: 15px;
+    color: #cbd5e1;
+    margin-top: 8px;
+  }
+  
+  .socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .socialBtn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+  
+    &:hover {
+      background: var(--color-primary);
+    }
+  }
+  
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .legal {
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 700px;
+  
+    p {
+      margin-bottom: 4px;
+    }
+  }
+  
+  .metaLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  
+  .metaLink {
+    font-size: 13px;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  
+  /* Огромная надпись на фоне */
+  .watermark {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 6vw; /* Огромный размер */
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03); /* Почти прозрачный */
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 1;
+    user-select: none;
+  }
+  
+  @media (max-width: 900px) {
+    .top {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .top {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .bottom {
+      flex-direction: column;
+    }
+    .metaLinks {
+      align-items: flex-start;
+    }
+  }

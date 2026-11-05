@@ -1,0 +1,41 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+:root {
+  --color-primary: #1e5f9e;
+  --color-primary-dark: #164a7a;
+  --color-primary-light: #e8f2fa;
+  --color-accent: #2b8fd9;
+  --color-white: #fff;
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b7280;
+  --color-border: #dbeafe;
+  --color-error: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-white);
+  font-family: Inter, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=src_app_globals_91e4631d.css.map*/

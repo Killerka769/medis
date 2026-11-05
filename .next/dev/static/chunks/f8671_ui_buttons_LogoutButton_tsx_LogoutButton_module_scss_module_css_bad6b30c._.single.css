@@ -1,0 +1,25 @@
+/* [project]/src/app/components/ui/buttons/LogoutButton.tsx/LogoutButton.module.scss.module.css [app-client] (css) */
+.LogoutButton-module-scss-module__Lezsma__button {
+  width: 100%;
+  max-width: 240px;
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+  cursor: pointer;
+  background: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background .2s, color .2s, transform .1s;
+}
+
+.LogoutButton-module-scss-module__Lezsma__button:hover {
+  background: var(--color-error);
+  color: var(--color-white);
+}
+
+.LogoutButton-module-scss-module__Lezsma__button:active {
+  transform: scale(.98);
+}
+
+/*# sourceMappingURL=f8671_ui_buttons_LogoutButton_tsx_LogoutButton_module_scss_module_css_bad6b30c._.single.css.map*/

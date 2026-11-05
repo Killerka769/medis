@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BA%D1%88%D0%B5%D0%BD%D1%8B/medis/src/app/admin/service-categories/page.tsx"],"sourcesContent":["\"use client\"\r\n\r\nimport { useState } from \"react\";\r\nimport z from \"zod\"\r\n\r\nexport default function ServiceCategoriesPage() {\r\n    const [isOpen, setIsOpen] = useState<boolean>(false);\r\n    const serviceCategorySchema = z.object({\r\n        title: z.string(),\r\n        sortOrder: z.string(),\r\n        isActive: z.boolean()\r\n    })\r\n    type TserviceCategorySchema = z.infer<typeof serviceCategorySchema>;\r\n    return<main>\r\n        <h1>Управление категориями услуг</h1>\r\n        <section>\r\n            <button>Создать</button>\r\n        </section>\r\n    </main>\r\n}"],"names":[],"mappings":";;;;;AAEA;AACA;;;AAHA;;;AAKe,SAAS;;IACpB,MAAM,CAAC,QAAQ,UAAU,GAAG,IAAA,yKAAQ,EAAU;IAC9C,MAAM,wBAAwB,iMAAC,CAAC,MAAM,CAAC;QACnC,OAAO,iMAAC,CAAC,MAAM;QACf,WAAW,iMAAC,CAAC,MAAM;QACnB,UAAU,iMAAC,CAAC,OAAO;IACvB;IAEA,qBAAM,6LAAC;;0BACH,6LAAC;0BAAG;;;;;;0BACJ,6LAAC;0BACG,cAAA,6LAAC;8BAAO;;;;;;;;;;;;;;;;;AAGpB;GAdwB;KAAA"}}]
+}

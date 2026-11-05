@@ -1,0 +1,50 @@
+/* [project]/src/app/components/FloatingContact/FloatingContact.module.scss.module.css [app-client] (css) */
+.FloatingContact-module-scss-module__YZvlwG__wrap {
+  z-index: 999;
+  flex-direction: column;
+  gap: 12px;
+  display: flex;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+.FloatingContact-module-scss-module__YZvlwG__btn {
+  color: #fff;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  text-decoration: none;
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  display: flex;
+  box-shadow: 0 4px 15px #0003;
+}
+
+.FloatingContact-module-scss-module__YZvlwG__btn:hover {
+  transform: scale(1.1)translateY(-5px);
+  box-shadow: 0 10px 25px #0000004d;
+}
+
+.FloatingContact-module-scss-module__YZvlwG__tg {
+  background: #08c;
+}
+
+.FloatingContact-module-scss-module__YZvlwG__wa {
+  background: #25d366;
+}
+
+@media (max-width: 600px) {
+  .FloatingContact-module-scss-module__YZvlwG__wrap {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .FloatingContact-module-scss-module__YZvlwG__btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/*# sourceMappingURL=b1a17_app_components_FloatingContact_FloatingContact_module_scss_module_css_bad6b30c._.single.css.map*/

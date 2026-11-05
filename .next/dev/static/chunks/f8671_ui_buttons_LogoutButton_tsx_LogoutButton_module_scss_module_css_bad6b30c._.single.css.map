@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///D:/Продакшены/medis/src/app/components/ui/buttons/LogoutButton.tsx/LogoutButton.module.scss"],"sourcesContent":[".button {\r\n    width: 100%;\r\n    max-width: 240px;\r\n    padding: 14px;\r\n    font-size: 16px;\r\n    font-weight: 600;\r\n    color: var(--color-error);\r\n    background: transparent;\r\n    border: 1px solid var(--color-error);\r\n    border-radius: 10px;\r\n    cursor: pointer;\r\n    transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;\r\n  \r\n    &:hover {\r\n      background: var(--color-error);\r\n      color: var(--color-white);\r\n    }\r\n  \r\n    &:active {\r\n      transform: scale(0.98);\r\n    }\r\n  }"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;AAaI;;;;;AAKA"}}]
+}

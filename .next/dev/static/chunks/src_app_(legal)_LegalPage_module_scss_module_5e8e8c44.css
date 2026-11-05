@@ -1,0 +1,86 @@
+/* [project]/src/app/(legal)/LegalPage.module.scss.module.css [app-client] (css) */
+.LegalPage-module-scss-module__5x_azq__page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.LegalPage-module-scss-module__5x_azq__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.LegalPage-module-scss-module__5x_azq__title {
+  color: var(--color-primary-dark);
+  margin-bottom: 12px;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.LegalPage-module-scss-module__5x_azq__updated {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.LegalPage-module-scss-module__5x_azq__content {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  background: #fff;
+  border-radius: 24px;
+  padding: 50px;
+  font-size: 16px;
+  line-height: 1.8;
+  box-shadow: 0 10px 40px #1e5f9e0d;
+}
+
+.LegalPage-module-scss-module__5x_azq__content h2 {
+  color: var(--color-primary-dark);
+  border-bottom: 1px solid var(--color-border);
+  margin: 32px 0 16px;
+  padding-bottom: 8px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.LegalPage-module-scss-module__5x_azq__content h2:first-child {
+  margin-top: 0;
+}
+
+.LegalPage-module-scss-module__5x_azq__content p {
+  margin-bottom: 16px;
+}
+
+.LegalPage-module-scss-module__5x_azq__content ul {
+  margin-bottom: 16px;
+  padding-left: 24px;
+}
+
+.LegalPage-module-scss-module__5x_azq__content ul li {
+  margin-bottom: 8px;
+}
+
+.LegalPage-module-scss-module__5x_azq__content strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.LegalPage-module-scss-module__5x_azq__content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.LegalPage-module-scss-module__5x_azq__content a:hover {
+  color: var(--color-primary-dark);
+}
+
+@media (max-width: 768px) {
+  .LegalPage-module-scss-module__5x_azq__content {
+    padding: 24px;
+  }
+
+  .LegalPage-module-scss-module__5x_azq__title {
+    font-size: 28px;
+  }
+}
+
+/*# sourceMappingURL=src_app_%28legal%29_LegalPage_module_scss_module_5e8e8c44.css.map*/

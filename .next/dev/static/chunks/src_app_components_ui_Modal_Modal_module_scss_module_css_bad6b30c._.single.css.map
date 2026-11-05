@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///D:/Продакшены/medis/src/app/components/ui/Modal/Modal.module.scss"],"sourcesContent":[".dialog {\r\n    border: none;\r\n    padding: 0;\r\n    background: transparent;\r\n    max-width: 480px;\r\n    width: calc(100% - 32px);\r\n    border-radius: 20px;\r\n    outline: none;\r\n    overflow: visible;\r\n  \r\n    &::backdrop {\r\n      background: rgba(15, 23, 42, 0.5);\r\n      backdrop-filter: blur(4px);\r\n    }\r\n  \r\n    /* Центрирование, если браузер не сделал сам */\r\n    margin: auto;\r\n  }\r\n  \r\n  .content {\r\n    background: var(--color-white);\r\n    border-radius: 20px;\r\n    padding: 32px 28px;\r\n    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);\r\n    border: 1px solid var(--color-border);\r\n    max-height: calc(100vh - 80px);\r\n    overflow-y: auto;\r\n  }\r\n  \r\n  @media (max-width: 480px) {\r\n    .content {\r\n      padding: 24px 20px;\r\n      border-radius: 16px;\r\n    }\r\n  }"],"names":[],"mappings":"AAAA;;;;;;;;;;;AAUI;;;;;;AAVJ;;;;AAmBE;;;;;;;;;;AAUA;EACE"}}]
+}

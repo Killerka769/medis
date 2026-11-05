@@ -1,0 +1,446 @@
+module.exports = [
+"[externals]/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-route-turbo.runtime.dev.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/compiled/next-server/app-route-turbo.runtime.dev.js", () => require("next/dist/compiled/next-server/app-route-turbo.runtime.dev.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/compiled/@opentelemetry/api [external] (next/dist/compiled/@opentelemetry/api, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/compiled/@opentelemetry/api", () => require("next/dist/compiled/@opentelemetry/api"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-page-turbo.runtime.dev.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js", () => require("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/work-unit-async-storage.external.js [external] (next/dist/server/app-render/work-unit-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/server/app-render/work-unit-async-storage.external.js", () => require("next/dist/server/app-render/work-unit-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/work-async-storage.external.js [external] (next/dist/server/app-render/work-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/server/app-render/work-async-storage.external.js", () => require("next/dist/server/app-render/work-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/shared/lib/no-fallback-error.external.js [external] (next/dist/shared/lib/no-fallback-error.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/shared/lib/no-fallback-error.external.js", () => require("next/dist/shared/lib/no-fallback-error.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/node:crypto [external] (node:crypto, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("node:crypto", () => require("node:crypto"));
+
+module.exports = mod;
+}),
+"[externals]/events [external] (events, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("events", () => require("events"));
+
+module.exports = mod;
+}),
+"[externals]/util [external] (util, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("util", () => require("util"));
+
+module.exports = mod;
+}),
+"[project]/src/prisma/contract.json (json)", ((__turbopack_context__) => {
+
+__turbopack_context__.v(JSON.parse("{\"schemaVersion\":\"1\",\"targetFamily\":\"sql\",\"target\":\"postgres\",\"profileHash\":\"3916f444a8a17ad749191acf9e08dad97d1a327b88c2f1d45d12f240296aa8b2\",\"roots\":{\"appointments\":{\"model\":\"Appointment\",\"namespace\":\"public\"},\"article_categories\":{\"model\":\"ArticleCategory\",\"namespace\":\"public\"},\"articles\":{\"model\":\"Article\",\"namespace\":\"public\"},\"doctor_services\":{\"model\":\"DoctorService\",\"namespace\":\"public\"},\"doctors\":{\"model\":\"Doctor\",\"namespace\":\"public\"},\"product_categories\":{\"model\":\"ProductCategory\",\"namespace\":\"public\"},\"product_requests\":{\"model\":\"ProductRequest\",\"namespace\":\"public\"},\"products\":{\"model\":\"Product\",\"namespace\":\"public\"},\"service_categories\":{\"model\":\"ServiceCategory\",\"namespace\":\"public\"},\"services\":{\"model\":\"Service\",\"namespace\":\"public\"},\"users\":{\"model\":\"Users\",\"namespace\":\"public\"}},\"domain\":{\"namespaces\":{\"public\":{\"enum\":{\"AppointmentStatus\":{\"codecId\":\"pg/text@1\",\"members\":[{\"name\":\"pending\",\"value\":\"pending\"},{\"name\":\"confirmed\",\"value\":\"confirmed\"},{\"name\":\"cancelled\",\"value\":\"cancelled\"},{\"name\":\"completed\",\"value\":\"completed\"},{\"name\":\"no_show\",\"value\":\"no_show\"}]},\"ArticleStatus\":{\"codecId\":\"pg/text@1\",\"members\":[{\"name\":\"draft\",\"value\":\"draft\"},{\"name\":\"published\",\"value\":\"published\"}]},\"RequestStatus\":{\"codecId\":\"pg/text@1\",\"members\":[{\"name\":\"new\",\"value\":\"new\"},{\"name\":\"processed\",\"value\":\"processed\"},{\"name\":\"done\",\"value\":\"done\"}]},\"UserRole\":{\"codecId\":\"pg/text@1\",\"members\":[{\"name\":\"Patient\",\"value\":\"patient\"},{\"name\":\"Admin\",\"value\":\"admin\"}]}},\"models\":{\"Appointment\":{\"fields\":{\"adminComment\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"comment\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"createdAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"date\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"doctorId\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"id\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"patientId\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"serviceId\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"status\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"},\"valueSet\":{\"entityKind\":\"enum\",\"entityName\":\"AppointmentStatus\",\"namespaceId\":\"public\",\"plane\":\"domain\"}},\"updatedAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}}},\"relations\":{\"doctor\":{\"cardinality\":\"N:1\",\"nullable\":false,\"on\":{\"localFields\":[\"doctorId\"],\"targetFields\":[\"id\"]},\"to\":{\"model\":\"Doctor\",\"namespace\":\"public\"}},\"patient\":{\"cardinality\":\"N:1\",\"nullable\":false,\"on\":{\"localFields\":[\"patientId\"],\"targetFields\":[\"id\"]},\"to\":{\"model\":\"Users\",\"namespace\":\"public\"}},\"service\":{\"cardinality\":\"N:1\",\"nullable\":false,\"on\":{\"localFields\":[\"serviceId\"],\"targetFields\":[\"id\"]},\"to\":{\"model\":\"Service\",\"namespace\":\"public\"}}},\"storage\":{\"fields\":{\"adminComment\":{\"column\":\"adminComment\"},\"comment\":{\"column\":\"comment\"},\"createdAt\":{\"column\":\"createdAt\"},\"date\":{\"column\":\"date\"},\"doctorId\":{\"column\":\"doctorId\"},\"id\":{\"column\":\"id\"},\"patientId\":{\"column\":\"patientId\"},\"serviceId\":{\"column\":\"serviceId\"},\"status\":{\"column\":\"status\"},\"updatedAt\":{\"column\":\"updatedAt\"}},\"namespaceId\":\"public\",\"table\":\"appointments\"}},\"Article\":{\"fields\":{\"categoryId\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"content\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"coverUrl\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"createdAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"excerpt\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"id\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"publishedAt\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"slug\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"status\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"},\"valueSet\":{\"entityKind\":\"enum\",\"entityName\":\"ArticleStatus\",\"namespaceId\":\"public\",\"plane\":\"domain\"}},\"title\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"updatedAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}}},\"relations\":{\"category\":{\"cardinality\":\"N:1\",\"nullable\":true,\"on\":{\"localFields\":[\"categoryId\"],\"targetFields\":[\"id\"]},\"to\":{\"model\":\"ArticleCategory\",\"namespace\":\"public\"}}},\"storage\":{\"fields\":{\"categoryId\":{\"column\":\"categoryId\"},\"content\":{\"column\":\"content\"},\"coverUrl\":{\"column\":\"coverUrl\"},\"createdAt\":{\"column\":\"createdAt\"},\"excerpt\":{\"column\":\"excerpt\"},\"id\":{\"column\":\"id\"},\"publishedAt\":{\"column\":\"publishedAt\"},\"slug\":{\"column\":\"slug\"},\"status\":{\"column\":\"status\"},\"title\":{\"column\":\"title\"},\"updatedAt\":{\"column\":\"updatedAt\"}},\"namespaceId\":\"public\",\"table\":\"articles\"}},\"ArticleCategory\":{\"fields\":{\"createdAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"id\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"isActive\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/bool@1\",\"kind\":\"scalar\"}},\"slug\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"sortOrder\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/int4@1\",\"kind\":\"scalar\"}},\"title\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"updatedAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}}},\"relations\":{\"articles\":{\"cardinality\":\"1:N\",\"on\":{\"localFields\":[\"id\"],\"targetFields\":[\"categoryId\"]},\"to\":{\"model\":\"Article\",\"namespace\":\"public\"}}},\"storage\":{\"fields\":{\"createdAt\":{\"column\":\"createdAt\"},\"id\":{\"column\":\"id\"},\"isActive\":{\"column\":\"isActive\"},\"slug\":{\"column\":\"slug\"},\"sortOrder\":{\"column\":\"sortOrder\"},\"title\":{\"column\":\"title\"},\"updatedAt\":{\"column\":\"updatedAt\"}},\"namespaceId\":\"public\",\"table\":\"article_categories\"}},\"Doctor\":{\"fields\":{\"bio\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"certificates\":{\"many\":true,\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"createdAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"education\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/json@1\",\"kind\":\"scalar\"}},\"experienceYears\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/int4@1\",\"kind\":\"scalar\"}},\"id\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"isActive\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/bool@1\",\"kind\":\"scalar\"}},\"name\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"photoUrl\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"slug\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"specialization\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"updatedAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}}},\"relations\":{\"appointments\":{\"cardinality\":\"1:N\",\"on\":{\"localFields\":[\"id\"],\"targetFields\":[\"doctorId\"]},\"to\":{\"model\":\"Appointment\",\"namespace\":\"public\"}},\"services\":{\"cardinality\":\"1:N\",\"on\":{\"localFields\":[\"id\"],\"targetFields\":[\"doctorId\"]},\"to\":{\"model\":\"DoctorService\",\"namespace\":\"public\"}}},\"storage\":{\"fields\":{\"bio\":{\"column\":\"bio\"},\"certificates\":{\"column\":\"certificates\"},\"createdAt\":{\"column\":\"createdAt\"},\"education\":{\"column\":\"education\"},\"experienceYears\":{\"column\":\"experienceYears\"},\"id\":{\"column\":\"id\"},\"isActive\":{\"column\":\"isActive\"},\"name\":{\"column\":\"name\"},\"photoUrl\":{\"column\":\"photoUrl\"},\"slug\":{\"column\":\"slug\"},\"specialization\":{\"column\":\"specialization\"},\"updatedAt\":{\"column\":\"updatedAt\"}},\"namespaceId\":\"public\",\"table\":\"doctors\"}},\"DoctorService\":{\"fields\":{\"doctorId\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"serviceId\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}}},\"relations\":{\"doctor\":{\"cardinality\":\"N:1\",\"nullable\":false,\"on\":{\"localFields\":[\"doctorId\"],\"targetFields\":[\"id\"]},\"to\":{\"model\":\"Doctor\",\"namespace\":\"public\"}},\"service\":{\"cardinality\":\"N:1\",\"nullable\":false,\"on\":{\"localFields\":[\"serviceId\"],\"targetFields\":[\"id\"]},\"to\":{\"model\":\"Service\",\"namespace\":\"public\"}}},\"storage\":{\"fields\":{\"doctorId\":{\"column\":\"doctorId\"},\"serviceId\":{\"column\":\"serviceId\"}},\"namespaceId\":\"public\",\"table\":\"doctor_services\"}},\"Product\":{\"fields\":{\"categoryId\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"content\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"createdAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"description\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"id\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"imageUrl\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"images\":{\"many\":true,\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"inStock\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/bool@1\",\"kind\":\"scalar\"}},\"isActive\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/bool@1\",\"kind\":\"scalar\"}},\"price\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/int4@1\",\"kind\":\"scalar\"}},\"slug\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"title\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"updatedAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}}},\"relations\":{\"category\":{\"cardinality\":\"N:1\",\"nullable\":false,\"on\":{\"localFields\":[\"categoryId\"],\"targetFields\":[\"id\"]},\"to\":{\"model\":\"ProductCategory\",\"namespace\":\"public\"}},\"requests\":{\"cardinality\":\"1:N\",\"on\":{\"localFields\":[\"id\"],\"targetFields\":[\"productId\"]},\"to\":{\"model\":\"ProductRequest\",\"namespace\":\"public\"}}},\"storage\":{\"fields\":{\"categoryId\":{\"column\":\"categoryId\"},\"content\":{\"column\":\"content\"},\"createdAt\":{\"column\":\"createdAt\"},\"description\":{\"column\":\"description\"},\"id\":{\"column\":\"id\"},\"imageUrl\":{\"column\":\"imageUrl\"},\"images\":{\"column\":\"images\"},\"inStock\":{\"column\":\"inStock\"},\"isActive\":{\"column\":\"isActive\"},\"price\":{\"column\":\"price\"},\"slug\":{\"column\":\"slug\"},\"title\":{\"column\":\"title\"},\"updatedAt\":{\"column\":\"updatedAt\"}},\"namespaceId\":\"public\",\"table\":\"products\"}},\"ProductCategory\":{\"fields\":{\"createdAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"id\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"isActive\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/bool@1\",\"kind\":\"scalar\"}},\"slug\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"sortOrder\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/int4@1\",\"kind\":\"scalar\"}},\"title\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"updatedAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}}},\"relations\":{\"products\":{\"cardinality\":\"1:N\",\"on\":{\"localFields\":[\"id\"],\"targetFields\":[\"categoryId\"]},\"to\":{\"model\":\"Product\",\"namespace\":\"public\"}}},\"storage\":{\"fields\":{\"createdAt\":{\"column\":\"createdAt\"},\"id\":{\"column\":\"id\"},\"isActive\":{\"column\":\"isActive\"},\"slug\":{\"column\":\"slug\"},\"sortOrder\":{\"column\":\"sortOrder\"},\"title\":{\"column\":\"title\"},\"updatedAt\":{\"column\":\"updatedAt\"}},\"namespaceId\":\"public\",\"table\":\"product_categories\"}},\"ProductRequest\":{\"fields\":{\"comment\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"createdAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"id\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"name\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"phone\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"productId\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"status\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"},\"valueSet\":{\"entityKind\":\"enum\",\"entityName\":\"RequestStatus\",\"namespaceId\":\"public\",\"plane\":\"domain\"}},\"updatedAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"userId\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}}},\"relations\":{\"product\":{\"cardinality\":\"N:1\",\"nullable\":false,\"on\":{\"localFields\":[\"productId\"],\"targetFields\":[\"id\"]},\"to\":{\"model\":\"Product\",\"namespace\":\"public\"}},\"user\":{\"cardinality\":\"N:1\",\"nullable\":false,\"on\":{\"localFields\":[\"userId\"],\"targetFields\":[\"id\"]},\"to\":{\"model\":\"Users\",\"namespace\":\"public\"}}},\"storage\":{\"fields\":{\"comment\":{\"column\":\"comment\"},\"createdAt\":{\"column\":\"createdAt\"},\"id\":{\"column\":\"id\"},\"name\":{\"column\":\"name\"},\"phone\":{\"column\":\"phone\"},\"productId\":{\"column\":\"productId\"},\"status\":{\"column\":\"status\"},\"updatedAt\":{\"column\":\"updatedAt\"},\"userId\":{\"column\":\"userId\"}},\"namespaceId\":\"public\",\"table\":\"product_requests\"}},\"Service\":{\"fields\":{\"categoryId\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"content\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"createdAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"description\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"duration\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/int4@1\",\"kind\":\"scalar\"}},\"id\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"imageUrl\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"isActive\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/bool@1\",\"kind\":\"scalar\"}},\"isOms\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/bool@1\",\"kind\":\"scalar\"}},\"price\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/int4@1\",\"kind\":\"scalar\"}},\"priceFrom\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/bool@1\",\"kind\":\"scalar\"}},\"slug\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"title\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"updatedAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}}},\"relations\":{\"appointments\":{\"cardinality\":\"1:N\",\"on\":{\"localFields\":[\"id\"],\"targetFields\":[\"serviceId\"]},\"to\":{\"model\":\"Appointment\",\"namespace\":\"public\"}},\"category\":{\"cardinality\":\"N:1\",\"nullable\":false,\"on\":{\"localFields\":[\"categoryId\"],\"targetFields\":[\"id\"]},\"to\":{\"model\":\"ServiceCategory\",\"namespace\":\"public\"}},\"doctors\":{\"cardinality\":\"1:N\",\"on\":{\"localFields\":[\"id\"],\"targetFields\":[\"serviceId\"]},\"to\":{\"model\":\"DoctorService\",\"namespace\":\"public\"}}},\"storage\":{\"fields\":{\"categoryId\":{\"column\":\"categoryId\"},\"content\":{\"column\":\"content\"},\"createdAt\":{\"column\":\"createdAt\"},\"description\":{\"column\":\"description\"},\"duration\":{\"column\":\"duration\"},\"id\":{\"column\":\"id\"},\"imageUrl\":{\"column\":\"imageUrl\"},\"isActive\":{\"column\":\"isActive\"},\"isOms\":{\"column\":\"isOms\"},\"price\":{\"column\":\"price\"},\"priceFrom\":{\"column\":\"priceFrom\"},\"slug\":{\"column\":\"slug\"},\"title\":{\"column\":\"title\"},\"updatedAt\":{\"column\":\"updatedAt\"}},\"namespaceId\":\"public\",\"table\":\"services\"}},\"ServiceCategory\":{\"fields\":{\"createdAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"id\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"isActive\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/bool@1\",\"kind\":\"scalar\"}},\"slug\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"sortOrder\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/int4@1\",\"kind\":\"scalar\"}},\"title\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"updatedAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}}},\"relations\":{\"services\":{\"cardinality\":\"1:N\",\"on\":{\"localFields\":[\"id\"],\"targetFields\":[\"categoryId\"]},\"to\":{\"model\":\"Service\",\"namespace\":\"public\"}}},\"storage\":{\"fields\":{\"createdAt\":{\"column\":\"createdAt\"},\"id\":{\"column\":\"id\"},\"isActive\":{\"column\":\"isActive\"},\"slug\":{\"column\":\"slug\"},\"sortOrder\":{\"column\":\"sortOrder\"},\"title\":{\"column\":\"title\"},\"updatedAt\":{\"column\":\"updatedAt\"}},\"namespaceId\":\"public\",\"table\":\"service_categories\"}},\"Users\":{\"fields\":{\"banReason\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"bannedUntil\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"createdAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"email\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"id\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/uuid@1\",\"kind\":\"scalar\"}},\"isBanned\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/bool@1\",\"kind\":\"scalar\"}},\"password\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"phone\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}},\"role\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"},\"valueSet\":{\"entityKind\":\"enum\",\"entityName\":\"UserRole\",\"namespaceId\":\"public\",\"plane\":\"domain\"}},\"updatedAt\":{\"nullable\":false,\"type\":{\"codecId\":\"pg/timestamptz-string@1\",\"kind\":\"scalar\"}},\"username\":{\"nullable\":true,\"type\":{\"codecId\":\"pg/text@1\",\"kind\":\"scalar\"}}},\"relations\":{\"appointments\":{\"cardinality\":\"1:N\",\"on\":{\"localFields\":[\"id\"],\"targetFields\":[\"patientId\"]},\"to\":{\"model\":\"Appointment\",\"namespace\":\"public\"}},\"productRequests\":{\"cardinality\":\"1:N\",\"on\":{\"localFields\":[\"id\"],\"targetFields\":[\"userId\"]},\"to\":{\"model\":\"ProductRequest\",\"namespace\":\"public\"}}},\"storage\":{\"fields\":{\"banReason\":{\"column\":\"banReason\"},\"bannedUntil\":{\"column\":\"bannedUntil\"},\"createdAt\":{\"column\":\"createdAt\"},\"email\":{\"column\":\"email\"},\"id\":{\"column\":\"id\"},\"isBanned\":{\"column\":\"isBanned\"},\"password\":{\"column\":\"password\"},\"phone\":{\"column\":\"phone\"},\"role\":{\"column\":\"role\"},\"updatedAt\":{\"column\":\"updatedAt\"},\"username\":{\"column\":\"username\"}},\"namespaceId\":\"public\",\"table\":\"users\"}}}}}},\"storage\":{\"namespaces\":{\"public\":{\"entries\":{\"table\":{\"appointments\":{\"checks\":[{\"expression\":\"\\\"status\\\" IN ('pending', 'confirmed', 'cancelled', 'completed', 'no_show')\",\"name\":\"appointments_status_check_ce4e5b74\",\"prefix\":\"appointments_status_check\"}],\"columns\":{\"adminComment\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"comment\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"createdAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"default\":{\"expression\":\"now()\",\"kind\":\"function\"},\"nativeType\":\"timestamptz\",\"nullable\":false},\"date\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":false},\"doctorId\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"id\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"patientId\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"serviceId\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"status\":{\"codecId\":\"pg/text@1\",\"default\":{\"kind\":\"literal\",\"value\":\"pending\"},\"nativeType\":\"text\",\"nullable\":false,\"valueSet\":{\"entityKind\":\"valueSet\",\"entityName\":\"AppointmentStatus\",\"namespaceId\":\"public\",\"plane\":\"storage\"}},\"updatedAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":false}},\"foreignKeys\":[{\"onDelete\":\"cascade\",\"source\":{\"columns\":[\"patientId\"],\"namespaceId\":\"public\",\"tableName\":\"appointments\"},\"target\":{\"columns\":[\"id\"],\"namespaceId\":\"public\",\"tableName\":\"users\"}},{\"onDelete\":\"restrict\",\"source\":{\"columns\":[\"doctorId\"],\"namespaceId\":\"public\",\"tableName\":\"appointments\"},\"target\":{\"columns\":[\"id\"],\"namespaceId\":\"public\",\"tableName\":\"doctors\"}},{\"onDelete\":\"restrict\",\"source\":{\"columns\":[\"serviceId\"],\"namespaceId\":\"public\",\"tableName\":\"appointments\"},\"target\":{\"columns\":[\"id\"],\"namespaceId\":\"public\",\"tableName\":\"services\"}}],\"indexes\":[{\"columns\":[\"date\"],\"name\":\"appointments_date_idx_b4ca319c\",\"prefix\":\"appointments_date_idx\",\"unique\":false},{\"columns\":[\"doctorId\",\"date\"],\"name\":\"appointments_doctorId_date_idx_66f265c1\",\"prefix\":\"appointments_doctorId_date_idx\",\"unique\":false},{\"columns\":[\"doctorId\"],\"name\":\"appointments_doctorId_idx_04369053\",\"prefix\":\"appointments_doctorId_idx\",\"unique\":false},{\"columns\":[\"patientId\"],\"name\":\"appointments_patientId_idx_e5f07e88\",\"prefix\":\"appointments_patientId_idx\",\"unique\":false},{\"columns\":[\"serviceId\"],\"name\":\"appointments_serviceId_idx_b5d9acbf\",\"prefix\":\"appointments_serviceId_idx\",\"unique\":false},{\"columns\":[\"status\"],\"name\":\"appointments_status_idx_e98638ab\",\"prefix\":\"appointments_status_idx\",\"unique\":false}],\"primaryKey\":{\"columns\":[\"id\"]},\"uniques\":[]},\"article_categories\":{\"columns\":{\"createdAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"default\":{\"expression\":\"now()\",\"kind\":\"function\"},\"nativeType\":\"timestamptz\",\"nullable\":false},\"id\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"isActive\":{\"codecId\":\"pg/bool@1\",\"default\":{\"kind\":\"literal\",\"value\":true},\"nativeType\":\"bool\",\"nullable\":false},\"slug\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"sortOrder\":{\"codecId\":\"pg/int4@1\",\"default\":{\"kind\":\"literal\",\"value\":0},\"nativeType\":\"int4\",\"nullable\":false},\"title\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"updatedAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":false}},\"foreignKeys\":[],\"indexes\":[{\"columns\":[\"isActive\"],\"name\":\"article_categories_isActive_idx_77fe3ba1\",\"prefix\":\"article_categories_isActive_idx\",\"unique\":false},{\"columns\":[\"sortOrder\"],\"name\":\"article_categories_sortOrder_idx_ebf2eac2\",\"prefix\":\"article_categories_sortOrder_idx\",\"unique\":false}],\"primaryKey\":{\"columns\":[\"id\"]},\"uniques\":[{\"columns\":[\"slug\"]}]},\"articles\":{\"checks\":[{\"expression\":\"\\\"status\\\" IN ('draft', 'published')\",\"name\":\"articles_status_check_e888e82e\",\"prefix\":\"articles_status_check\"}],\"columns\":{\"categoryId\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":true},\"content\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"coverUrl\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"createdAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"default\":{\"expression\":\"now()\",\"kind\":\"function\"},\"nativeType\":\"timestamptz\",\"nullable\":false},\"excerpt\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"id\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"publishedAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":true},\"slug\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"status\":{\"codecId\":\"pg/text@1\",\"default\":{\"kind\":\"literal\",\"value\":\"draft\"},\"nativeType\":\"text\",\"nullable\":false,\"valueSet\":{\"entityKind\":\"valueSet\",\"entityName\":\"ArticleStatus\",\"namespaceId\":\"public\",\"plane\":\"storage\"}},\"title\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"updatedAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":false}},\"foreignKeys\":[{\"onDelete\":\"setNull\",\"source\":{\"columns\":[\"categoryId\"],\"namespaceId\":\"public\",\"tableName\":\"articles\"},\"target\":{\"columns\":[\"id\"],\"namespaceId\":\"public\",\"tableName\":\"article_categories\"}}],\"indexes\":[{\"columns\":[\"categoryId\"],\"name\":\"articles_categoryId_idx_15c304f2\",\"prefix\":\"articles_categoryId_idx\",\"unique\":false},{\"columns\":[\"publishedAt\"],\"name\":\"articles_publishedAt_idx_36121b91\",\"prefix\":\"articles_publishedAt_idx\",\"unique\":false},{\"columns\":[\"status\"],\"name\":\"articles_status_idx_e98638ab\",\"prefix\":\"articles_status_idx\",\"unique\":false}],\"primaryKey\":{\"columns\":[\"id\"]},\"uniques\":[{\"columns\":[\"slug\"]}]},\"doctor_services\":{\"columns\":{\"doctorId\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"serviceId\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false}},\"foreignKeys\":[{\"onDelete\":\"cascade\",\"source\":{\"columns\":[\"doctorId\"],\"namespaceId\":\"public\",\"tableName\":\"doctor_services\"},\"target\":{\"columns\":[\"id\"],\"namespaceId\":\"public\",\"tableName\":\"doctors\"}},{\"onDelete\":\"cascade\",\"source\":{\"columns\":[\"serviceId\"],\"namespaceId\":\"public\",\"tableName\":\"doctor_services\"},\"target\":{\"columns\":[\"id\"],\"namespaceId\":\"public\",\"tableName\":\"services\"}}],\"indexes\":[{\"columns\":[\"doctorId\"],\"name\":\"doctor_services_doctorId_idx_04369053\",\"prefix\":\"doctor_services_doctorId_idx\",\"unique\":false},{\"columns\":[\"serviceId\"],\"name\":\"doctor_services_serviceId_idx_b5d9acbf\",\"prefix\":\"doctor_services_serviceId_idx\",\"unique\":false}],\"primaryKey\":{\"columns\":[\"doctorId\",\"serviceId\"]},\"uniques\":[]},\"doctors\":{\"checks\":[{\"expression\":\"array_position(\\\"certificates\\\", NULL) IS NULL\",\"name\":\"doctors_certificates_elem_not_null_d9472574\",\"prefix\":\"doctors_certificates_elem_not_null\"}],\"columns\":{\"bio\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"certificates\":{\"codecId\":\"pg/text@1\",\"many\":true,\"nativeType\":\"text\",\"nullable\":false},\"createdAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"default\":{\"expression\":\"now()\",\"kind\":\"function\"},\"nativeType\":\"timestamptz\",\"nullable\":false},\"education\":{\"codecId\":\"pg/json@1\",\"nativeType\":\"json\",\"nullable\":true},\"experienceYears\":{\"codecId\":\"pg/int4@1\",\"default\":{\"kind\":\"literal\",\"value\":0},\"nativeType\":\"int4\",\"nullable\":false},\"id\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"isActive\":{\"codecId\":\"pg/bool@1\",\"default\":{\"kind\":\"literal\",\"value\":true},\"nativeType\":\"bool\",\"nullable\":false},\"name\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"photoUrl\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"slug\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"specialization\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"updatedAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":false}},\"foreignKeys\":[],\"indexes\":[{\"columns\":[\"isActive\"],\"name\":\"doctors_isActive_idx_77fe3ba1\",\"prefix\":\"doctors_isActive_idx\",\"unique\":false},{\"columns\":[\"specialization\"],\"name\":\"doctors_specialization_idx_6166aa06\",\"prefix\":\"doctors_specialization_idx\",\"unique\":false}],\"primaryKey\":{\"columns\":[\"id\"]},\"uniques\":[{\"columns\":[\"slug\"]}]},\"product_categories\":{\"columns\":{\"createdAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"default\":{\"expression\":\"now()\",\"kind\":\"function\"},\"nativeType\":\"timestamptz\",\"nullable\":false},\"id\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"isActive\":{\"codecId\":\"pg/bool@1\",\"default\":{\"kind\":\"literal\",\"value\":true},\"nativeType\":\"bool\",\"nullable\":false},\"slug\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"sortOrder\":{\"codecId\":\"pg/int4@1\",\"default\":{\"kind\":\"literal\",\"value\":0},\"nativeType\":\"int4\",\"nullable\":false},\"title\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"updatedAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":false}},\"foreignKeys\":[],\"indexes\":[{\"columns\":[\"isActive\"],\"name\":\"product_categories_isActive_idx_77fe3ba1\",\"prefix\":\"product_categories_isActive_idx\",\"unique\":false},{\"columns\":[\"sortOrder\"],\"name\":\"product_categories_sortOrder_idx_ebf2eac2\",\"prefix\":\"product_categories_sortOrder_idx\",\"unique\":false}],\"primaryKey\":{\"columns\":[\"id\"]},\"uniques\":[{\"columns\":[\"slug\"]}]},\"product_requests\":{\"checks\":[{\"expression\":\"\\\"status\\\" IN ('new', 'processed', 'done')\",\"name\":\"product_requests_status_check_82793a4c\",\"prefix\":\"product_requests_status_check\"}],\"columns\":{\"comment\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"createdAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"default\":{\"expression\":\"now()\",\"kind\":\"function\"},\"nativeType\":\"timestamptz\",\"nullable\":false},\"id\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"name\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"phone\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"productId\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"status\":{\"codecId\":\"pg/text@1\",\"default\":{\"kind\":\"literal\",\"value\":\"new\"},\"nativeType\":\"text\",\"nullable\":false,\"valueSet\":{\"entityKind\":\"valueSet\",\"entityName\":\"RequestStatus\",\"namespaceId\":\"public\",\"plane\":\"storage\"}},\"updatedAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":false},\"userId\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false}},\"foreignKeys\":[{\"onDelete\":\"cascade\",\"source\":{\"columns\":[\"productId\"],\"namespaceId\":\"public\",\"tableName\":\"product_requests\"},\"target\":{\"columns\":[\"id\"],\"namespaceId\":\"public\",\"tableName\":\"products\"}},{\"onDelete\":\"cascade\",\"source\":{\"columns\":[\"userId\"],\"namespaceId\":\"public\",\"tableName\":\"product_requests\"},\"target\":{\"columns\":[\"id\"],\"namespaceId\":\"public\",\"tableName\":\"users\"}}],\"indexes\":[{\"columns\":[\"productId\"],\"name\":\"product_requests_productId_idx_5858600a\",\"prefix\":\"product_requests_productId_idx\",\"unique\":false},{\"columns\":[\"status\"],\"name\":\"product_requests_status_idx_e98638ab\",\"prefix\":\"product_requests_status_idx\",\"unique\":false},{\"columns\":[\"userId\"],\"name\":\"product_requests_userId_idx_a489d58a\",\"prefix\":\"product_requests_userId_idx\",\"unique\":false}],\"primaryKey\":{\"columns\":[\"id\"]},\"uniques\":[]},\"products\":{\"checks\":[{\"expression\":\"array_position(\\\"images\\\", NULL) IS NULL\",\"name\":\"products_images_elem_not_null_2f12556f\",\"prefix\":\"products_images_elem_not_null\"}],\"columns\":{\"categoryId\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"content\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"createdAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"default\":{\"expression\":\"now()\",\"kind\":\"function\"},\"nativeType\":\"timestamptz\",\"nullable\":false},\"description\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"id\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"imageUrl\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"images\":{\"codecId\":\"pg/text@1\",\"many\":true,\"nativeType\":\"text\",\"nullable\":false},\"inStock\":{\"codecId\":\"pg/bool@1\",\"default\":{\"kind\":\"literal\",\"value\":true},\"nativeType\":\"bool\",\"nullable\":false},\"isActive\":{\"codecId\":\"pg/bool@1\",\"default\":{\"kind\":\"literal\",\"value\":true},\"nativeType\":\"bool\",\"nullable\":false},\"price\":{\"codecId\":\"pg/int4@1\",\"nativeType\":\"int4\",\"nullable\":false},\"slug\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"title\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"updatedAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":false}},\"foreignKeys\":[{\"onDelete\":\"restrict\",\"source\":{\"columns\":[\"categoryId\"],\"namespaceId\":\"public\",\"tableName\":\"products\"},\"target\":{\"columns\":[\"id\"],\"namespaceId\":\"public\",\"tableName\":\"product_categories\"}}],\"indexes\":[{\"columns\":[\"categoryId\"],\"name\":\"products_categoryId_idx_15c304f2\",\"prefix\":\"products_categoryId_idx\",\"unique\":false},{\"columns\":[\"isActive\"],\"name\":\"products_isActive_idx_77fe3ba1\",\"prefix\":\"products_isActive_idx\",\"unique\":false}],\"primaryKey\":{\"columns\":[\"id\"]},\"uniques\":[{\"columns\":[\"slug\"]}]},\"service_categories\":{\"columns\":{\"createdAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"default\":{\"expression\":\"now()\",\"kind\":\"function\"},\"nativeType\":\"timestamptz\",\"nullable\":false},\"id\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"isActive\":{\"codecId\":\"pg/bool@1\",\"default\":{\"kind\":\"literal\",\"value\":true},\"nativeType\":\"bool\",\"nullable\":false},\"slug\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"sortOrder\":{\"codecId\":\"pg/int4@1\",\"default\":{\"kind\":\"literal\",\"value\":0},\"nativeType\":\"int4\",\"nullable\":false},\"title\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"updatedAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":false}},\"foreignKeys\":[],\"indexes\":[{\"columns\":[\"isActive\"],\"name\":\"service_categories_isActive_idx_77fe3ba1\",\"prefix\":\"service_categories_isActive_idx\",\"unique\":false},{\"columns\":[\"sortOrder\"],\"name\":\"service_categories_sortOrder_idx_ebf2eac2\",\"prefix\":\"service_categories_sortOrder_idx\",\"unique\":false}],\"primaryKey\":{\"columns\":[\"id\"]},\"uniques\":[{\"columns\":[\"slug\"]}]},\"services\":{\"columns\":{\"categoryId\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"content\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"createdAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"default\":{\"expression\":\"now()\",\"kind\":\"function\"},\"nativeType\":\"timestamptz\",\"nullable\":false},\"description\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"duration\":{\"codecId\":\"pg/int4@1\",\"nativeType\":\"int4\",\"nullable\":true},\"id\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"imageUrl\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"isActive\":{\"codecId\":\"pg/bool@1\",\"default\":{\"kind\":\"literal\",\"value\":true},\"nativeType\":\"bool\",\"nullable\":false},\"isOms\":{\"codecId\":\"pg/bool@1\",\"default\":{\"kind\":\"literal\",\"value\":false},\"nativeType\":\"bool\",\"nullable\":false},\"price\":{\"codecId\":\"pg/int4@1\",\"nativeType\":\"int4\",\"nullable\":true},\"priceFrom\":{\"codecId\":\"pg/bool@1\",\"default\":{\"kind\":\"literal\",\"value\":false},\"nativeType\":\"bool\",\"nullable\":false},\"slug\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"title\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"updatedAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":false}},\"foreignKeys\":[{\"onDelete\":\"restrict\",\"source\":{\"columns\":[\"categoryId\"],\"namespaceId\":\"public\",\"tableName\":\"services\"},\"target\":{\"columns\":[\"id\"],\"namespaceId\":\"public\",\"tableName\":\"service_categories\"}}],\"indexes\":[{\"columns\":[\"categoryId\"],\"name\":\"services_categoryId_idx_15c304f2\",\"prefix\":\"services_categoryId_idx\",\"unique\":false},{\"columns\":[\"isActive\"],\"name\":\"services_isActive_idx_77fe3ba1\",\"prefix\":\"services_isActive_idx\",\"unique\":false},{\"columns\":[\"isOms\"],\"name\":\"services_isOms_idx_2cfeb051\",\"prefix\":\"services_isOms_idx\",\"unique\":false}],\"primaryKey\":{\"columns\":[\"id\"]},\"uniques\":[{\"columns\":[\"slug\"]}]},\"users\":{\"checks\":[{\"expression\":\"\\\"role\\\" IN ('patient', 'admin')\",\"name\":\"users_role_check_8a279b32\",\"prefix\":\"users_role_check\"}],\"columns\":{\"banReason\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true},\"bannedUntil\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":true},\"createdAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"default\":{\"expression\":\"now()\",\"kind\":\"function\"},\"nativeType\":\"timestamptz\",\"nullable\":false},\"email\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"id\":{\"codecId\":\"pg/uuid@1\",\"nativeType\":\"uuid\",\"nullable\":false},\"isBanned\":{\"codecId\":\"pg/bool@1\",\"default\":{\"kind\":\"literal\",\"value\":false},\"nativeType\":\"bool\",\"nullable\":false},\"password\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"phone\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":false},\"role\":{\"codecId\":\"pg/text@1\",\"default\":{\"kind\":\"literal\",\"value\":\"patient\"},\"nativeType\":\"text\",\"nullable\":false,\"valueSet\":{\"entityKind\":\"valueSet\",\"entityName\":\"UserRole\",\"namespaceId\":\"public\",\"plane\":\"storage\"}},\"updatedAt\":{\"codecId\":\"pg/timestamptz-string@1\",\"nativeType\":\"timestamptz\",\"nullable\":false},\"username\":{\"codecId\":\"pg/text@1\",\"nativeType\":\"text\",\"nullable\":true}},\"foreignKeys\":[],\"indexes\":[{\"columns\":[\"isBanned\"],\"name\":\"users_isBanned_idx_c71a7df8\",\"prefix\":\"users_isBanned_idx\",\"unique\":false}],\"primaryKey\":{\"columns\":[\"id\"]},\"uniques\":[{\"columns\":[\"email\"]},{\"columns\":[\"phone\"]}]}},\"valueSet\":{\"AppointmentStatus\":{\"kind\":\"valueSet\",\"values\":[\"pending\",\"confirmed\",\"cancelled\",\"completed\",\"no_show\"]},\"ArticleStatus\":{\"kind\":\"valueSet\",\"values\":[\"draft\",\"published\"]},\"RequestStatus\":{\"kind\":\"valueSet\",\"values\":[\"new\",\"processed\",\"done\"]},\"UserRole\":{\"kind\":\"valueSet\",\"values\":[\"patient\",\"admin\"]}}},\"id\":\"public\",\"kind\":\"postgres-schema\"}},\"storageHash\":\"78460f88eb315358de2316e1f914d417aa6388f97a4adc996a799f98c1e729f7\"},\"execution\":{\"executionHash\":\"996a7370a2563473a3a7c41076b82400fd8fa1817b870e4e1034cff58252967a\",\"mutations\":{\"defaults\":[{\"onCreate\":{\"id\":\"uuidv4\",\"kind\":\"generator\"},\"ref\":{\"column\":\"id\",\"namespace\":\"public\",\"table\":\"appointments\"}},{\"onCreate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"onUpdate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"ref\":{\"column\":\"updatedAt\",\"namespace\":\"public\",\"table\":\"appointments\"}},{\"onCreate\":{\"id\":\"uuidv4\",\"kind\":\"generator\"},\"ref\":{\"column\":\"id\",\"namespace\":\"public\",\"table\":\"article_categories\"}},{\"onCreate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"onUpdate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"ref\":{\"column\":\"updatedAt\",\"namespace\":\"public\",\"table\":\"article_categories\"}},{\"onCreate\":{\"id\":\"uuidv4\",\"kind\":\"generator\"},\"ref\":{\"column\":\"id\",\"namespace\":\"public\",\"table\":\"articles\"}},{\"onCreate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"onUpdate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"ref\":{\"column\":\"updatedAt\",\"namespace\":\"public\",\"table\":\"articles\"}},{\"onCreate\":{\"id\":\"uuidv4\",\"kind\":\"generator\"},\"ref\":{\"column\":\"id\",\"namespace\":\"public\",\"table\":\"doctors\"}},{\"onCreate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"onUpdate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"ref\":{\"column\":\"updatedAt\",\"namespace\":\"public\",\"table\":\"doctors\"}},{\"onCreate\":{\"id\":\"uuidv4\",\"kind\":\"generator\"},\"ref\":{\"column\":\"id\",\"namespace\":\"public\",\"table\":\"product_categories\"}},{\"onCreate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"onUpdate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"ref\":{\"column\":\"updatedAt\",\"namespace\":\"public\",\"table\":\"product_categories\"}},{\"onCreate\":{\"id\":\"uuidv4\",\"kind\":\"generator\"},\"ref\":{\"column\":\"id\",\"namespace\":\"public\",\"table\":\"product_requests\"}},{\"onCreate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"onUpdate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"ref\":{\"column\":\"updatedAt\",\"namespace\":\"public\",\"table\":\"product_requests\"}},{\"onCreate\":{\"id\":\"uuidv4\",\"kind\":\"generator\"},\"ref\":{\"column\":\"id\",\"namespace\":\"public\",\"table\":\"products\"}},{\"onCreate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"onUpdate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"ref\":{\"column\":\"updatedAt\",\"namespace\":\"public\",\"table\":\"products\"}},{\"onCreate\":{\"id\":\"uuidv4\",\"kind\":\"generator\"},\"ref\":{\"column\":\"id\",\"namespace\":\"public\",\"table\":\"service_categories\"}},{\"onCreate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"onUpdate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"ref\":{\"column\":\"updatedAt\",\"namespace\":\"public\",\"table\":\"service_categories\"}},{\"onCreate\":{\"id\":\"uuidv4\",\"kind\":\"generator\"},\"ref\":{\"column\":\"id\",\"namespace\":\"public\",\"table\":\"services\"}},{\"onCreate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"onUpdate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"ref\":{\"column\":\"updatedAt\",\"namespace\":\"public\",\"table\":\"services\"}},{\"onCreate\":{\"id\":\"uuidv4\",\"kind\":\"generator\"},\"ref\":{\"column\":\"id\",\"namespace\":\"public\",\"table\":\"users\"}},{\"onCreate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"onUpdate\":{\"id\":\"timestampNow\",\"kind\":\"generator\"},\"ref\":{\"column\":\"updatedAt\",\"namespace\":\"public\",\"table\":\"users\"}}]}},\"capabilities\":{\"postgres\":{\"distinctOn\":true,\"jsonAgg\":true,\"lateral\":true,\"limit\":true,\"orderBy\":true,\"returning\":true},\"sql\":{\"checkConstraint\":true,\"defaultInInsert\":true,\"enums\":true,\"insertOnConflictSkip\":true,\"insertOnConflictWithoutTarget\":true,\"lateral\":true,\"returning\":true,\"scalarList\":true}},\"extensions\":{},\"meta\":{},\"_generated\":{\"warning\":\"⚠️  GENERATED FILE - DO NOT EDIT\",\"message\":\"This file is automatically generated by \\\"prisma contract emit\\\".\",\"regenerate\":\"To regenerate, run: prisma contract emit\"}}"));}),
+"[project]/src/prisma/composer.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "appContract",
+    ()=>appContract
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@prisma/composer-prisma-cloud/dist/orm.mjs [app-route] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2d$postgres$2d$ChW2Ewj7$2d$Dnas0G3L$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__n__as__dataContract$3e$__ = __turbopack_context__.i("[project]/node_modules/@prisma/composer-prisma-cloud/dist/orm-postgres-ChW2Ewj7-Dnas0G3L.mjs [app-route] (ecmascript) <export n as dataContract>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$contract$2e$json__$28$json$29$__ = __turbopack_context__.i("[project]/src/prisma/contract.json (json)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2d$postgres$2d$ChW2Ewj7$2d$Dnas0G3L$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__n__as__dataContract$3e$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2d$postgres$2d$ChW2Ewj7$2d$Dnas0G3L$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__n__as__dataContract$3e$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+const appContract = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2d$postgres$2d$ChW2Ewj7$2d$Dnas0G3L$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__n__as__dataContract$3e$__["dataContract"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$contract$2e$json__$28$json$29$__["default"]);
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/service.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2f$dist$2f$nextjs$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@prisma/composer/dist/nextjs.mjs [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@prisma/composer-prisma-cloud/dist/index.mjs [app-route] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@prisma/composer-prisma-cloud/dist/orm.mjs [app-route] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2d$postgres$2d$ChW2Ewj7$2d$Dnas0G3L$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__i__as__postgres$3e$__ = __turbopack_context__.i("[project]/node_modules/@prisma/composer-prisma-cloud/dist/orm-postgres-ChW2Ewj7-Dnas0G3L.mjs [app-route] (ecmascript) <export i as postgres>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$composer$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/prisma/composer.ts [app-route] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2d$postgres$2d$ChW2Ewj7$2d$Dnas0G3L$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__i__as__postgres$3e$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$composer$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2d$postgres$2d$ChW2Ewj7$2d$Dnas0G3L$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__i__as__postgres$3e$__, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$composer$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+const __TURBOPACK__import$2e$meta__ = {
+    get url () {
+        return `file://${__turbopack_context__.P("service.ts")}`;
+    }
+};
+;
+;
+;
+;
+const __TURBOPACK__default__export__ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$index$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__["compute"])({
+    name: "app",
+    deps: {
+        database: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2d$prisma$2d$cloud$2f$dist$2f$orm$2d$postgres$2d$ChW2Ewj7$2d$Dnas0G3L$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__i__as__postgres$3e$__["postgres"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$composer$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["appContract"])
+    },
+    build: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$composer$2f$dist$2f$nextjs$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])({
+        module: __TURBOPACK__import$2e$meta__.url,
+        appDir: "."
+    })
+});
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/src/prisma/db.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "connectDatabase",
+    ()=>connectDatabase,
+    "db",
+    ()=>db
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$orm$2d$postgres$2f$dist$2f$runtime$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@prisma/orm-postgres/dist/runtime.mjs [app-route] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$temporal$2d$polyfill$2f$global$2e$esm$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/temporal-polyfill/global.esm.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$service$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/service.ts [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$contract$2e$json__$28$json$29$__ = __turbopack_context__.i("[project]/src/prisma/contract.json (json)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$orm$2d$postgres$2f$dist$2f$runtime$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$service$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$orm$2d$postgres$2f$dist$2f$runtime$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__, __TURBOPACK__imported__module__$5b$project$5d2f$service$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+;
+function loadComposerDatabase() {
+    try {
+        return __TURBOPACK__imported__module__$5b$project$5d2f$service$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].load().database.client;
+    } catch  {
+        return undefined;
+    }
+}
+const db = loadComposerDatabase() ?? (process.env.DATABASE_URL ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$orm$2d$postgres$2f$dist$2f$runtime$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"])({
+    contractJson: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$contract$2e$json__$28$json$29$__["default"],
+    url: process.env.DATABASE_URL
+}) : (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$prisma$2f$orm$2d$postgres$2f$dist$2f$runtime$2e$mjs__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"])({
+    contractJson: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$contract$2e$json__$28$json$29$__["default"]
+}));
+let connection;
+function connectDatabase() {
+    connection ??= db.connect().then(()=>undefined).catch((error)=>{
+        connection = undefined;
+        throw error;
+    });
+    return connection;
+}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[externals]/crypto [external] (crypto, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("crypto", () => require("crypto"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/after-task-async-storage.external.js [external] (next/dist/server/app-render/after-task-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/server/app-render/after-task-async-storage.external.js", () => require("next/dist/server/app-render/after-task-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[project]/src/lib/utils/phone.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "formatPhoneToE164",
+    ()=>formatPhoneToE164,
+    "isValidPhone",
+    ()=>isValidPhone,
+    "isValidPhoneCode",
+    ()=>isValidPhoneCode,
+    "isValidPhoneFormat",
+    ()=>isValidPhoneFormat,
+    "normalizePhone",
+    ()=>normalizePhone
+]);
+const MOBILE_CODES = [
+    // МТС
+    "910",
+    "911",
+    "912",
+    "913",
+    "914",
+    "915",
+    "916",
+    "917",
+    "918",
+    "919",
+    "980",
+    "981",
+    "982",
+    "983",
+    "984",
+    "985",
+    "986",
+    "987",
+    "988",
+    "989",
+    // Билайн
+    "902",
+    "903",
+    "904",
+    "905",
+    "906",
+    "907",
+    "908",
+    "909",
+    "960",
+    "961",
+    "962",
+    "963",
+    "964",
+    "965",
+    "966",
+    "967",
+    "968",
+    "969",
+    // Мегафон
+    "920",
+    "921",
+    "922",
+    "923",
+    "924",
+    "925",
+    "926",
+    "927",
+    "928",
+    "929",
+    "930",
+    "931",
+    "932",
+    "933",
+    "934",
+    "935",
+    "936",
+    "937",
+    "938",
+    "939",
+    // Tele2
+    "900",
+    "901",
+    "902",
+    "904",
+    "908",
+    "950",
+    "951",
+    "952",
+    "953",
+    "954",
+    "955",
+    "956",
+    "957",
+    "958",
+    "959",
+    // Yota
+    "999",
+    "998",
+    "997",
+    "996",
+    "995",
+    "994",
+    "993",
+    "992",
+    "991",
+    "990",
+    // Ростелеком
+    "800",
+    "801",
+    "802",
+    "803",
+    "804",
+    "805",
+    "806",
+    "807",
+    "808",
+    "809",
+    // Другие коды
+    "941",
+    "942",
+    "943",
+    "944",
+    "945",
+    "946",
+    "947",
+    "948",
+    "949",
+    "970",
+    "971",
+    "972",
+    "973",
+    "974",
+    "975",
+    "976",
+    "977",
+    "978",
+    "979"
+];
+function normalizePhone(phone) {
+    return phone.replace(/\D/g, "");
+}
+function isValidPhoneFormat(phone) {
+    const normalized = normalizePhone(phone);
+    if (normalized.length !== 11) return false;
+    if (!normalized.startsWith("7") && !normalized.startsWith("8")) return false;
+    return true;
+}
+function isValidPhoneCode(phone) {
+    const normalized = normalizePhone(phone);
+    let numberForCheck = normalized;
+    if (numberForCheck.startsWith("8")) {
+        numberForCheck = "7" + numberForCheck.slice(1);
+    }
+    const code = numberForCheck.slice(1, 4);
+    return MOBILE_CODES.includes(code);
+}
+function isValidPhone(phone) {
+    if (!phone || phone.trim().length === 0) {
+        return {
+            valid: false,
+            error: "Введите номер телефона"
+        };
+    }
+    if (!isValidPhoneFormat(phone)) {
+        return {
+            valid: false,
+            error: "Введите корректный номер телефона (11 цифр)"
+        };
+    }
+    if (!isValidPhoneCode(phone)) {
+        return {
+            valid: false,
+            error: "Номер должен быть российским мобильным"
+        };
+    }
+    return {
+        valid: true
+    };
+}
+function formatPhoneToE164(phone) {
+    const normalized = normalizePhone(phone);
+    if (normalized.startsWith("8")) {
+        return "+7" + normalized.slice(1);
+    }
+    if (normalized.startsWith("7")) {
+        return "+" + normalized;
+    }
+    return "+7" + normalized;
+}
+}),
+"[project]/src/app/api/auth/login/route.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "POST",
+    ()=>POST
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/prisma/db.ts [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/bcryptjs/index.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jose$2f$dist$2f$webapi$2f$jwt$2f$sign$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/jose/dist/webapi/jwt/sign.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$phone$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/utils/phone.ts [app-route] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+;
+;
+async function POST(req) {
+    try {
+        const { phone, password } = await req.json();
+        if (!phone || !password) return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            message: "Заполните все поля"
+        }, {
+            status: 409
+        });
+        const existsUser = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["db"].orm.public.Users.where({
+            phone: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2f$phone$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["formatPhoneToE164"])(phone)
+        }).select("id", "role", "password").first();
+        if (!existsUser) return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            message: "Пользователь не найден"
+        }, {
+            status: 404
+        });
+        const checkPassword = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].compare(password, existsUser.password);
+        if (!checkPassword) return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            message: "Неверный пароль"
+        }, {
+            status: 401
+        });
+        const token = await new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jose$2f$dist$2f$webapi$2f$jwt$2f$sign$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["SignJWT"]({
+            id: existsUser.id,
+            role: existsUser.role
+        }).setProtectedHeader({
+            alg: "HS256"
+        }).setIssuedAt().setExpirationTime("14d").sign(new TextEncoder().encode(process.env.SECRET_KEY));
+        let res = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            message: "Успешный вход"
+        }, {
+            status: 200
+        });
+        res.cookies.set("token", token, {
+            httpOnly: true,
+            secure: ("TURBOPACK compile-time value", "development") === "production",
+            sameSite: "lax",
+            maxAge: 60 * 60 * 24 * 14,
+            path: "/"
+        });
+        return res;
+    } catch (error) {
+        console.log(error);
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            message: "Ошибка логина сервера"
+        }, {
+            status: 500
+        });
+    }
+}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__b645d246._.js.map

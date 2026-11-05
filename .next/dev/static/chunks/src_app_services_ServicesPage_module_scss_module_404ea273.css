@@ -1,0 +1,118 @@
+/* [project]/src/app/services/ServicesPage.module.scss.module.css [app-client] (css) */
+.ServicesPage-module-scss-module__JZyE0G__page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__title {
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__subtitle {
+  color: var(--color-text-muted);
+  font-size: 16px;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__filters {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__filterBtn {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  cursor: pointer;
+  background: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all .2s;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__filterBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.ServicesPage-module-scss-module__JZyE0G__filterBtn.ServicesPage-module-scss-module__JZyE0G__active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__grid {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  display: grid;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__card {
+  border: 1px solid var(--color-border);
+  background: #fff;
+  border-radius: 16px;
+  flex-direction: column;
+  padding: 24px;
+  text-decoration: none;
+  transition: all .2s;
+  display: flex;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px #1e5f9e14;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__cardTitle {
+  color: var(--color-primary-dark);
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__cardDesc {
+  color: var(--color-text-muted);
+  flex: 1;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__cardBottom {
+  border-top: 1px solid var(--color-border);
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  display: flex;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__price {
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__more {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  transition: color .2s;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__card:hover .ServicesPage-module-scss-module__JZyE0G__more {
+  color: var(--color-primary);
+}
+
+/*# sourceMappingURL=src_app_services_ServicesPage_module_scss_module_404ea273.css.map*/

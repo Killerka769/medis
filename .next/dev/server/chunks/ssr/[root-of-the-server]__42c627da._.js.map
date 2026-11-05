@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BA%D1%88%D0%B5%D0%BD%D1%8B/medis/src/app/admin/page.tsx"],"sourcesContent":["export default function AdminPage() {\r\n    \r\n    return<main>\r\n        <h1>Панель администратора</h1>\r\n    </main>\r\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IAEpB,qBAAM,8OAAC;kBACH,cAAA,8OAAC;sBAAG;;;;;;;;;;;AAEZ"}}]
+}

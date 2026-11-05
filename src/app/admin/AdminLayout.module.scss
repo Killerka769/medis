@@ -1,0 +1,27 @@
+.adminLayout {
+    display: flex;
+    min-height: 100vh;
+    background: #f8fafc; /* Светло-серый фон для админки */
+  }
+  
+  .content {
+    flex: 1;
+    padding: 40px;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .contentInner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 768px) {
+    .adminLayout {
+      flex-direction: column;
+    }
+    .content {
+      padding: 20px;
+      height: auto;
+    }
+  }

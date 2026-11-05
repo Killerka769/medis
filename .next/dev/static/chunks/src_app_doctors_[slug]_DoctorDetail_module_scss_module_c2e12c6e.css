@@ -1,0 +1,198 @@
+/* [project]/src/app/doctors/[slug]/DoctorDetail.module.scss.module.css [app-client] (css) */
+.DoctorDetail-module-scss-module__AZ9BLW__page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__breadcrumbs {
+  color: var(--color-text-muted);
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__breadcrumbs a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__profileCard {
+  border: 1px solid var(--color-border);
+  background: #fff;
+  border-radius: 24px;
+  gap: 40px;
+  margin-bottom: 40px;
+  padding: 40px;
+  display: flex;
+  box-shadow: 0 10px 40px #1e5f9e0d;
+}
+
+@media (max-width: 768px) {
+  .DoctorDetail-module-scss-module__AZ9BLW__profileCard {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+  }
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__avatarWrap {
+  background: var(--color-primary-light);
+  border-radius: 16px;
+  flex-shrink: 0;
+  width: 240px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__avatarWrap img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  color: var(--color-primary);
+  opacity: .5;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  font-weight: 700;
+  display: flex;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__infoWrap {
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  display: flex;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__name {
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__spec {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__badges {
+  margin-bottom: 30px;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__badge {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__btnPrimary {
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 12px;
+  width: fit-content;
+  padding: 14px 32px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s;
+  display: inline-block;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__btnPrimary:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__detailsGrid {
+  flex-direction: column;
+  gap: 24px;
+  display: flex;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__block {
+  border: 1px solid var(--color-border);
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__block h2 {
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__block p {
+  color: var(--color-text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__preWrap {
+  white-space: pre-wrap;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__list {
+  padding-left: 20px;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__list li {
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__servicesList {
+  flex-direction: column;
+  gap: 12px;
+  display: flex;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__serviceLink {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  text-decoration: none;
+  transition: all .2s;
+  display: flex;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__serviceLink:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__serviceLink span {
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.DoctorDetail-module-scss-module__AZ9BLW__servicePrice {
+  color: var(--color-primary) !important;
+  font-weight: 700 !important;
+}
+
+/*# sourceMappingURL=src_app_doctors_%5Bslug%5D_DoctorDetail_module_scss_module_c2e12c6e.css.map*/

@@ -1,0 +1,169 @@
+/* [project]/src/app/register/RegisterPage.module.scss.module.css [app-client] (css) */
+.RegisterPage-module-scss-module__adEmda__page {
+  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-white) 60%);
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 160px);
+  padding: 40px 20px;
+  display: flex;
+}
+
+.RegisterPage-module-scss-module__adEmda__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 32px;
+  box-shadow: 0 10px 40px #1e5f9e1a;
+}
+
+.RegisterPage-module-scss-module__adEmda__title {
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.RegisterPage-module-scss-module__adEmda__subtitle {
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.RegisterPage-module-scss-module__adEmda__form {
+  flex-direction: column;
+  gap: 18px;
+  display: flex;
+}
+
+.RegisterPage-module-scss-module__adEmda__field {
+  flex-direction: column;
+  gap: 6px;
+  display: flex;
+}
+
+.RegisterPage-module-scss-module__adEmda__label {
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.RegisterPage-module-scss-module__adEmda__input {
+  width: 100%;
+  color: var(--color-text);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  outline: none;
+  padding: 12px 16px;
+  font-size: 15px;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.RegisterPage-module-scss-module__adEmda__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.RegisterPage-module-scss-module__adEmda__input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px #1e5f9e1f;
+}
+
+.RegisterPage-module-scss-module__adEmda__error {
+  color: var(--color-error);
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.RegisterPage-module-scss-module__adEmda__serverError {
+  color: var(--color-error);
+  text-align: center;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.RegisterPage-module-scss-module__adEmda__button {
+  width: 100%;
+  color: var(--color-white);
+  background: var(--color-primary);
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background .2s, transform .1s;
+}
+
+.RegisterPage-module-scss-module__adEmda__button:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.RegisterPage-module-scss-module__adEmda__button:active:not(:disabled) {
+  transform: scale(.98);
+}
+
+.RegisterPage-module-scss-module__adEmda__button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.RegisterPage-module-scss-module__adEmda__footerText {
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.RegisterPage-module-scss-module__adEmda__link {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.RegisterPage-module-scss-module__adEmda__link:hover {
+  text-decoration: underline;
+}
+
+.RegisterPage-module-scss-module__adEmda__agreementCheckbox {
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.RegisterPage-module-scss-module__adEmda__agreementCheckbox input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.RegisterPage-module-scss-module__adEmda__agreementCheckbox label {
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.RegisterPage-module-scss-module__adEmda__agreementCheckbox label a {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.RegisterPage-module-scss-module__adEmda__agreementCheckbox label a:hover {
+  color: var(--color-primary-dark);
+}
+
+/*# sourceMappingURL=src_app_register_RegisterPage_module_scss_module_f81f9e5d.css.map*/

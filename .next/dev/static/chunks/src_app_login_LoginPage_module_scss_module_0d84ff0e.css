@@ -1,0 +1,135 @@
+/* [project]/src/app/login/LoginPage.module.scss.module.css [app-client] (css) */
+.LoginPage-module-scss-module__GYTbVa__page {
+  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-white) 60%);
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 160px);
+  padding: 40px 20px;
+  display: flex;
+}
+
+.LoginPage-module-scss-module__GYTbVa__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 32px;
+  box-shadow: 0 10px 40px #1e5f9e1a;
+}
+
+.LoginPage-module-scss-module__GYTbVa__title {
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.LoginPage-module-scss-module__GYTbVa__subtitle {
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.LoginPage-module-scss-module__GYTbVa__form {
+  flex-direction: column;
+  gap: 18px;
+  display: flex;
+}
+
+.LoginPage-module-scss-module__GYTbVa__field {
+  flex-direction: column;
+  gap: 6px;
+  display: flex;
+}
+
+.LoginPage-module-scss-module__GYTbVa__label {
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.LoginPage-module-scss-module__GYTbVa__input {
+  width: 100%;
+  color: var(--color-text);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  outline: none;
+  padding: 12px 16px;
+  font-size: 15px;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.LoginPage-module-scss-module__GYTbVa__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.LoginPage-module-scss-module__GYTbVa__input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px #1e5f9e1f;
+}
+
+.LoginPage-module-scss-module__GYTbVa__error {
+  color: var(--color-error);
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.LoginPage-module-scss-module__GYTbVa__serverError {
+  color: var(--color-error);
+  text-align: center;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.LoginPage-module-scss-module__GYTbVa__button {
+  width: 100%;
+  color: var(--color-white);
+  background: var(--color-primary);
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background .2s, transform .1s;
+}
+
+.LoginPage-module-scss-module__GYTbVa__button:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.LoginPage-module-scss-module__GYTbVa__button:active:not(:disabled) {
+  transform: scale(.98);
+}
+
+.LoginPage-module-scss-module__GYTbVa__button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.LoginPage-module-scss-module__GYTbVa__footerText {
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.LoginPage-module-scss-module__GYTbVa__link {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.LoginPage-module-scss-module__GYTbVa__link:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=src_app_login_LoginPage_module_scss_module_0d84ff0e.css.map*/

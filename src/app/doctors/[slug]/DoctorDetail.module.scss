@@ -1,0 +1,32 @@
+.page { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+.breadcrumbs { font-size: 14px; color: var(--color-text-muted); margin-bottom: 30px; a { color: var(--color-primary); text-decoration: none; &:hover { text-decoration: underline; } } }
+
+.profileCard { display: flex; gap: 40px; background: white; padding: 40px; border-radius: 24px; border: 1px solid var(--color-border); margin-bottom: 40px; box-shadow: 0 10px 40px rgba(30, 95, 158, 0.05); }
+@media (max-width: 768px) { .profileCard { flex-direction: column; align-items: center; text-align: center; padding: 24px; gap: 24px; } }
+
+.avatarWrap { width: 240px; height: 300px; border-radius: 16px; overflow: hidden; background: var(--color-primary-light); flex-shrink: 0;
+    img { width: 100%; height: 100%; object-fit: cover; }
+}
+.avatarPlaceholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 80px; font-weight: 700; color: var(--color-primary); opacity: 0.5; }
+
+.infoWrap { display: flex; flex-direction: column; justify-content: center; flex: 1; }
+.name { font-size: 32px; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 8px; }
+.spec { font-size: 18px; color: var(--color-primary); font-weight: 500; margin-bottom: 20px; }
+.badges { margin-bottom: 30px; }
+.badge { display: inline-block; padding: 6px 16px; background: var(--color-primary-light); color: var(--color-primary); border-radius: 20px; font-weight: 600; font-size: 14px; }
+.btnPrimary { display: inline-block; padding: 14px 32px; background: var(--color-primary); color: white; border-radius: 12px; font-weight: 600; text-decoration: none; transition: all 0.2s; width: fit-content; &:hover { background: var(--color-primary-dark); transform: translateY(-2px); } }
+
+.detailsGrid { display: flex; flex-direction: column; gap: 24px; }
+.block { background: white; padding: 30px; border-radius: 16px; border: 1px solid var(--color-border);
+    h2 { font-size: 22px; font-weight: 700; color: var(--color-text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--color-border); }
+    p { font-size: 16px; line-height: 1.6; color: var(--color-text-muted); }
+}
+.preWrap { white-space: pre-wrap; }
+.list { padding-left: 20px; li { font-size: 16px; color: var(--color-text-muted); margin-bottom: 8px; } }
+
+.servicesList { display: flex; flex-direction: column; gap: 12px; }
+.serviceLink { display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid var(--color-border); border-radius: 12px; text-decoration: none; transition: all 0.2s;
+    &:hover { border-color: var(--color-primary); background: var(--color-primary-light); }
+    span { font-size: 16px; font-weight: 500; color: var(--color-text); }
+}
+.servicePrice { color: var(--color-primary) !important; font-weight: 700 !important; }

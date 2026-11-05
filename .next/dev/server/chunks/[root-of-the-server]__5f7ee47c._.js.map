@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BA%D1%88%D0%B5%D0%BD%D1%8B/medis/src/app/api/auth/logout/route.ts"],"sourcesContent":["import { cookies } from \"next/headers\";\r\nimport { NextResponse } from \"next/server\";\r\n\r\nexport async function DELETE() {\r\n    try {\r\n        (await cookies()).delete(\"token\");\r\n        return NextResponse.json({ message: \"Успешный выход с профиля\" }, { status: 200 });\r\n    } catch (error) {\r\n        return NextResponse.json({ message: \"Ошибка при выходе с профиля!\" }, { status: 500 });\r\n    }\r\n}"],"names":[],"mappings":";;;;AAAA;AACA;;;AAEO,eAAe;IAClB,IAAI;QACA,CAAC,MAAM,IAAA,4IAAO,GAAE,EAAE,MAAM,CAAC;QACzB,OAAO,gJAAY,CAAC,IAAI,CAAC;YAAE,SAAS;QAA2B,GAAG;YAAE,QAAQ;QAAI;IACpF,EAAE,OAAO,OAAO;QACZ,OAAO,gJAAY,CAAC,IAAI,CAAC;YAAE,SAAS;QAA+B,GAAG;YAAE,QAAQ;QAAI;IACxF;AACJ"}}]
+}

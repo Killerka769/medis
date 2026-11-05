@@ -1,0 +1,107 @@
+/* [project]/src/app/profile/ProfileClient.module.scss.module.css [app-client] (css) */
+.ProfileClient-module-scss-module__aMgNTG__page {
+  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-white) 60%);
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 160px);
+  padding: 40px 20px;
+  display: flex;
+}
+
+.ProfileClient-module-scss-module__aMgNTG__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 560px;
+  padding: 40px 32px;
+  display: flex;
+  box-shadow: 0 10px 40px #1e5f9e1a;
+}
+
+.ProfileClient-module-scss-module__aMgNTG__avatar {
+  background: var(--color-primary);
+  width: 72px;
+  height: 72px;
+  color: var(--color-white);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 28px;
+  font-weight: 700;
+  display: flex;
+  box-shadow: 0 6px 20px #1e5f9e40;
+}
+
+.ProfileClient-module-scss-module__aMgNTG__title {
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 4px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ProfileClient-module-scss-module__aMgNTG__role {
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+.ProfileClient-module-scss-module__aMgNTG__info {
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 28px;
+  display: flex;
+}
+
+.ProfileClient-module-scss-module__aMgNTG__row {
+  background: var(--color-primary-light);
+  border-radius: 12px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  display: flex;
+}
+
+.ProfileClient-module-scss-module__aMgNTG__label {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ProfileClient-module-scss-module__aMgNTG__value {
+  color: var(--color-text);
+  text-align: right;
+  word-break: break-word;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.ProfileClient-module-scss-module__aMgNTG__actions {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+}
+
+@media (max-width: 480px) {
+  .ProfileClient-module-scss-module__aMgNTG__card {
+    padding: 32px 20px;
+  }
+
+  .ProfileClient-module-scss-module__aMgNTG__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .ProfileClient-module-scss-module__aMgNTG__value {
+    text-align: left;
+  }
+}
+
+/*# sourceMappingURL=src_app_profile_ProfileClient_module_scss_module_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///D:/Продакшены/medis/src/app/admin/AdminLayout.module.scss"],"sourcesContent":[".adminLayout {\r\n    display: flex;\r\n    min-height: 100vh;\r\n    background: #f8fafc; /* Светло-серый фон для админки */\r\n  }\r\n  \r\n  .content {\r\n    flex: 1;\r\n    padding: 40px;\r\n    height: 100vh;\r\n    overflow-y: auto;\r\n  }\r\n  \r\n  .contentInner {\r\n    max-width: 1200px;\r\n    margin: 0 auto;\r\n  }\r\n  \r\n  @media (max-width: 768px) {\r\n    .adminLayout {\r\n      flex-direction: column;\r\n    }\r\n    .content {\r\n      padding: 20px;\r\n      height: auto;\r\n    }\r\n  }"],"names":[],"mappings":"AAAA;;;;;;AAME;;;;;;;AAOA;;;;;AAKA;EACE;;;;EAGA"}}]
+}

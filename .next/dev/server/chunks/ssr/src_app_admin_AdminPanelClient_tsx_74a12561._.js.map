@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BA%D1%88%D0%B5%D0%BD%D1%8B/medis/src/app/admin/AdminPanelClient.tsx"],"sourcesContent":["\"use client\"\r\nimport Link from \"next/link\";\r\n\r\nexport default function AdminPanelClient() {\r\n    \r\n    return<main>\r\n    <h1>Панель администратора</h1>\r\n    <section>\r\n        <h3>Категории</h3>\r\n        <ul>\r\n            <Link href=\"/admin/service-categories\"><li>Услуг</li></Link>\r\n            <Link href=\"/admin/article-categories\"><li>Блога</li></Link>\r\n            <Link href=\"/admin/product-categories\"><li>Товаров</li></Link>\r\n        </ul>\r\n        <Link href=\"/admin/doctors\">Докторы</Link>\r\n    </section>\r\n</main>\r\n}"],"names":[],"mappings":";;;;;AACA;AADA;;;AAGe,SAAS;IAEpB,qBAAM,8OAAC;;0BACP,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;;kCACG,8OAAC;kCAAG;;;;;;kCACJ,8OAAC;;0CACG,8OAAC,uKAAI;gCAAC,MAAK;0CAA4B,cAAA,8OAAC;8CAAG;;;;;;;;;;;0CAC3C,8OAAC,uKAAI;gCAAC,MAAK;0CAA4B,cAAA,8OAAC;8CAAG;;;;;;;;;;;0CAC3C,8OAAC,uKAAI;gCAAC,MAAK;0CAA4B,cAAA,8OAAC;8CAAG;;;;;;;;;;;;;;;;;kCAE/C,8OAAC,uKAAI;wBAAC,MAAK;kCAAiB;;;;;;;;;;;;;;;;;;AAGpC"}}]
+}

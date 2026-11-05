@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BA%D1%88%D0%B5%D0%BD%D1%8B/medis/src/lib/ReactQuery/ReactQueryProvider.tsx"],"sourcesContent":["\"use client\"\r\nimport { QueryClientProvider, QueryClient } from \"@tanstack/react-query\";\r\nimport { useState } from \"react\";\r\n\r\nexport function ReactQueryProvider({ children } : { children : React.ReactNode }) {\r\n    const [client] = useState(() => new QueryClient());\r\n    return <QueryClientProvider client={client}>\r\n        {children}\r\n    </QueryClientProvider>\r\n}"],"names":[],"mappings":";;;;;AACA;AAAA;AACA;;;AAFA;;;AAIO,SAAS,mBAAmB,EAAE,QAAQ,EAAmC;;IAC5E,MAAM,CAAC,OAAO,GAAG,IAAA,yKAAQ;uCAAC,IAAM,IAAI,+LAAW;;IAC/C,qBAAO,6LAAC,gNAAmB;QAAC,QAAQ;kBAC/B;;;;;;AAET;GALgB;KAAA"}}]
+}

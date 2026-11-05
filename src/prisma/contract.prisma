@@ -1,21 +1,284 @@
 // use prisma-8
 
-model User {
-  id        Int      @id @default(autoincrement())
+// ============================================================
+// ПОЛЬЗОВАТЕЛИ
+// ============================================================
+
+// Аккаунты пациентов и админов. Врачи — не пользователи.
+// Бан: isBanned = true (навсегда) или bannedUntil в будущем (временно).
+model Users {
+  id        Uuid     @id @default(uuid())
   email     String   @unique
+  phone     String   @unique
+  password  String
   username  String?
-  name      String?
-  posts     Post[]
+  role      UserRole @default(Patient)
+
+  isBanned    Boolean  @default(false)
+  bannedUntil TimestamptzString?
+  banReason   String?
+
   createdAt TimestamptzString @default(now())
   updatedAt temporal.updatedAtString()
+
+  appointments    Appointment[]
+  productRequests ProductRequest[]
+
+  @@index([isBanned])
+  @@map("users")
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
+enum UserRole {
+  @@type("pg/text@1")
+  Patient = "patient"
+  Admin   = "admin"
+}
+
+// ============================================================
+// ВРАЧИ
+// ============================================================
+
+model Doctor {
+  id              Uuid     @id @default(uuid())
+  name            String
+  slug            String   @unique
+  specialization  String
+  experienceYears Int      @default(0)
+  education       Json?
+  certificates    String[]
+  bio             String?
+  photoUrl        String?
+  isActive        Boolean  @default(true)
+  createdAt       TimestamptzString @default(now())
+  updatedAt       temporal.updatedAtString()
+
+  appointments Appointment[]
+  services     DoctorService[]
+
+  @@index([specialization])
+  @@index([isActive])
+  @@map("doctors")
+}
+
+// ============================================================
+// КАТЕГОРИИ УСЛУГ
+// ============================================================
+
+model ServiceCategory {
+  id        Uuid     @id @default(uuid())
   title     String
-  content   String?
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
+  slug      String   @unique
+  sortOrder Int      @default(0)
+  isActive  Boolean  @default(true)
   createdAt TimestamptzString @default(now())
   updatedAt temporal.updatedAtString()
+
+  services Service[]
+
+  @@index([isActive])
+  @@index([sortOrder])
+  @@map("service_categories")
+}
+
+// ============================================================
+// УСЛУГИ
+// ============================================================
+
+model Service {
+  id          Uuid     @id @default(uuid())
+  title       String
+  slug        String   @unique
+  description String?
+  content     String?
+  price       Int?
+  priceFrom   Boolean  @default(false)
+  categoryId  Uuid
+  category    ServiceCategory @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  isOms       Boolean  @default(false)
+  duration    Int?
+  imageUrl    String?
+  isActive    Boolean  @default(true)
+  createdAt   TimestamptzString @default(now())
+  updatedAt   temporal.updatedAtString()
+
+  appointments Appointment[]
+  doctors      DoctorService[]
+
+  @@index([categoryId])
+  @@index([isOms])
+  @@index([isActive])
+  @@map("services")
+}
+
+// ============================================================
+// ЗАПИСИ НА ПРИЁМ
+// ============================================================
+
+model Appointment {
+  id           Uuid     @id @default(uuid())
+  patientId    Uuid
+  patient      Users    @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  doctorId     Uuid
+  doctor       Doctor   @relation(fields: [doctorId], references: [id], onDelete: Restrict)
+  serviceId    Uuid
+  service      Service  @relation(fields: [serviceId], references: [id], onDelete: Restrict)
+  date         TimestamptzString
+  status       AppointmentStatus @default(pending)
+  comment      String?
+  adminComment String?
+  createdAt    TimestamptzString @default(now())
+  updatedAt    temporal.updatedAtString()
+
+  @@index([patientId])
+  @@index([doctorId])
+  @@index([serviceId])
+  @@index([date])
+  @@index([status])
+  @@index([doctorId, date])
+  @@map("appointments")
+}
+
+enum AppointmentStatus {
+  pending
+  confirmed
+  cancelled
+  completed
+  no_show
+}
+
+// ============================================================
+// КАТЕГОРИИ БЛОГА
+// ============================================================
+
+model ArticleCategory {
+  id        Uuid     @id @default(uuid())
+  title     String
+  slug      String   @unique
+  sortOrder Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+
+  articles Article[]
+
+  @@index([isActive])
+  @@index([sortOrder])
+  @@map("article_categories")
+}
+
+// ============================================================
+// БЛОГ
+// ============================================================
+
+model Article {
+  id          Uuid     @id @default(uuid())
+  title       String
+  slug        String   @unique
+  excerpt     String?
+  content     String
+  coverUrl    String?
+  categoryId  Uuid?
+  category    ArticleCategory? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  status      ArticleStatus @default(draft)
+  publishedAt TimestamptzString?
+  createdAt   TimestamptzString @default(now())
+  updatedAt   temporal.updatedAtString()
+
+  @@index([status])
+  @@index([publishedAt])
+  @@index([categoryId])
+  @@map("articles")
+}
+
+enum ArticleStatus {
+  draft
+  published
+}
+
+// ============================================================
+// КАТЕГОРИИ ТОВАРОВ
+// ============================================================
+
+model ProductCategory {
+  id        Uuid     @id @default(uuid())
+  title     String
+  slug      String   @unique
+  sortOrder Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+
+  products Product[]
+
+  @@index([isActive])
+  @@index([sortOrder])
+  @@map("product_categories")
+}
+
+// ============================================================
+// МАГАЗИН
+// ============================================================
+
+model Product {
+  id          Uuid     @id @default(uuid())
+  title       String
+  slug        String   @unique
+  description String?
+  content     String?
+  price       Int
+  categoryId  Uuid
+  category    ProductCategory @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  imageUrl    String?
+  images      String[]
+  inStock     Boolean  @default(true)
+  isActive    Boolean  @default(true)
+  createdAt   TimestamptzString @default(now())
+  updatedAt   temporal.updatedAtString()
+
+  requests ProductRequest[]
+
+  @@index([categoryId])
+  @@index([isActive])
+  @@map("products")
+}
+
+// Заявки на товар. Только для авторизованных. Без онлайн-оплаты.
+model ProductRequest {
+  id        Uuid     @id @default(uuid())
+  productId Uuid
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userId    Uuid
+  user      Users    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String
+  phone     String
+  comment   String?
+  status    RequestStatus @default(new)
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+
+  @@index([status])
+  @@index([productId])
+  @@index([userId])
+  @@map("product_requests")
+}
+
+enum RequestStatus {
+  new
+  processed
+  done
+}
+
+// ============================================================
+// СВЯЗЬ ВРАЧ ↔ УСЛУГА
+// ============================================================
+
+model DoctorService {
+  doctorId  Uuid
+  doctor    Doctor  @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  serviceId Uuid
+  service   Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@id([doctorId, serviceId])
+  @@index([serviceId])
+  @@map("doctor_services")
 }

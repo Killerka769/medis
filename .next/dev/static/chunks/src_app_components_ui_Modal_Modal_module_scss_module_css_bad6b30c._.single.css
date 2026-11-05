@@ -1,0 +1,40 @@
+/* [project]/src/app/components/ui/Modal/Modal.module.scss.module.css [app-client] (css) */
+.Modal-module-scss-module__EJwFSG__dialog {
+  background: none;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  width: calc(100% - 32px);
+  max-width: 480px;
+  padding: 0;
+  overflow: visible;
+}
+
+.Modal-module-scss-module__EJwFSG__dialog::backdrop {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  background: #0f172a80;
+}
+
+.Modal-module-scss-module__EJwFSG__dialog {
+  margin: auto;
+}
+
+.Modal-module-scss-module__EJwFSG__content {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  max-height: calc(100vh - 80px);
+  padding: 32px 28px;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px #0f172a40;
+}
+
+@media (max-width: 480px) {
+  .Modal-module-scss-module__EJwFSG__content {
+    border-radius: 16px;
+    padding: 24px 20px;
+  }
+}
+
+/*# sourceMappingURL=src_app_components_ui_Modal_Modal_module_scss_module_css_bad6b30c._.single.css.map*/

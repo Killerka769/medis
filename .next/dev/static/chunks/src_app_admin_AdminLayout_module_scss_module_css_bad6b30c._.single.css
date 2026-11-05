@@ -1,0 +1,31 @@
+/* [project]/src/app/admin/AdminLayout.module.scss.module.css [app-client] (css) */
+.AdminLayout-module-scss-module__W3p-ba__adminLayout {
+  background: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+}
+
+.AdminLayout-module-scss-module__W3p-ba__content {
+  flex: 1;
+  height: 100vh;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.AdminLayout-module-scss-module__W3p-ba__contentInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .AdminLayout-module-scss-module__W3p-ba__adminLayout {
+    flex-direction: column;
+  }
+
+  .AdminLayout-module-scss-module__W3p-ba__content {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+/*# sourceMappingURL=src_app_admin_AdminLayout_module_scss_module_css_bad6b30c._.single.css.map*/

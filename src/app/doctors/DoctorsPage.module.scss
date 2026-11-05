@@ -1,0 +1,18 @@
+.page { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+.header { text-align: center; margin-bottom: 40px; }
+.title { font-size: 36px; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 10px; }
+.subtitle { font-size: 16px; color: var(--color-text-muted); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+.card { display: flex; flex-direction: column; background: white; border: 1px solid var(--color-border); border-radius: 20px; overflow: hidden; text-decoration: none; transition: all 0.2s ease;
+    &:hover { box-shadow: 0 15px 40px rgba(30, 95, 158, 0.1); transform: translateY(-5px); }
+}
+.imageWrap { height: 300px; background: var(--color-primary-light); 
+    img { width: 100%; height: 100%; object-fit: cover; }
+}
+.placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 80px; font-weight: 700; color: var(--color-primary); opacity: 0.3; }
+.info { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+.name { font-size: 20px; font-weight: 700; color: var(--color-text); margin-bottom: 6px; }
+.spec { font-size: 15px; color: var(--color-primary); font-weight: 500; margin-bottom: 12px; }
+.exp { font-size: 14px; color: var(--color-text-muted); margin-bottom: 24px; }
+.btn { width: 100%; padding: 12px; background: var(--color-primary-light); color: var(--color-primary); border: none; border-radius: 10px; font-weight: 600; font-size: 15px; cursor: pointer; transition: all 0.2s; margin-top: auto; .card:hover & { background: var(--color-primary); color: white; } }

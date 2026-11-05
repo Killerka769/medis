@@ -1,0 +1,129 @@
+/* [project]/src/app/contacts/ContactsPage.module.scss.module.css [app-client] (css) */
+.ContactsPage-module-scss-module__9jQ_jG__page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__title {
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__subtitle {
+  color: var(--color-text-muted);
+  font-size: 16px;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__grid {
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 40px;
+  display: grid;
+}
+
+@media (max-width: 900px) {
+  .ContactsPage-module-scss-module__9jQ_jG__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__infoCard {
+  border: 1px solid var(--color-border);
+  background: #fff;
+  border-radius: 24px;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  display: flex;
+  box-shadow: 0 10px 40px #1e5f9e0d;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__infoItem {
+  gap: 20px;
+  display: flex;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__icon {
+  background: var(--color-primary-light);
+  border-radius: 16px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+  display: flex;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__infoItem h3 {
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__infoItem p {
+  color: var(--color-primary-dark);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__phone {
+  color: var(--color-primary);
+  font-size: 24px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__phone:hover {
+  text-decoration: underline;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__muted {
+  margin-top: 4px;
+  color: var(--color-text-muted) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__socials {
+  border-top: 1px solid var(--color-border);
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+  display: flex;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__socialBtn {
+  color: var(--color-text);
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__socialBtn:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__mapCard {
+  border: 1px solid var(--color-border);
+  background: #e2e8f0;
+  border-radius: 24px;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=src_app_contacts_ContactsPage_module_scss_module_bf3109f7.css.map*/

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BA%D1%88%D0%B5%D0%BD%D1%8B/medis/src/app/login/page.tsx"],"sourcesContent":["\"use client\"\r\n\r\nexport default function LoginPage() {\r\n    \r\n    return<main>\r\n        <h1>Авторизация</h1>\r\n        <section>\r\n            <form></form>\r\n        </section>\r\n    </main>\r\n}"],"names":[],"mappings":";;;;;AAAA;;AAEe,SAAS;IAEpB,qBAAM,6LAAC;;0BACH,6LAAC;0BAAG;;;;;;0BACJ,6LAAC;0BACG,cAAA,6LAAC;;;;;;;;;;;;;;;;AAGb;KARwB"}}]
+}

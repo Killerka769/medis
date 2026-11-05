@@ -1,0 +1,13 @@
+var R=require("../../../../chunks/[turbopack]_runtime.js")("server/app/api/admin/doctors/route.js")
+R.c("server/chunks/node_modules_next_de9ee5fc._.js")
+R.c("server/chunks/node_modules_@prisma_orm-framework_dist_76d3fcfe._.js")
+R.c("server/chunks/node_modules_@prisma_orm-family-sql_dist_e7d10038._.js")
+R.c("server/chunks/node_modules_@ark_schema_out_72590dec._.js")
+R.c("server/chunks/node_modules_arktype_out_0ed5b975._.js")
+R.c("server/chunks/node_modules_@prisma_orm-target-postgres_dist_14af0994._.js")
+R.c("server/chunks/node_modules_temporal-polyfill_d9c212a9._.js")
+R.c("server/chunks/[root-of-the-server]__cad156dc._.js")
+R.c("server/chunks/[root-of-the-server]__4fe6696e._.js")
+R.c("server/chunks/_next-internal_server_app_api_admin_doctors_route_actions_1b392d8f.js")
+R.m("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/src/app/api/admin/doctors/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/src/app/api/admin/doctors/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BA%D1%88%D0%B5%D0%BD%D1%8B/medis/src/app/components/ui/buttons/LogoutButton.tsx/LogoutButton.tsx"],"sourcesContent":["\"use client\"\r\n\r\nexport function LogoutButton() {\r\n    async function onLeave() {\r\n        await fetch(\"/api/auth/logout\", {\r\n            method: \"DELETE\"\r\n        })\r\n    }\r\n    return<button onClick={onLeave}>\r\n        Выйти\r\n    </button>\r\n}"],"names":[],"mappings":";;;;;AAAA;;AAEO,SAAS;IACZ,eAAe;QACX,MAAM,MAAM,oBAAoB;YAC5B,QAAQ;QACZ;IACJ;IACA,qBAAM,6LAAC;QAAO,SAAS;kBAAS;;;;;;AAGpC;KATgB"}},
+    {"offset": {"line": 36, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BA%D1%88%D0%B5%D0%BD%D1%8B/medis/src/app/profile/ProfileClient.tsx"],"sourcesContent":["\"use client\"\r\n\r\nimport { TUser } from \"@/src/types\"\r\nimport { LogoutButton } from \"../components/ui/buttons/LogoutButton.tsx/LogoutButton\"\r\n\r\nexport default function ProfileClient({ user } : { user: TUser }) {\r\n    return<main>\r\n        <h1>Профиль {user.username}</h1>\r\n        <section>\r\n            asd\r\n            <LogoutButton />\r\n        </section>\r\n    </main>\r\n}"],"names":[],"mappings":";;;;;AAGA;AAHA;;;AAKe,SAAS,cAAc,EAAE,IAAI,EAAoB;IAC5D,qBAAM,6LAAC;;0BACH,6LAAC;;oBAAG;oBAAS,KAAK,QAAQ;;;;;;;0BAC1B,6LAAC;;oBAAQ;kCAEL,6LAAC,oMAAY;;;;;;;;;;;;;;;;;AAGzB;KARwB"}}]
+}

@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/api/admin/dashboard/route": "app/api/admin/dashboard/route.js",
+  "/api/profile/route": "app/api/profile/route.js",
+  "/api/public/articles/route": "app/api/public/articles/route.js",
+  "/api/public/doctors/route": "app/api/public/doctors/route.js",
+  "/api/public/home/route": "app/api/public/home/route.js",
+  "/api/public/oms/route": "app/api/public/oms/route.js",
+  "/api/public/products/route": "app/api/public/products/route.js",
+  "/api/public/services/route": "app/api/public/services/route.js",
+  "/blog/page": "app/blog/page.js",
+  "/doctors/page": "app/doctors/page.js",
+  "/oms/page": "app/oms/page.js",
+  "/page": "app/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/services/page": "app/services/page.js",
+  "/shop/page": "app/shop/page.js"
+}

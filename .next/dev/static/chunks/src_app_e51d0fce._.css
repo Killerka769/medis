@@ -1,0 +1,131 @@
+/* [project]/src/app/components/AdminSidebar/AdminSidebar.module.scss.module.css [app-client] (css) */
+.AdminSidebar-module-scss-module__CfpFZa__sidebar {
+  border-right: 1px solid var(--color-border);
+  z-index: 100;
+  background: #fff;
+  flex-direction: column;
+  width: 280px;
+  height: 100vh;
+  display: flex;
+  position: sticky;
+  top: 0;
+  box-shadow: 4px 0 24px #1e5f9e08;
+}
+
+.AdminSidebar-module-scss-module__CfpFZa__logoWrap {
+  border-bottom: 1px solid var(--color-border);
+  padding: 30px 24px;
+}
+
+.AdminSidebar-module-scss-module__CfpFZa__logo {
+  color: var(--color-primary-dark);
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+  display: flex;
+}
+
+.AdminSidebar-module-scss-module__CfpFZa__logo span {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.AdminSidebar-module-scss-module__CfpFZa__nav {
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+  padding: 24px 16px;
+  display: flex;
+  overflow-y: auto;
+}
+
+.AdminSidebar-module-scss-module__CfpFZa__navItem {
+  color: var(--color-text-muted);
+  border-radius: 10px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .2s;
+  display: flex;
+}
+
+.AdminSidebar-module-scss-module__CfpFZa__navItem:hover {
+  color: var(--color-primary-dark);
+  background: #f8fafc;
+}
+
+.AdminSidebar-module-scss-module__CfpFZa__navItem.AdminSidebar-module-scss-module__CfpFZa__active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.AdminSidebar-module-scss-module__CfpFZa__icon {
+  opacity: .8;
+  font-size: 18px;
+}
+
+.AdminSidebar-module-scss-module__CfpFZa__bottom {
+  border-top: 1px solid var(--color-border);
+  padding: 24px;
+}
+
+.AdminSidebar-module-scss-module__CfpFZa__siteLink {
+  text-align: center;
+  color: var(--color-text);
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background .2s;
+  display: block;
+}
+
+.AdminSidebar-module-scss-module__CfpFZa__siteLink:hover {
+  background: #f1f5f9;
+}
+
+/* [project]/src/app/admin/AdminLayout.module.scss.module.css [app-client] (css) */
+.AdminLayout-module-scss-module__W3p-ba__adminLayout {
+  background: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+}
+
+.AdminLayout-module-scss-module__W3p-ba__content {
+  flex: 1;
+  height: 100vh;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.AdminLayout-module-scss-module__W3p-ba__contentInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .AdminLayout-module-scss-module__W3p-ba__adminLayout {
+    flex-direction: column;
+  }
+
+  .AdminLayout-module-scss-module__W3p-ba__content {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+/*# sourceMappingURL=src_app_e51d0fce._.css.map*/
