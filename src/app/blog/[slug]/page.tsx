@@ -1,16 +1,36 @@
-"use client"
-
-import { use } from "react";
-import { useGetPublicArticle } from "@/src/lib/ReactQuery/query/public/articles/query";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Link from "next/link";
+import { getPublicArticle } from "@/src/lib/data/public";
+import { ShareButtons } from "./ShareButtons";
+import { MediaPlaceholder } from "../../components/MediaPlaceholder";
 import styles from "./ArticleDetail.module.scss";
 
-export default function ArticleDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = use(params);
-    const { data, isLoading, isError } = useGetPublicArticle(slug);
+type Props = { params: Promise<{ slug: string }> };
 
-    if (isLoading) return <div className={styles.loading}>Загрузка...</div>;
-    if (isError || !data) return <div className={styles.error}>Статья не найдена</div>;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params;
+    const data = await getPublicArticle(slug).catch(() => null);
+    if (!data) return { title: "Статья не найдена | Медис" };
+
+    const title = `${data.article.title} | Блог Медис`;
+    const description = data.article.excerpt || data.article.title;
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            images: [{ url: data.article.coverUrl || "/hero.webp" }],
+        },
+    };
+}
+
+export default async function ArticleDetailPage({ params }: Props) {
+    const { slug } = await params;
+    const data = await getPublicArticle(slug).catch(() => null);
+    if (!data) notFound();
 
     const { article, recentArticles } = data;
 
@@ -25,32 +45,39 @@ export default function ArticleDetailPage({ params }: { params: Promise<{ slug: 
                     <span className={styles.category}>{article.category?.title || "Статья"}</span>
                     <h1 className={styles.title}>{article.title}</h1>
                     <p className={styles.date}>
-                        Опубликовано: {new Date(article.publishedAt || article.createdAt).toLocaleDateString("ru-RU", { day: 'numeric', month: 'long', year: 'numeric' })}
+                        Опубликовано: {new Date(article.publishedAt || article.createdAt).toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" })}
                     </p>
                 </header>
 
-                {article.coverUrl && (
+                {article.coverUrl ? (
                     <img src={article.coverUrl} alt={article.title} className={styles.cover} />
+                ) : (
+                    <div className={styles.coverFallback}>
+                        <MediaPlaceholder kind="article" title={article.title} />
+                    </div>
                 )}
 
                 <div className={styles.content}>
                     {article.content}
                 </div>
-                
+
                 <div className={styles.footer}>
                     <p>Поделиться статьей:</p>
-                    <div className={styles.shareBtns}>
-                        <button className={styles.shareBtn}>ВК</button>
-                        <button className={styles.shareBtn}>Telegram</button>
-                    </div>
+                    <ShareButtons title={article.title} />
                 </div>
             </article>
+
+            <div className={styles.ctaCard}>
+                <h2>Подготовлено врачами Медис</h2>
+                <p>Материал носит информационный характер. Для диагноза и лечения запишитесь на приём в клинику.</p>
+                <Link href="/appointments" className={styles.ctaBtn}>Записаться на прием</Link>
+            </div>
 
             {recentArticles && recentArticles.length > 0 && (
                 <section className={styles.recent}>
                     <h2 className={styles.recentTitle}>Читайте также</h2>
                     <div className={styles.recentGrid}>
-                        {recentArticles.filter((a:any) => a.id !== article.id).map((rec: any) => (
+                        {recentArticles.filter((a: any) => a.id !== article.id).map((rec: any) => (
                             <Link href={`/blog/${rec.slug}`} key={rec.id} className={styles.recCard}>
                                 <h3>{rec.title}</h3>
                                 <span>{new Date(rec.publishedAt || rec.createdAt).toLocaleDateString("ru-RU")}</span>

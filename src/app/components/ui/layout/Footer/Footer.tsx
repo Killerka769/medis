@@ -12,7 +12,7 @@ export function Footer() {
                         <Link href="/services" className={styles.link}>Услуги</Link>
                         <Link href="/doctors" className={styles.link}>Врачи</Link>
                         <Link href="/blog" className={styles.link}>Статьи</Link>
-                        <Link href="/about" className={styles.link}>О нас</Link>
+                        <Link href="/" className={styles.link}>О нас</Link>
                     </div>
                     
                     <div className={styles.col}>
@@ -36,8 +36,8 @@ export function Footer() {
                         <p className={styles.address}>г. Махачкала, ул. Ахульго, 77</p>
                         
                         <div className={styles.socials}>
-                            <a href="https://t.me/medis" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Telegram">TG</a>
-                            <a href="https://wa.me/79285558818" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="WhatsApp">WA</a>
+                            <a href="https://t.me/medis" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Написать в мессенджер">TG</a>
+                            <a href="https://wa.me/79285558818" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Написать в чат">WA</a>
                             <a href="https://vk.com/medis" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="VK">VK</a>
                         </div>
                     </div>

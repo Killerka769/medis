@@ -1,4 +1,4 @@
-.page { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+.page { max-width: 800px; margin: 0 auto; padding: 40px 20px; width: 100%; }
 .breadcrumbs { font-size: 14px; color: var(--color-text-muted); margin-bottom: 30px; a { color: var(--color-primary); text-decoration: none; &:hover { text-decoration: underline; } } }
 
 .article { background: white; padding: 40px 60px; border-radius: 24px; border: 1px solid var(--color-border); box-shadow: 0 10px 40px rgba(30, 95, 158, 0.05); }
@@ -11,6 +11,7 @@
 .date { font-size: 14px; color: var(--color-text-muted); }
 
 .cover { width: 100%; height: auto; max-height: 450px; object-fit: cover; border-radius: 16px; margin-bottom: 30px; }
+.coverFallback { width: 100%; height: 220px; border-radius: 16px; overflow: hidden; margin-bottom: 30px; }
 
 .content { font-size: 17px; line-height: 1.8; color: var(--color-text); white-space: pre-wrap; }
 
@@ -20,8 +21,33 @@
 
 .recent { margin-top: 60px; }
 .recentTitle { font-size: 24px; font-weight: 700; color: var(--color-text); margin-bottom: 24px; }
-.recentGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
-.recCard { display: flex; flex-direction: column; padding: 20px; background: white; border: 1px solid var(--color-border); border-radius: 16px; text-decoration: none; transition: all 0.2s; &:hover { border-color: var(--color-primary); transform: translateY(-2px); }
+.recentGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 20px; }
+.recCard { display: flex; flex-direction: column; padding: 20px; background: white; border: 1px solid var(--color-border); border-radius: 16px; text-decoration: none; transition: border-color 0.3s ease, box-shadow 0.3s ease; &:hover { border-color: var(--color-primary); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); }
     h3 { font-size: 16px; font-weight: 600; color: var(--color-primary-dark); margin-bottom: 10px; line-height: 1.4; }
     span { font-size: 13px; color: var(--color-text-muted); margin-top: auto; }
+}
+
+.ctaCard {
+  margin-top: 32px;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+
+  h2 { font-size: 22px; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 8px; }
+  p { font-size: 15px; color: var(--color-text-muted); margin-bottom: 20px; }
+}
+
+.ctaBtn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+
+  &:hover { background: var(--color-primary-dark); }
 }

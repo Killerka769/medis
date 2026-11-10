@@ -3,13 +3,15 @@
 import { useState } from "react";
 import { useGetPublicProducts } from "@/src/lib/ReactQuery/query/public/products/query";
 import Link from "next/link";
+import { CatalogLoading } from "../components/ui/Skeleton";
+import { MediaPlaceholder } from "../components/MediaPlaceholder";
 import styles from "./ShopPage.module.scss";
 
 export default function ShopCatalogPage() {
     const { data, isLoading, isError } = useGetPublicProducts();
     const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-    if (isLoading) return <div className={styles.loading}>Загрузка магазина...</div>;
+    if (isLoading) return <CatalogLoading variant="product" count={6} />;
     if (isError || !data) return <div className={styles.error}>Ошибка загрузки</div>;
 
     const filteredProducts = activeCategory 
@@ -19,8 +21,9 @@ export default function ShopCatalogPage() {
     return (
         <main className={styles.page}>
             <div className={styles.header}>
-                <h1 className={styles.title}>Магазин медицинских товаров</h1>
-                <p className={styles.subtitle}>Базы, расходные материалы и импланты</p>
+                <span className={styles.badge}>Магазин</span>
+                <h1 className={styles.title}>Медицинские товары</h1>
+                <p className={styles.subtitle}>Базы, расходные материалы и импланты для клиники и дома</p>
             </div>
 
             <div className={styles.filters}>
@@ -41,6 +44,9 @@ export default function ShopCatalogPage() {
                 ))}
             </div>
 
+            {filteredProducts.length === 0 ? (
+                <p className={styles.empty}>Товаров в этой категории пока нет</p>
+            ) : (
             <div className={styles.grid}>
                 {filteredProducts.map((product: any) => (
                     <Link href={`/shop/${product.slug}`} key={product.id} className={styles.card}>
@@ -48,7 +54,7 @@ export default function ShopCatalogPage() {
                             {product.imageUrl ? (
                                 <img src={product.imageUrl} alt={product.title} />
                             ) : (
-                                <div className={styles.placeholder}>Нет фото</div>
+                                <MediaPlaceholder kind="product" title={product.title} />
                             )}
                         </div>
                         <div className={styles.content}>
@@ -62,6 +68,7 @@ export default function ShopCatalogPage() {
                     </Link>
                 ))}
             </div>
+            )}
         </main>
     );
 }

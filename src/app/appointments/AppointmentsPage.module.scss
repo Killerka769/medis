@@ -4,8 +4,15 @@
     align-items: center;
     justify-content: center;
     padding: 60px 20px;
-    /* Красивый градиентный фон */
+    width: 100%;
     background: linear-gradient(135deg, #e8f2fa 0%, #ffffff 50%, #e0e7ff 100%);
+  }
+
+.loading {
+    text-align: center;
+    padding: 100px 20px;
+    font-size: 18px;
+    color: var(--color-text-muted);
   }
   
   .container {
@@ -141,21 +148,57 @@
     font-size: 16px;
     font-weight: 700;
     color: white;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    background: var(--color-primary);
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(30, 95, 158, 0.3);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 18px rgba(30, 95, 158, 0.22);
   
     &:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 30px rgba(30, 95, 158, 0.4);
+      background: var(--color-primary-dark);
+      box-shadow: 0 10px 22px rgba(30, 95, 158, 0.28);
     }
   
     &:disabled {
       opacity: 0.7;
       cursor: not-allowed;
+    }
+  }
+
+  .btnSecondary {
+    margin-top: 10px;
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: border-color 0.2s ease, background 0.2s ease;
+
+    &:hover {
+      border-color: var(--color-primary);
+      background: var(--color-primary-light);
+    }
+  }
+
+  .authActions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+
+    .btnPrimary,
+    .btnSecondary {
+      width: 100%;
     }
   }
   
@@ -231,4 +274,22 @@
       }
     }
   }
+
+@media (max-width: 768px) {
+  .page {
+    padding: 32px 16px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .formSection {
+    padding: 24px 16px;
+  }
+
+  .successCard {
+    padding: 40px 20px;
+  }
+}
 }

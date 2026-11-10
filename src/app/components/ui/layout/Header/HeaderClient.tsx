@@ -10,30 +10,47 @@ export function HeaderClient({ isAuth, isAdmin }: { isAuth: boolean, isAdmin: bo
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    // Эффект прилипания и изменения фона при скролле
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Закрываем меню при клике на ссылку
+    useEffect(() => {
+        document.body.style.overflow = isOpen ? "hidden" : "";
+        return () => { document.body.style.overflow = ""; };
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (!isOpen) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") setIsOpen(false);
+        };
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, [isOpen]);
+
     const closeMenu = () => setIsOpen(false);
 
     return (
         <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
+            {isOpen && <div className={styles.overlay} onClick={closeMenu} />}
+
             <div className={styles.container}>
                 <Link href="/" className={styles.logo} onClick={closeMenu}>
                     <Image src={logo} alt="Медис" width={40} height={40} className={styles.logoImg} />
                     <span>Медис</span>
                 </Link>
 
-                {/* Бургер для мобилок */}
-                <button className={styles.burger} onClick={() => setIsOpen(!isOpen)}>
+                <button
+                    className={styles.burger}
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Меню"
+                    aria-expanded={isOpen}
+                >
                     <span className={isOpen ? styles.burgerActive : ""}></span>
                 </button>
 
-                {/* Навигация */}
                 <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ""}`}>
                     <Link className={styles.navLink} href="/services" onClick={closeMenu}>Услуги</Link>
                     <Link className={styles.navLink} href="/doctors" onClick={closeMenu}>Врачи</Link>
@@ -43,18 +60,22 @@ export function HeaderClient({ isAuth, isAdmin }: { isAuth: boolean, isAdmin: bo
                     <Link className={styles.navLink} href="/contacts" onClick={closeMenu}>Контакты</Link>
 
                     <div className={styles.authButtons}>
+                        <Link className={styles.btn} href="/appointments" onClick={closeMenu}>
+                            Записаться на прием
+                        </Link>
+
                         {isAdmin && (
                             <Link className={styles.btnOutline} href="/admin" onClick={closeMenu}>
                                 Дашборд
                             </Link>
                         )}
-                        
+
                         {isAuth ? (
-                            <Link className={styles.btn} href="/profile" onClick={closeMenu}>
+                            <Link className={styles.btnOutline} href="/profile" onClick={closeMenu}>
                                 Профиль
                             </Link>
                         ) : (
-                            <Link className={styles.btn} href="/login" onClick={closeMenu}>
+                            <Link className={styles.btnOutline} href="/login" onClick={closeMenu}>
                                 Войти
                             </Link>
                         )}

@@ -16,17 +16,24 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', -apple-system, sans-serif;
   color: var(--color-text);
-  background: var(--color-white);
+  background: #f7fafc;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+.siteContent {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -34,7 +41,15 @@ h1 {
   font-weight: 700;
   color: var(--color-primary);
   margin-bottom: 24px;
-  text-align: center;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 @keyframes fadeUp {
@@ -42,6 +57,33 @@ h1 {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
 .animate-fade-up {
   animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+main {
+  animation: pageFade 0.45s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  main {
+    animation: none;
+  }
 }

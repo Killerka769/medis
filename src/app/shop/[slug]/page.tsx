@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import { CatalogLoading } from "../../components/ui/Skeleton";
+import { MediaPlaceholder } from "../../components/MediaPlaceholder";
 import styles from "./ProductDetail.module.scss";
 
 const requestSchema = z.object({
@@ -26,7 +28,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
         defaultValues: { name: "", phone: "", comment: "" }
     });
 
-    if (isLoading) return <div className={styles.loading}>Загрузка...</div>;
+    if (isLoading) return <CatalogLoading variant="product" count={3} />;
     if (isError || !data) return <div className={styles.error}>Товар не найден</div>;
 
     const { product } = data;
@@ -58,7 +60,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                         {product.imageUrl ? (
                             <img src={product.imageUrl} alt={product.title} />
                         ) : (
-                            <div className={styles.placeholder}>Нет фото</div>
+                            <MediaPlaceholder kind="product" title={product.title} />
                         )}
                     </div>
                     

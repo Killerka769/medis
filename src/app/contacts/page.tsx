@@ -39,8 +39,8 @@ export default function ContactsPage() {
                     </div>
 
                     <div className={styles.socials}>
-                        <a href="https://t.me/medis" target="_blank" className={styles.socialBtn}>Telegram</a>
-                        <a href="https://wa.me/79285558818" target="_blank" className={styles.socialBtn}>WhatsApp</a>
+                        <a href="https://t.me/medis" target="_blank" rel="noreferrer" className={styles.socialBtn}>TG</a>
+                        <a href="https://wa.me/79285558818" target="_blank" rel="noreferrer" className={styles.socialBtn}>WA</a>
                     </div>
                 </div>
 

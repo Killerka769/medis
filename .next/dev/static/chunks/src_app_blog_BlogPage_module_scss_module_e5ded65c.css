@@ -1,5 +1,6 @@
 /* [project]/src/app/blog/BlogPage.module.scss.module.css [app-client] (css) */
 .BlogPage-module-scss-module__cg7Tpq__page {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
@@ -20,6 +21,12 @@
 .BlogPage-module-scss-module__cg7Tpq__subtitle {
   color: var(--color-text-muted);
   font-size: 16px;
+}
+
+.BlogPage-module-scss-module__cg7Tpq__loading, .BlogPage-module-scss-module__cg7Tpq__error, .BlogPage-module-scss-module__cg7Tpq__empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 40px 20px;
 }
 
 .BlogPage-module-scss-module__cg7Tpq__filters {
@@ -54,7 +61,7 @@
 }
 
 .BlogPage-module-scss-module__cg7Tpq__grid {
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 30px;
   display: grid;
 }
@@ -65,15 +72,14 @@
   border-radius: 16px;
   flex-direction: column;
   text-decoration: none;
-  transition: all .3s;
+  transition: box-shadow .3s, border-color .3s;
   display: flex;
   overflow: hidden;
 }
 
 .BlogPage-module-scss-module__cg7Tpq__card:hover {
   border-color: var(--color-primary);
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px #1e5f9e14;
+  box-shadow: 0 20px 40px #00000014;
 }
 
 .BlogPage-module-scss-module__cg7Tpq__card:hover .BlogPage-module-scss-module__cg7Tpq__readMore {
@@ -83,12 +89,18 @@
 .BlogPage-module-scss-module__cg7Tpq__imageWrap {
   background: var(--color-primary-light);
   height: 220px;
+  overflow: hidden;
 }
 
 .BlogPage-module-scss-module__cg7Tpq__imageWrap img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  transition: transform .3s;
+}
+
+.BlogPage-module-scss-module__cg7Tpq__card:hover .BlogPage-module-scss-module__cg7Tpq__imageWrap img {
+  transform: scale(1.05);
 }
 
 .BlogPage-module-scss-module__cg7Tpq__placeholder {
@@ -151,6 +163,16 @@
   font-size: 14px;
   font-weight: 600;
   transition: transform .2s;
+}
+
+@media (max-width: 768px) {
+  .BlogPage-module-scss-module__cg7Tpq__page {
+    padding: 32px 16px;
+  }
+
+  .BlogPage-module-scss-module__cg7Tpq__title {
+    font-size: 28px;
+  }
 }
 
 /*# sourceMappingURL=src_app_blog_BlogPage_module_scss_module_e5ded65c.css.map*/

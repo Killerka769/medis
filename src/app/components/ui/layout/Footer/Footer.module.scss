@@ -73,8 +73,9 @@
   }
   
   .socialBtn {
-    width: 36px;
+    min-width: 40px;
     height: 36px;
+    padding: 0 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,7 +84,8 @@
     color: white;
     text-decoration: none;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.3px;
     transition: background 0.2s ease;
   
     &:hover {

@@ -1,23 +1,40 @@
-"use client"
-
-import { use } from "react";
-import { useGetPublicDoctor } from "@/src/lib/ReactQuery/query/public/doctors/query";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Link from "next/link";
+import { getPublicDoctor } from "@/src/lib/data/public";
+import { DoctorAvatar } from "../../components/DoctorAvatar";
 import styles from "./DoctorDetail.module.scss";
 
-export default function DoctorDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = use(params);
-    const { data, isLoading, isError } = useGetPublicDoctor(slug);
+type Props = { params: Promise<{ slug: string }> };
 
-    if (isLoading) return <div className={styles.loading}>Загрузка...</div>;
-    if (isError || !data) return <div className={styles.error}>Врач не найден</div>;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params;
+    const data = await getPublicDoctor(slug).catch(() => null);
+    if (!data) return { title: "Врач не найден | Медис" };
+
+    const title = `${data.doctor.name} — ${data.doctor.specialization} | Медис`;
+    const description = data.doctor.bio || `Запись к врачу ${data.doctor.name}, ${data.doctor.specialization}. Клиника Медис, Махачкала.`;
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            images: [{ url: data.doctor.photoUrl || "/hero.webp" }],
+        },
+    };
+}
+
+export default async function DoctorDetailPage({ params }: Props) {
+    const { slug } = await params;
+    const data = await getPublicDoctor(slug).catch(() => null);
+    if (!data) notFound();
 
     const { doctor, services } = data;
-
-    // Парсим сертификаты, если они пришли массивом
     const certificates = Array.isArray(doctor.certificates) ? doctor.certificates : [];
-    // Парсим образование (JSON)
-    const education = doctor.education?.text || "";
+    const educationRaw = doctor.education as any;
+    const education = typeof educationRaw === "string" ? educationRaw : (educationRaw?.text || "");
 
     return (
         <main className={styles.page}>
@@ -30,16 +47,19 @@ export default function DoctorDetailPage({ params }: { params: Promise<{ slug: s
                     {doctor.photoUrl ? (
                         <img src={doctor.photoUrl} alt={doctor.name} />
                     ) : (
-                        <div className={styles.avatarPlaceholder}>{doctor.name[0]}</div>
+                        <DoctorAvatar name={doctor.name} className={styles.avatarSvg} />
                     )}
                 </div>
-                
+
                 <div className={styles.infoWrap}>
                     <h1 className={styles.name}>{doctor.name}</h1>
                     <p className={styles.spec}>{doctor.specialization}</p>
-                    
+
                     <div className={styles.badges}>
                         <span className={styles.badge}>Стаж: {doctor.experienceYears} лет</span>
+                        {doctor.specialization && (
+                            <span className={styles.badge}>{doctor.specialization}</span>
+                        )}
                     </div>
 
                     <Link href={`/appointments?doctor=${doctor.id}`} className={styles.btnPrimary}>
@@ -89,6 +109,14 @@ export default function DoctorDetailPage({ params }: { params: Promise<{ slug: s
                         </div>
                     </div>
                 )}
+            </div>
+
+            <div className={styles.bottomCta}>
+                <h2>Записаться к врачу</h2>
+                <p>Оставьте заявку — администратор подтвердит удобное время приёма.</p>
+                <Link href={`/appointments?doctor=${doctor.id}`} className={styles.btnPrimary}>
+                    Записаться к {doctor.name}
+                </Link>
             </div>
         </main>
     );

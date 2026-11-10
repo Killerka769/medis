@@ -1,37 +1,51 @@
-"use client"
-
-import { useGetPublicDoctors } from "@/src/lib/ReactQuery/query/public/doctors/query"; 
+import type { Metadata } from "next";
 import Link from "next/link";
+import { getPublicDoctors } from "@/src/lib/data/public";
+import { DoctorAvatar } from "../components/DoctorAvatar";
 import styles from "./DoctorsPage.module.scss";
 
-export default function DoctorsCatalogPage() {
-    const { data, isLoading, isError } = useGetPublicDoctors();
+export const metadata: Metadata = {
+    title: "Врачи клиники Медис в Махачкале",
+    description: "Опытные специалисты медицинского центра «Медис». Запись на приём онлайн.",
+    openGraph: {
+        title: "Врачи клиники Медис",
+        description: "Опытные специалисты. Запись на приём онлайн в Махачкале.",
+        images: [{ url: "/hero.webp" }],
+    },
+};
 
-    if (isLoading) return <div className={styles.loading}>Загрузка врачей...</div>;
-    if (isError || !data) return <div className={styles.error}>Ошибка загрузки</div>;
+export default async function DoctorsCatalogPage() {
+    let doctors: any[] = [];
+    try {
+        const data = await getPublicDoctors();
+        doctors = data.doctors;
+    } catch {
+        return <main className={styles.page}><div className={styles.error}>Ошибка загрузки</div></main>;
+    }
 
     return (
         <main className={styles.page}>
             <div className={styles.header}>
+                <span className={styles.badge}>Команда</span>
                 <h1 className={styles.title}>Наши специалисты</h1>
-                <p className={styles.subtitle}>Опытные врачи, готовые прийти на помощь</p>
+                <p className={styles.subtitle}>Опытные врачи клиники «Медис». Выберите специалиста и запишитесь онлайн</p>
             </div>
 
             <div className={styles.grid}>
-                {data.doctors.map((doctor: any) => (
+                {doctors.map((doctor: any) => (
                     <Link href={`/doctors/${doctor.slug}`} key={doctor.id} className={styles.card}>
                         <div className={styles.imageWrap}>
                             {doctor.photoUrl ? (
                                 <img src={doctor.photoUrl} alt={doctor.name} />
                             ) : (
-                                <div className={styles.placeholder}>{doctor.name.charAt(0)}</div>
+                                <DoctorAvatar name={doctor.name} className={styles.avatarSvg} />
                             )}
                         </div>
                         <div className={styles.info}>
                             <h3 className={styles.name}>{doctor.name}</h3>
                             <p className={styles.spec}>{doctor.specialization}</p>
                             <p className={styles.exp}>Стаж: {doctor.experienceYears} лет</p>
-                            <button className={styles.btn}>Подробнее</button>
+                            <span className={styles.btn}>Записаться</span>
                         </div>
                     </Link>
                 ))}

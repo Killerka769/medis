@@ -1,0 +1,256 @@
+/* [project]/src/app/components/MediaPlaceholder.module.scss.module.css [app-client] (css) */
+.MediaPlaceholder-module-scss-module__w0jI3W__wrap {
+  width: 100%;
+  height: 100%;
+  color: var(--color-primary);
+  background: linear-gradient(155deg, #e8f2fa 0%, #f7fbfe 48%, #d9eaf8 100%);
+  justify-content: center;
+  align-items: center;
+  transition: transform .3s;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.MediaPlaceholder-module-scss-module__w0jI3W__glow {
+  filter: blur(12px);
+  pointer-events: none;
+  background: #1e5f9e1f;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+}
+
+.MediaPlaceholder-module-scss-module__w0jI3W__icon {
+  z-index: 1;
+  width: 72px;
+  height: 72px;
+  position: relative;
+}
+
+.MediaPlaceholder-module-scss-module__w0jI3W__product .MediaPlaceholder-module-scss-module__w0jI3W__icon {
+  width: 80px;
+  height: 80px;
+}
+
+.MediaPlaceholder-module-scss-module__w0jI3W__article .MediaPlaceholder-module-scss-module__w0jI3W__icon {
+  width: 76px;
+  height: 76px;
+}
+
+.MediaPlaceholder-module-scss-module__w0jI3W__tile {
+  background: var(--color-primary-light);
+  width: 48px;
+  height: 48px;
+  color: var(--color-primary);
+  border-radius: 14px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.MediaPlaceholder-module-scss-module__w0jI3W__tile svg {
+  width: 24px;
+  height: 24px;
+}
+
+.MediaPlaceholder-module-scss-module__w0jI3W__mini {
+  background: var(--color-primary-light);
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.MediaPlaceholder-module-scss-module__w0jI3W__mini svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.MediaPlaceholder-module-scss-module__w0jI3W__label {
+  z-index: 1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  opacity: .7;
+  font-size: 11px;
+  font-weight: 700;
+  position: absolute;
+  bottom: 14px;
+}
+
+@media (max-width: 768px) {
+  .MediaPlaceholder-module-scss-module__w0jI3W__icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .MediaPlaceholder-module-scss-module__w0jI3W__tile {
+    border-radius: 12px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* [project]/src/app/services/ServicesPage.module.scss.module.css [app-client] (css) */
+.ServicesPage-module-scss-module__JZyE0G__page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__badge {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__title {
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__subtitle {
+  color: var(--color-text-muted);
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__loading, .ServicesPage-module-scss-module__JZyE0G__error, .ServicesPage-module-scss-module__JZyE0G__empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 40px 20px;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__filters {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
+  display: flex;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__filterBtn {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  cursor: pointer;
+  background: #fff;
+  border-radius: 30px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background .2s, border-color .2s, color .2s;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__filterBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.ServicesPage-module-scss-module__JZyE0G__filterBtn.ServicesPage-module-scss-module__JZyE0G__active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 24px;
+  display: grid;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__card {
+  border: 1px solid var(--color-border);
+  background: #fff;
+  border-radius: 20px;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 24px;
+  text-decoration: none;
+  transition: box-shadow .3s, border-color .3s;
+  display: flex;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 40px #00000014;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__card:hover .ServicesPage-module-scss-module__JZyE0G__more {
+  color: var(--color-primary);
+  transform: translateX(4px);
+}
+
+.ServicesPage-module-scss-module__JZyE0G__cardTitle {
+  color: var(--color-primary-dark);
+  overflow-wrap: anywhere;
+  margin: 16px 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__cardDesc {
+  color: var(--color-text-muted);
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  flex: 1;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.5;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__cardBottom {
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  display: flex;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__price {
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ServicesPage-module-scss-module__JZyE0G__more {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  transition: color .2s, transform .2s;
+}
+
+@media (max-width: 768px) {
+  .ServicesPage-module-scss-module__JZyE0G__page {
+    padding: 32px 16px;
+  }
+
+  .ServicesPage-module-scss-module__JZyE0G__title {
+    font-size: 28px;
+  }
+}
+
+/*# sourceMappingURL=src_app_7511bacd._.css.map*/

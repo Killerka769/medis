@@ -30,7 +30,10 @@ export default function LoginPage() {
 
     async function onSubmit(data: TLoginSchema) {
         loginMutation.mutate(data, {
-            onSuccess: () => router.push("/profile")
+            onSuccess: () => {
+                router.push("/profile");
+                router.refresh();
+            }
         })
     }
 

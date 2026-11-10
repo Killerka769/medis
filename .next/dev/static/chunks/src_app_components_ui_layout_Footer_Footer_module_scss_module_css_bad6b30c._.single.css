@@ -75,14 +75,16 @@
 
 .Footer-module-scss-module__izbZ2G__socialBtn {
   color: #fff;
+  letter-spacing: .3px;
   background: #ffffff1a;
   border-radius: 8px;
   justify-content: center;
   align-items: center;
-  width: 36px;
+  min-width: 40px;
   height: 36px;
+  padding: 0 8px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: background .2s;
   display: flex;

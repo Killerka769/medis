@@ -14,7 +14,7 @@ const bookingSchema = z.object({
     serviceId: z.string().min(1, "Выберите услугу"),
     date: z.string().min(1, "Укажите дату и время"),
     comment: z.string(),
-    agree: z.boolean().refine(val => val === true, "Необходимо согласие") // <-- Валидация чекбокса
+    agree: z.boolean().refine(val => val === true, "Необходимо согласие")
 });
 type TBookingSchema = z.infer<typeof bookingSchema>;
 
@@ -24,11 +24,18 @@ export default function AppointmentsContent() {
     const { data: bookingData, isLoading } = useGetBookingData();
     const createMutation = useCreateAppointment();
     const [isSuccess, setIsSuccess] = useState(false);
+    const [isAuth, setIsAuth] = useState<boolean | null>(null);
 
     const { register, handleSubmit, formState: { errors }, setValue } = useForm<TBookingSchema>({
         resolver: zodResolver(bookingSchema),
         defaultValues: { doctorId: "", serviceId: "", date: "", comment: "", agree: false }
     });
+
+    useEffect(() => {
+        fetch("/api/profile")
+            .then((res) => setIsAuth(res.ok))
+            .catch(() => setIsAuth(false));
+    }, []);
 
     useEffect(() => {
         const doc = searchParams.get("doctor");
@@ -38,22 +45,37 @@ export default function AppointmentsContent() {
     }, [searchParams, setValue]);
 
     async function onSubmit(data: TBookingSchema) {
-        // Убираем "agree" из данных перед отправкой (чтобы не сохранялось в БД)
-        const { agree, ...payload } = data;
+        const { agree: _agree, ...payload } = data;
         createMutation.mutate(payload, {
             onSuccess: () => setIsSuccess(true)
         });
     }
 
-    if (isLoading) return <div className={styles.loading}>Загрузка формы...</div>;
+    if (isAuth === null || isLoading) return <div className={styles.loading}>Загрузка формы...</div>;
+
+    if (!isAuth) {
+        return (
+            <main className={styles.page}>
+                <div className={styles.successCard}>
+                    <h2>Войдите, чтобы записаться</h2>
+                    <p>Запись на прием доступна в личном кабинете. Если аккаунта ещё нет — регистрация займёт минуту.</p>
+                    <a href="tel:+79285558818" className={styles.phone}>+7 (928) 555-88-18</a>
+                    <div className={styles.authActions}>
+                        <Link href="/login" className={styles.btnPrimary}>Войти</Link>
+                        <Link href="/register" className={styles.btnSecondary}>Создать аккаунт</Link>
+                    </div>
+                </div>
+            </main>
+        );
+    }
 
     if (isSuccess) {
         return (
             <main className={styles.page}>
                 <div className={styles.successCard}>
                     <div className={styles.successIcon}>✓</div>
-                    <h2>Вы успешно записаны!</h2>
-                    <p>Наш администратор свяжется с вами в ближайшее время для подтверждения.</p>
+                    <h2>Заявка принята</h2>
+                    <p>Администратор свяжется с вами, чтобы подтвердить удобное время приёма.</p>
                     <button onClick={() => router.push("/profile")} className={styles.btnPrimary}>Перейти в профиль</button>
                 </div>
             </main>
@@ -111,7 +133,6 @@ export default function AppointmentsContent() {
                             <div className={styles.serverError}>{(createMutation.error as Error).message}</div>
                         )}
 
-                        {/* ЧЕКБОКС СОГЛАСИЯ */}
                         <div className={styles.agreementCheckbox}>
                             <input type="checkbox" id="agree" {...register("agree")} />
                             <label htmlFor="agree">
@@ -120,7 +141,7 @@ export default function AppointmentsContent() {
                                 <Link href="/consent" target="_blank">Согласия на обработку ПД</Link>.
                             </label>
                         </div>
-                        {errors.agree && <span className={styles.error} style={{ marginTop: "-10px" }}>{errors.agree.message}</span>}
+                        {errors.agree && <span className={styles.error}>{errors.agree.message}</span>}
 
                         <button type="submit" className={styles.btnPrimary} disabled={createMutation.isPending}>
                             {createMutation.isPending ? "Отправка..." : "Записаться на прием"}

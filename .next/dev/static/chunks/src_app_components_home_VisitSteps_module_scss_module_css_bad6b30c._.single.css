@@ -1,0 +1,53 @@
+/* [project]/src/app/components/home/VisitSteps.module.scss.module.css [app-client] (css) */
+.VisitSteps-module-scss-module__eTyzrG__grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 24px;
+  display: grid;
+}
+
+.VisitSteps-module-scss-module__eTyzrG__card {
+  border: 1px solid var(--color-border);
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 24px;
+  transition: box-shadow .3s, border-color .3s;
+}
+
+.VisitSteps-module-scss-module__eTyzrG__card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 40px #00000014;
+}
+
+.VisitSteps-module-scss-module__eTyzrG__card h3 {
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.VisitSteps-module-scss-module__eTyzrG__card p {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.VisitSteps-module-scss-module__eTyzrG__num {
+  background: var(--color-primary-light);
+  width: 40px;
+  height: 40px;
+  color: var(--color-primary);
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  font-weight: 700;
+  display: inline-flex;
+}
+
+@media (max-width: 768px) {
+  .VisitSteps-module-scss-module__eTyzrG__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=src_app_components_home_VisitSteps_module_scss_module_css_bad6b30c._.single.css.map*/

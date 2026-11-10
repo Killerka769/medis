@@ -1,16 +1,35 @@
-"use client"
-
-import { use } from "react";
-import { useGetPublicService } from "@/src/lib/ReactQuery/query/public/services/query";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Link from "next/link";
+import { getPublicService } from "@/src/lib/data/public";
+import { DoctorMiniAvatar, MediaPlaceholder } from "../../components/MediaPlaceholder";
 import styles from "./ServiceDetail.module.scss";
 
-export default function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = use(params);
-    const { data, isLoading, isError } = useGetPublicService(slug);
+type Props = { params: Promise<{ slug: string }> };
 
-    if (isLoading) return <div className={styles.loading}>Загрузка...</div>;
-    if (isError || !data) return <div className={styles.error}>Услуга не найдена</div>;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params;
+    const data = await getPublicService(slug).catch(() => null);
+    if (!data) return { title: "Услуга не найдена | Медис" };
+
+    const title = `${data.service.title} | Медис`;
+    const description = data.service.description || `Запись на услугу «${data.service.title}» в клинике Медис, Махачкала.`;
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            images: [{ url: data.service.imageUrl || "/hero.webp" }],
+        },
+    };
+}
+
+export default async function ServiceDetailPage({ params }: Props) {
+    const { slug } = await params;
+    const data = await getPublicService(slug).catch(() => null);
+    if (!data) notFound();
 
     const { service, doctors } = data;
 
@@ -21,18 +40,35 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
             </div>
 
             <div className={styles.layout}>
-                {/* Основная информация */}
                 <div className={styles.mainContent}>
                     <h1 className={styles.title}>{service.title}</h1>
                     <p className={styles.category}>{service.category?.title}</p>
-                    
-                    {service.imageUrl && (
+
+                    {service.imageUrl ? (
                         <img src={service.imageUrl} alt={service.title} className={styles.image} />
+                    ) : (
+                        <div className={styles.imageFallback}>
+                            <MediaPlaceholder kind="clinic" title={service.title} />
+                        </div>
                     )}
 
                     <div className={styles.content}>
-                        {/* Если контент в markdown, здесь позже можно подключить react-markdown */}
                         {service.content || service.description || "Описание услуги скоро появится."}
+                    </div>
+
+                    <div className={styles.infoBlocks}>
+                        <div className={styles.infoBlock}>
+                            <h2>Что входит</h2>
+                            <p>
+                                {service.description || "Консультация врача, осмотр и рекомендации по лечению. Точный состав приёма уточнит специалист на месте."}
+                            </p>
+                        </div>
+                        <div className={styles.infoBlock}>
+                            <h2>Как подготовиться</h2>
+                            <p>
+                                Возьмите паспорт и полис ОМС (если есть). На анализы крови лучше приходить натощак, если врач не указал иное. О переносе записи предупредите администратора заранее по телефону +7 (928) 555-88-18.
+                            </p>
+                        </div>
                     </div>
 
                     {doctors.length > 0 && (
@@ -41,7 +77,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                             <div className={styles.doctorsGrid}>
                                 {doctors.map((doc: any) => (
                                     <Link href={`/doctors/${doc.slug}`} key={doc.id} className={styles.doctorMini}>
-                                        {doc.photoUrl ? <img src={doc.photoUrl} alt={doc.name} /> : <div className={styles.avatarPlaceholder}>{doc.name[0]}</div>}
+                                        {doc.photoUrl ? <img src={doc.photoUrl} alt={doc.name} /> : <DoctorMiniAvatar name={doc.name} />}
                                         <div>
                                             <p className={styles.docName}>{doc.name}</p>
                                             <p className={styles.docSpec}>{doc.specialization}</p>
@@ -53,7 +89,6 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                     )}
                 </div>
 
-                {/* Сайдбар с ценой и кнопкой */}
                 <aside className={styles.sidebar}>
                     <div className={styles.priceCard}>
                         <p className={styles.priceLabel}>Стоимость:</p>
@@ -61,12 +96,13 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                             {service.price ? (service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽`) : "По запросу"}
                         </p>
                         {service.duration && <p className={styles.duration}>~{service.duration} минут</p>}
-                        
+
                         <Link href={`/appointments?service=${service.id}`} className={styles.btnPrimary}>
                             Записаться на прием
                         </Link>
-                        
-                        <p className={styles.omsInfo}>
+                        <a href="tel:+79285558818" className={styles.btnCall}>Позвонить</a>
+
+                        <p className={`${styles.omsInfo} ${service.isOms ? styles.omsYes : styles.omsNo}`}>
                             {service.isOms ? "Доступно по ОМС" : "Оказывается на платной основе"}
                         </p>
                     </div>

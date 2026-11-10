@@ -1,5 +1,6 @@
 /* [project]/src/app/oms/OmsPage.module.scss.module.css [app-client] (css) */
 .OmsPage-module-scss-module__JWfE_a__page {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
@@ -35,6 +36,21 @@
 @media (max-width: 900px) {
   .OmsPage-module-scss-module__JWfE_a__layout {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .OmsPage-module-scss-module__JWfE_a__page {
+    padding: 32px 16px;
+  }
+
+  .OmsPage-module-scss-module__JWfE_a__title {
+    font-size: 28px;
+  }
+
+  .OmsPage-module-scss-module__JWfE_a__serviceItem {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
