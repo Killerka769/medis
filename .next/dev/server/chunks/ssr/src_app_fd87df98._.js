@@ -41,6 +41,7 @@ __turbopack_context__.v({
   "heroImage": "HomePage-module-scss-module__vQrwUa__heroImage",
   "heroImageWrapper": "HomePage-module-scss-module__vQrwUa__heroImageWrapper",
   "heroImg": "HomePage-module-scss-module__vQrwUa__heroImg",
+  "heroMeta": "HomePage-module-scss-module__vQrwUa__heroMeta",
   "heroShift": "HomePage-module-scss-module__vQrwUa__heroShift",
   "heroSubtitle": "HomePage-module-scss-module__vQrwUa__heroSubtitle",
   "heroTitle": "HomePage-module-scss-module__vQrwUa__heroTitle",
@@ -857,6 +858,33 @@ function HomeView({ data }) {
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].heroImage,
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].heroImageWrapper,
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                src: "/hero.webp",
+                                width: 960,
+                                height: 720,
+                                priority: true,
+                                sizes: "(max-width: 768px) 100vw, 520px",
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].heroImg,
+                                alt: "Клиника Медис"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/HomeView.tsx",
+                                lineNumber: 51,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/HomeView.tsx",
+                            lineNumber: 50,
+                            columnNumber: 21
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/HomeView.tsx",
+                        lineNumber: 49,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].heroContent,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -864,7 +892,7 @@ function HomeView({ data }) {
                                 children: "Медицинский центр «Медис»"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 50,
+                                lineNumber: 64,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -873,7 +901,7 @@ function HomeView({ data }) {
                                     "Забота о вашем здоровье ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 52,
+                                        lineNumber: 66,
                                         columnNumber: 49
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -881,21 +909,51 @@ function HomeView({ data }) {
                                         children: "в Махачкале"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 53,
+                                        lineNumber: 67,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 51,
+                                lineNumber: 65,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].heroSubtitle,
-                                children: "Современная клиника с опытными врачами, новейшим оборудованием и индивидуальным подходом к каждому пациенту. Мы работаем для вас 7 дней в неделю, с 09:00 до 23:00."
+                                children: "Современная клиника с опытными врачами и оборудованием. Работаем ежедневно с 09:00 до 23:00."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 55,
+                                lineNumber: 69,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].heroMeta,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: "09:00–23:00"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/HomeView.tsx",
+                                        lineNumber: 73,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: "ул. Ахульго, 77"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/HomeView.tsx",
+                                        lineNumber: 74,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: "Запись онлайн"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/HomeView.tsx",
+                                        lineNumber: 75,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/HomeView.tsx",
+                                lineNumber: 72,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -907,7 +965,7 @@ function HomeView({ data }) {
                                         children: "Записаться на прием"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 78,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -916,45 +974,19 @@ function HomeView({ data }) {
                                         children: "Все услуги"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 62,
+                                        lineNumber: 81,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 58,
+                                lineNumber: 77,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 49,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].heroImage,
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].heroImageWrapper,
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                src: "/hero.webp",
-                                fill: true,
-                                priority: true,
-                                sizes: "(max-width: 768px) 100vw, 520px",
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].heroImg,
-                                alt: "Клиника Медис"
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 69,
-                                columnNumber: 25
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/src/app/HomeView.tsx",
-                            lineNumber: 68,
-                            columnNumber: 21
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 67,
+                        lineNumber: 63,
                         columnNumber: 17
                     }, this)
                 ]
@@ -974,7 +1006,7 @@ function HomeView({ data }) {
                                 children: "Наши услуги"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 84,
+                                lineNumber: 91,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -983,13 +1015,13 @@ function HomeView({ data }) {
                                 children: "Все услуги →"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 85,
+                                lineNumber: 92,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 83,
+                        lineNumber: 90,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1005,7 +1037,7 @@ function HomeView({ data }) {
                                                 kind: "service"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 91,
+                                                lineNumber: 98,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1013,7 +1045,7 @@ function HomeView({ data }) {
                                                 children: service.title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 92,
+                                                lineNumber: 99,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1021,13 +1053,13 @@ function HomeView({ data }) {
                                                 children: service.category?.title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 93,
+                                                lineNumber: 100,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 97,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1038,7 +1070,7 @@ function HomeView({ data }) {
                                                 children: service.price ? service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽` : "По запросу"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 96,
+                                                lineNumber: 103,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1046,30 +1078,30 @@ function HomeView({ data }) {
                                                 children: "→"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 106,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 102,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, service.id, true, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 89,
+                                lineNumber: 96,
                                 columnNumber: 29
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 87,
+                        lineNumber: 94,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/HomeView.tsx",
-                lineNumber: 82,
+                lineNumber: 89,
                 columnNumber: 17
             }, this),
             data.doctors && data.doctors.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1083,7 +1115,7 @@ function HomeView({ data }) {
                                 children: "Наши специалисты"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 110,
+                                lineNumber: 117,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1092,13 +1124,13 @@ function HomeView({ data }) {
                                 children: "Все врачи →"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 111,
+                                lineNumber: 118,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 109,
+                        lineNumber: 116,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1114,18 +1146,18 @@ function HomeView({ data }) {
                                             alt: doctor.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/HomeView.tsx",
-                                            lineNumber: 118,
+                                            lineNumber: 125,
                                             columnNumber: 41
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$DoctorAvatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DoctorAvatar"], {
                                             name: doctor.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/HomeView.tsx",
-                                            lineNumber: 120,
+                                            lineNumber: 127,
                                             columnNumber: 41
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 123,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1136,7 +1168,7 @@ function HomeView({ data }) {
                                                 children: doctor.name
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 124,
+                                                lineNumber: 131,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1144,7 +1176,7 @@ function HomeView({ data }) {
                                                 children: doctor.specialization
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 132,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1156,30 +1188,30 @@ function HomeView({ data }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 126,
+                                                lineNumber: 133,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 123,
+                                        lineNumber: 130,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, doctor.id, true, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 115,
+                                lineNumber: 122,
                                 columnNumber: 29
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 113,
+                        lineNumber: 120,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/HomeView.tsx",
-                lineNumber: 108,
+                lineNumber: 115,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1192,23 +1224,23 @@ function HomeView({ data }) {
                             children: "Как проходит визит"
                         }, void 0, false, {
                             fileName: "[project]/src/app/HomeView.tsx",
-                            lineNumber: 136,
+                            lineNumber: 143,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 135,
+                        lineNumber: 142,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$home$2f$VisitSteps$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["VisitSteps"], {}, void 0, false, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 138,
+                        lineNumber: 145,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/HomeView.tsx",
-                lineNumber: 134,
+                lineNumber: 141,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1221,7 +1253,7 @@ function HomeView({ data }) {
                             children: "Не откладывайте здоровье на потом"
                         }, void 0, false, {
                             fileName: "[project]/src/app/HomeView.tsx",
-                            lineNumber: 143,
+                            lineNumber: 150,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1229,7 +1261,7 @@ function HomeView({ data }) {
                             children: "Оставьте заявку — администратор подберёт удобное время и подтвердит запись звонком."
                         }, void 0, false, {
                             fileName: "[project]/src/app/HomeView.tsx",
-                            lineNumber: 144,
+                            lineNumber: 151,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1238,18 +1270,18 @@ function HomeView({ data }) {
                             children: "Записаться на прием"
                         }, void 0, false, {
                             fileName: "[project]/src/app/HomeView.tsx",
-                            lineNumber: 147,
+                            lineNumber: 154,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/HomeView.tsx",
-                    lineNumber: 142,
+                    lineNumber: 149,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/HomeView.tsx",
-                lineNumber: 141,
+                lineNumber: 148,
                 columnNumber: 13
             }, this),
             data.articles && data.articles.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1263,7 +1295,7 @@ function HomeView({ data }) {
                                 children: "Полезные статьи"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 156,
+                                lineNumber: 163,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1272,13 +1304,13 @@ function HomeView({ data }) {
                                 children: "Все статьи →"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 157,
+                                lineNumber: 164,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 155,
+                        lineNumber: 162,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1294,19 +1326,19 @@ function HomeView({ data }) {
                                             alt: article.title
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/HomeView.tsx",
-                                            lineNumber: 164,
+                                            lineNumber: 171,
                                             columnNumber: 41
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$MediaPlaceholder$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MediaPlaceholder"], {
                                             kind: "article",
                                             title: article.title
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/HomeView.tsx",
-                                            lineNumber: 166,
+                                            lineNumber: 173,
                                             columnNumber: 41
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 169,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1317,7 +1349,7 @@ function HomeView({ data }) {
                                                 children: article.category?.title || "Статья"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 170,
+                                                lineNumber: 177,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1325,7 +1357,7 @@ function HomeView({ data }) {
                                                 children: article.title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 171,
+                                                lineNumber: 178,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1334,30 +1366,30 @@ function HomeView({ data }) {
                                                 children: new Date(article.publishedAt || article.createdAt).toLocaleDateString("ru-RU")
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 172,
+                                                lineNumber: 179,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 169,
+                                        lineNumber: 176,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, article.id, true, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 161,
+                                lineNumber: 168,
                                 columnNumber: 29
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 159,
+                        lineNumber: 166,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/HomeView.tsx",
-                lineNumber: 154,
+                lineNumber: 161,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1370,12 +1402,12 @@ function HomeView({ data }) {
                             children: "Почему выбирают нас"
                         }, void 0, false, {
                             fileName: "[project]/src/app/HomeView.tsx",
-                            lineNumber: 184,
+                            lineNumber: 191,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 183,
+                        lineNumber: 190,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1395,53 +1427,6 @@ function HomeView({ data }) {
                                                 fill: "currentColor"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
-                                                lineNumber: 189,
-                                                columnNumber: 66
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/HomeView.tsx",
-                                            lineNumber: 189,
-                                            columnNumber: 29
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 188,
-                                        columnNumber: 25
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        children: "Профессионализм"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 191,
-                                        columnNumber: 25
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        children: "Специалисты различных областей медицины. Большинство докторов имеют ученую степень и применяют инновационные методы."
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/HomeView.tsx",
-                                        lineNumber: 192,
-                                        columnNumber: 25
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 187,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].featureItem,
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].featureIcon,
-                                        "aria-hidden": true,
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                            viewBox: "0 0 24 24",
-                                            fill: "none",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                d: "M4 7h16v3H4V7zm2 5h12v7H6v-7zm5-9h2v3h-2V3z",
-                                                fill: "currentColor"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/HomeView.tsx",
                                                 lineNumber: 196,
                                                 columnNumber: 66
                                             }, this)
@@ -1456,14 +1441,14 @@ function HomeView({ data }) {
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        children: "Современное оборудование"
+                                        children: "Профессионализм"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/HomeView.tsx",
                                         lineNumber: 198,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        children: "Передовое, высокотехнологичное оборудование экспертного класса. Точная диагностика в кратчайшие сроки."
+                                        children: "Специалисты различных областей медицины. Большинство докторов имеют ученую степень и применяют инновационные методы."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/HomeView.tsx",
                                         lineNumber: 199,
@@ -1485,7 +1470,7 @@ function HomeView({ data }) {
                                             viewBox: "0 0 24 24",
                                             fill: "none",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                d: "M12 4a8 8 0 100 16 8 8 0 000-16zm.8 4h-1.6v5l3.6 2.2.8-1.3-2.8-1.7V8z",
+                                                d: "M4 7h16v3H4V7zm2 5h12v7H6v-7zm5-9h2v3h-2V3z",
                                                 fill: "currentColor"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
@@ -1503,14 +1488,14 @@ function HomeView({ data }) {
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        children: "Ежедневно с 09:00 до 23:00"
+                                        children: "Современное оборудование"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/HomeView.tsx",
                                         lineNumber: 205,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        children: "Клиника открыта семь дней в неделю. Вы можете получить помощь в удобное время, в том числе вечером и в выходные."
+                                        children: "Передовое, высокотехнологичное оборудование экспертного класса. Точная диагностика в кратчайшие сроки."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/HomeView.tsx",
                                         lineNumber: 206,
@@ -1521,17 +1506,64 @@ function HomeView({ data }) {
                                 fileName: "[project]/src/app/HomeView.tsx",
                                 lineNumber: 201,
                                 columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].featureItem,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].featureIcon,
+                                        "aria-hidden": true,
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            viewBox: "0 0 24 24",
+                                            fill: "none",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                d: "M12 4a8 8 0 100 16 8 8 0 000-16zm.8 4h-1.6v5l3.6 2.2.8-1.3-2.8-1.7V8z",
+                                                fill: "currentColor"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/HomeView.tsx",
+                                                lineNumber: 210,
+                                                columnNumber: 66
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/HomeView.tsx",
+                                            lineNumber: 210,
+                                            columnNumber: 29
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/HomeView.tsx",
+                                        lineNumber: 209,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        children: "Ежедневно с 09:00 до 23:00"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/HomeView.tsx",
+                                        lineNumber: 212,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        children: "Клиника открыта семь дней в неделю. Вы можете получить помощь в удобное время, в том числе вечером и в выходные."
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/HomeView.tsx",
+                                        lineNumber: 213,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/HomeView.tsx",
+                                lineNumber: 208,
+                                columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 186,
+                        lineNumber: 193,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/HomeView.tsx",
-                lineNumber: 182,
+                lineNumber: 189,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1544,35 +1576,6 @@ function HomeView({ data }) {
                             children: "Доверие и безопасность"
                         }, void 0, false, {
                             fileName: "[project]/src/app/HomeView.tsx",
-                            lineNumber: 213,
-                            columnNumber: 21
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 212,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$home$2f$TrustBlock$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TrustBlock"], {}, void 0, false, {
-                        fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 215,
-                        columnNumber: 17
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/app/HomeView.tsx",
-                lineNumber: 211,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].section} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].reveal}`,
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].sectionHeader,
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].sectionTitle,
-                            children: "Частые вопросы"
-                        }, void 0, false, {
-                            fileName: "[project]/src/app/HomeView.tsx",
                             lineNumber: 220,
                             columnNumber: 21
                         }, this)
@@ -1581,7 +1584,7 @@ function HomeView({ data }) {
                         lineNumber: 219,
                         columnNumber: 17
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$home$2f$Faq$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Faq"], {}, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$home$2f$TrustBlock$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TrustBlock"], {}, void 0, false, {
                         fileName: "[project]/src/app/HomeView.tsx",
                         lineNumber: 222,
                         columnNumber: 17
@@ -1596,6 +1599,35 @@ function HomeView({ data }) {
                 className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].section} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].reveal}`,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].sectionHeader,
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].sectionTitle,
+                            children: "Частые вопросы"
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/HomeView.tsx",
+                            lineNumber: 227,
+                            columnNumber: 21
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/HomeView.tsx",
+                        lineNumber: 226,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$home$2f$Faq$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Faq"], {}, void 0, false, {
+                        fileName: "[project]/src/app/HomeView.tsx",
+                        lineNumber: 229,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/app/HomeView.tsx",
+                lineNumber: 225,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].section} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].reveal}`,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].contactHeader,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1603,7 +1635,7 @@ function HomeView({ data }) {
                                 children: "Как нас найти"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 227,
+                                lineNumber: 234,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1611,13 +1643,13 @@ function HomeView({ data }) {
                                 children: "г. Махачкала, ул. Ахульго, 77 · Пн–Вс: 09:00 – 23:00"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/HomeView.tsx",
-                                lineNumber: 228,
+                                lineNumber: 235,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 226,
+                        lineNumber: 233,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1631,18 +1663,18 @@ function HomeView({ data }) {
                             loading: "lazy"
                         }, void 0, false, {
                             fileName: "[project]/src/app/HomeView.tsx",
-                            lineNumber: 231,
+                            lineNumber: 238,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/HomeView.tsx",
-                        lineNumber: 230,
+                        lineNumber: 237,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/HomeView.tsx",
-                lineNumber: 225,
+                lineNumber: 232,
                 columnNumber: 13
             }, this)
         ]

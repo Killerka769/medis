@@ -212,6 +212,7 @@ __turbopack_context__.v({
   "heroImage": "HomePage-module-scss-module__vQrwUa__heroImage",
   "heroImageWrapper": "HomePage-module-scss-module__vQrwUa__heroImageWrapper",
   "heroImg": "HomePage-module-scss-module__vQrwUa__heroImg",
+  "heroMeta": "HomePage-module-scss-module__vQrwUa__heroMeta",
   "heroShift": "HomePage-module-scss-module__vQrwUa__heroShift",
   "heroSubtitle": "HomePage-module-scss-module__vQrwUa__heroSubtitle",
   "heroTitle": "HomePage-module-scss-module__vQrwUa__heroTitle",

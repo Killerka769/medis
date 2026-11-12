@@ -46,6 +46,20 @@ export function HomeView({ data }: { data: any }) {
                 <div className={styles.blob1}></div>
                 <div className={styles.blob2}></div>
 
+                <div className={styles.heroImage}>
+                    <div className={styles.heroImageWrapper}>
+                        <Image
+                            src="/hero.webp"
+                            width={960}
+                            height={720}
+                            priority
+                            sizes="(max-width: 768px) 100vw, 520px"
+                            className={styles.heroImg}
+                            alt="Клиника Медис"
+                        />
+                    </div>
+                </div>
+
                 <div className={styles.heroContent}>
                     <div className={styles.heroBadge}>Медицинский центр «Медис»</div>
                     <h1 className={styles.heroTitle}>
@@ -53,8 +67,13 @@ export function HomeView({ data }: { data: any }) {
                         <span className={styles.heroAccent}>в Махачкале</span>
                     </h1>
                     <p className={styles.heroSubtitle}>
-                        Современная клиника с опытными врачами, новейшим оборудованием и индивидуальным подходом к каждому пациенту. Мы работаем для вас 7 дней в неделю, с 09:00 до 23:00.
+                        Современная клиника с опытными врачами и оборудованием. Работаем ежедневно с 09:00 до 23:00.
                     </p>
+                    <div className={styles.heroMeta}>
+                        <span>09:00–23:00</span>
+                        <span>ул. Ахульго, 77</span>
+                        <span>Запись онлайн</span>
+                    </div>
                     <div className={styles.heroActions}>
                         <Link href="/appointments" className={styles.btnPrimary}>
                             Записаться на прием
@@ -62,18 +81,6 @@ export function HomeView({ data }: { data: any }) {
                         <Link href="/services" className={styles.btnSecondary}>
                             Все услуги
                         </Link>
-                    </div>
-                </div>
-                <div className={styles.heroImage}>
-                    <div className={styles.heroImageWrapper}>
-                        <Image
-                            src="/hero.webp"
-                            fill
-                            priority
-                            sizes="(max-width: 768px) 100vw, 520px"
-                            className={styles.heroImg}
-                            alt="Клиника Медис"
-                        />
                     </div>
                 </div>
             </section>

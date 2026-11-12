@@ -177,20 +177,17 @@ main {
 
 /* [project]/src/app/components/ui/layout/Header/Header.module.scss.module.css [app-client] (css) */
 .Header-module-scss-module__wxeC6q__header {
-  z-index: 100;
-  -webkit-backdrop-filter: blur(16px);
-  background: #ffffffd9;
-  border-bottom: 1px solid #0000;
+  z-index: 200;
+  border-bottom: 1px solid var(--color-border);
+  background: #fff;
   width: 100%;
-  transition: all .3s;
+  transition: box-shadow .3s;
   position: sticky;
   top: 0;
 }
 
 .Header-module-scss-module__wxeC6q__scrolled {
-  border-bottom: 1px solid var(--color-border);
-  background: #fffffff2;
-  box-shadow: 0 10px 30px #1e5f9e14;
+  box-shadow: 0 8px 24px #1e5f9e14;
 }
 
 .Header-module-scss-module__wxeC6q__container {
@@ -667,14 +664,15 @@ main {
 
 @media (max-width: 600px) {
   .FloatingContact-module-scss-module__YZvlwG__wrap {
-    bottom: 20px;
-    right: 20px;
+    gap: 8px;
+    bottom: 16px;
+    right: 12px;
   }
 
   .FloatingContact-module-scss-module__YZvlwG__btn {
-    width: 48px;
-    height: 48px;
-    font-size: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 11px;
   }
 }
 
