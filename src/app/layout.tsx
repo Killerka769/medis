@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   title: "Медис — клиника в Махачкале",
   description: "Современный медицинский центр. Запись на прием онлайн.",
+  icons: {
+    icon: [{ url: "/logo.webp", type: "image/webp" }],
+    shortcut: "/logo.webp",
+    apple: "/logo.webp",
+  },
   openGraph: {
     title: "Медис — клиника в Махачкале",
     description: "Современный медицинский центр. Запись на прием онлайн.",
