@@ -130,7 +130,7 @@ export function HomeView({ data }: { data: any }) {
                                 <div className={styles.doctorInfo}>
                                     <h3 className={styles.doctorName}>{doctor.name}</h3>
                                     <p className={styles.doctorSpec}>{doctor.specialization}</p>
-                                    {doctor.experienceYears > 0 && <p className={styles.doctorExp}>Стаж: {doctor.experienceYears} лет</p>}
+                                    <p className={styles.doctorExp}>Стаж: {doctor.experienceYears} лет</p>
                                 </div>
                             </Link>
                         ))}
