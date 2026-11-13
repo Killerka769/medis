@@ -1,3 +1,16 @@
 {
-  "/page": "app/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/doctors/page": "app/admin/doctors/page.js",
+  "/admin/media/page": "app/admin/media/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/api/admin/dashboard/route": "app/api/admin/dashboard/route.js",
+  "/api/admin/doctors/route": "app/api/admin/doctors/route.js",
+  "/api/admin/media/route": "app/api/admin/media/route.js",
+  "/contacts/page": "app/contacts/page.js",
+  "/doctors/[slug]/page": "app/doctors/[slug]/page.js",
+  "/doctors/page": "app/doctors/page.js",
+  "/oms/page": "app/oms/page.js",
+  "/page": "app/page.js",
+  "/services/[slug]/page": "app/services/[slug]/page.js",
+  "/services/page": "app/services/page.js"
 }

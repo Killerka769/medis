@@ -2,6 +2,7 @@
 "[project]/src/app/contacts/ContactsPage.module.scss [app-client] (css module)", ((__turbopack_context__) => {
 
 __turbopack_context__.v({
+  "email": "ContactsPage-module-scss-module__9jQ_jG__email",
   "grid": "ContactsPage-module-scss-module__9jQ_jG__grid",
   "header": "ContactsPage-module-scss-module__9jQ_jG__header",
   "icon": "ContactsPage-module-scss-module__9jQ_jG__icon",
@@ -126,7 +127,7 @@ function ContactsPage() {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "tel:+79285558818",
                                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contacts$2f$ContactsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].phone,
-                                                children: "+7 (928) 555-88-18"
+                                                children: "+7 928 555-88-18"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/contacts/page.tsx",
                                                 lineNumber: 28,
@@ -149,7 +150,7 @@ function ContactsPage() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contacts$2f$ContactsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].icon,
-                                        children: "🕐"
+                                        children: "✉️"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/contacts/page.tsx",
                                         lineNumber: 33,
@@ -158,25 +159,19 @@ function ContactsPage() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                children: "Режим работы"
+                                                children: "Почта"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/contacts/page.tsx",
                                                 lineNumber: 35,
                                                 columnNumber: 29
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                children: "Пн-Вс: 09:00 – 23:00"
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                href: "mailto:medis-medcentr@mail.ru",
+                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contacts$2f$ContactsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].email,
+                                                children: "medis-medcentr@mail.ru"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/contacts/page.tsx",
                                                 lineNumber: 36,
-                                                columnNumber: 29
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contacts$2f$ContactsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].muted,
-                                                children: "По предварительной записи"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/contacts/page.tsx",
-                                                lineNumber: 37,
                                                 columnNumber: 29
                                             }, this)
                                         ]
@@ -192,19 +187,55 @@ function ContactsPage() {
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contacts$2f$ContactsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].socials,
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contacts$2f$ContactsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].infoItem,
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://t.me/medis",
-                                        target: "_blank",
-                                        rel: "noreferrer",
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contacts$2f$ContactsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].socialBtn,
-                                        children: "TG"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contacts$2f$ContactsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].icon,
+                                        children: "🕐"
                                     }, void 0, false, {
+                                        fileName: "[project]/src/app/contacts/page.tsx",
+                                        lineNumber: 41,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                children: "Режим работы"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/contacts/page.tsx",
+                                                lineNumber: 43,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                children: "Пн-Вс: 09:00 – 23:00"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/contacts/page.tsx",
+                                                lineNumber: 44,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contacts$2f$ContactsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].muted,
+                                                children: "По предварительной записи"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/contacts/page.tsx",
+                                                lineNumber: 45,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/src/app/contacts/page.tsx",
                                         lineNumber: 42,
                                         columnNumber: 25
-                                    }, this),
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/contacts/page.tsx",
+                                lineNumber: 40,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contacts$2f$ContactsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].socials,
+                                children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "https://wa.me/79285558818",
                                         target: "_blank",
@@ -213,13 +244,24 @@ function ContactsPage() {
                                         children: "WA"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/contacts/page.tsx",
-                                        lineNumber: 43,
+                                        lineNumber: 50,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "https://www.instagram.com/medis.medcentr",
+                                        target: "_blank",
+                                        rel: "noreferrer",
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contacts$2f$ContactsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].socialBtn,
+                                        children: "IG"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/contacts/page.tsx",
+                                        lineNumber: 51,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/contacts/page.tsx",
-                                lineNumber: 41,
+                                lineNumber: 49,
                                 columnNumber: 21
                             }, this)
                         ]
@@ -238,12 +280,12 @@ function ContactsPage() {
                             title: "Карта клиники Медис"
                         }, void 0, false, {
                             fileName: "[project]/src/app/contacts/page.tsx",
-                            lineNumber: 49,
+                            lineNumber: 58,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/contacts/page.tsx",
-                        lineNumber: 48,
+                        lineNumber: 57,
                         columnNumber: 17
                     }, this)
                 ]

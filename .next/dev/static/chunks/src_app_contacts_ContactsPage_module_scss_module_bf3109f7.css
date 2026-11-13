@@ -102,6 +102,18 @@
   text-decoration: underline;
 }
 
+.ContactsPage-module-scss-module__9jQ_jG__email {
+  color: var(--color-primary);
+  word-break: break-word;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ContactsPage-module-scss-module__9jQ_jG__email:hover {
+  text-decoration: underline;
+}
+
 .ContactsPage-module-scss-module__9jQ_jG__muted {
   margin-top: 4px;
   color: var(--color-text-muted) !important;

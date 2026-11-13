@@ -251,22 +251,12 @@ function HeaderClient({ isAuth, isAdmin }) {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$layout$2f$Header$2f$Header$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].navLink,
-                                href: "/oms",
-                                onClick: closeMenu,
-                                children: "ОМС"
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/components/ui/layout/Header/HeaderClient.tsx",
-                                lineNumber: 59,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$layout$2f$Header$2f$Header$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].navLink,
                                 href: "/contacts",
                                 onClick: closeMenu,
                                 children: "Контакты"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/ui/layout/Header/HeaderClient.tsx",
-                                lineNumber: 60,
+                                lineNumber: 62,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -279,7 +269,7 @@ function HeaderClient({ isAuth, isAdmin }) {
                                         children: "Записаться на прием"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ui/layout/Header/HeaderClient.tsx",
-                                        lineNumber: 63,
+                                        lineNumber: 65,
                                         columnNumber: 25
                                     }, this),
                                     isAdmin && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -289,7 +279,7 @@ function HeaderClient({ isAuth, isAdmin }) {
                                         children: "Дашборд"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ui/layout/Header/HeaderClient.tsx",
-                                        lineNumber: 68,
+                                        lineNumber: 70,
                                         columnNumber: 29
                                     }, this),
                                     isAuth ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -299,7 +289,7 @@ function HeaderClient({ isAuth, isAdmin }) {
                                         children: "Профиль"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ui/layout/Header/HeaderClient.tsx",
-                                        lineNumber: 74,
+                                        lineNumber: 76,
                                         columnNumber: 29
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$layout$2f$Header$2f$Header$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].btnOutline,
@@ -308,13 +298,13 @@ function HeaderClient({ isAuth, isAdmin }) {
                                         children: "Войти"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ui/layout/Header/HeaderClient.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 80,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/ui/layout/Header/HeaderClient.tsx",
-                                lineNumber: 62,
+                                lineNumber: 64,
                                 columnNumber: 21
                             }, this)
                         ]
@@ -348,6 +338,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 __turbopack_context__.v({
   "btn": "FloatingContact-module-scss-module__YZvlwG__btn",
+  "ig": "FloatingContact-module-scss-module__YZvlwG__ig",
   "phone": "FloatingContact-module-scss-module__YZvlwG__phone",
   "tg": "FloatingContact-module-scss-module__YZvlwG__tg",
   "wa": "FloatingContact-module-scss-module__YZvlwG__wa",
@@ -390,18 +381,6 @@ function FloatingContact() {
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                href: "https://t.me/medis",
-                target: "_blank",
-                rel: "noreferrer",
-                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$FloatingContact$2f$FloatingContact$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].btn} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$FloatingContact$2f$FloatingContact$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].tg}`,
-                "aria-label": "Написать в мессенджер",
-                children: "TG"
-            }, void 0, false, {
-                fileName: "[project]/src/app/components/FloatingContact/FloatingContact.tsx",
-                lineNumber: 24,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                 href: "https://wa.me/79285558818",
                 target: "_blank",
                 rel: "noreferrer",
@@ -410,7 +389,19 @@ function FloatingContact() {
                 children: "WA"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/FloatingContact/FloatingContact.tsx",
-                lineNumber: 27,
+                lineNumber: 25,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                href: "https://www.instagram.com/medis.medcentr",
+                target: "_blank",
+                rel: "noreferrer",
+                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$FloatingContact$2f$FloatingContact$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].btn} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$FloatingContact$2f$FloatingContact$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].ig}`,
+                "aria-label": "Соцсеть клиники",
+                children: "IG"
+            }, void 0, false, {
+                fileName: "[project]/src/app/components/FloatingContact/FloatingContact.tsx",
+                lineNumber: 28,
                 columnNumber: 13
             }, this)
         ]

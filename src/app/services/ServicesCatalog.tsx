@@ -49,7 +49,7 @@ export function ServicesCatalog({ services, categories }: { services: any[]; cat
                             <p className={styles.cardDesc}>{service.description || "Подробнее на странице услуги"}</p>
                             <div className={styles.cardBottom}>
                                 <span className={styles.price}>
-                                    {service.price ? (service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽`) : "По запросу"}
+                                    {service.price == null ? "По запросу" : service.price === 0 ? "Бесплатно" : (service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽`)}
                                 </span>
                                 <span className={styles.more}>Подробнее →</span>
                             </div>

@@ -66,7 +66,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                         <div className={styles.infoBlock}>
                             <h2>Как подготовиться</h2>
                             <p>
-                                Возьмите паспорт и полис ОМС (если есть). На анализы крови лучше приходить натощак, если врач не указал иное. О переносе записи предупредите администратора заранее по телефону +7 (928) 555-88-18.
+                                Возьмите паспорт. На анализы крови лучше приходить натощак, если врач не указал иное. О переносе записи предупредите администратора заранее по телефону +7 928 555-88-18.
                             </p>
                         </div>
                     </div>
@@ -93,7 +93,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <div className={styles.priceCard}>
                         <p className={styles.priceLabel}>Стоимость:</p>
                         <p className={styles.priceValue}>
-                            {service.price ? (service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽`) : "По запросу"}
+                            {service.price == null ? "По запросу" : service.price === 0 ? "Бесплатно" : (service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽`)}
                         </p>
                         {service.duration && <p className={styles.duration}>~{service.duration} минут</p>}
 
@@ -102,9 +102,12 @@ export default async function ServiceDetailPage({ params }: Props) {
                         </Link>
                         <a href="tel:+79285558818" className={styles.btnCall}>Позвонить</a>
 
+                        {/* Только платный приём — блок ОМС скрыт
                         <p className={`${styles.omsInfo} ${service.isOms ? styles.omsYes : styles.omsNo}`}>
                             {service.isOms ? "Доступно по ОМС" : "Оказывается на платной основе"}
                         </p>
+                        */}
+                        <p className={styles.omsInfo}>Оказывается на платной основе</p>
                     </div>
                 </aside>
             </div>

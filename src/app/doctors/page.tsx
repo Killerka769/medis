@@ -44,7 +44,7 @@ export default async function DoctorsCatalogPage() {
                         <div className={styles.info}>
                             <h3 className={styles.name}>{doctor.name}</h3>
                             <p className={styles.spec}>{doctor.specialization}</p>
-                            <p className={styles.exp}>Стаж: {doctor.experienceYears} лет</p>
+                            {doctor.experienceYears > 0 && <p className={styles.exp}>Стаж: {doctor.experienceYears} лет</p>}
                             <span className={styles.btn}>Записаться</span>
                         </div>
                     </Link>

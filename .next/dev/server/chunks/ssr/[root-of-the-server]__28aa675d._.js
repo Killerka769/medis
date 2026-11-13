@@ -430,7 +430,7 @@ async function DoctorDetailPage({ params }) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$doctors$2f5b$slug$5d2f$DoctorDetail$2e$module$2e$scss__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].badges,
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    doctor.experienceYears > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$doctors$2f5b$slug$5d2f$DoctorDetail$2e$module$2e$scss__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].badge,
                                         children: [
                                             "Стаж: ",
@@ -440,7 +440,7 @@ async function DoctorDetailPage({ params }) {
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/doctors/[slug]/page.tsx",
                                         lineNumber: 59,
-                                        columnNumber: 25
+                                        columnNumber: 56
                                     }, this),
                                     doctor.specialization && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$doctors$2f5b$slug$5d2f$DoctorDetail$2e$module$2e$scss__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].badge,
@@ -582,7 +582,7 @@ async function DoctorDetailPage({ params }) {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$doctors$2f5b$slug$5d2f$DoctorDetail$2e$module$2e$scss__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].servicePrice,
-                                                children: srv.price ? `${srv.price} ₽` : "По запросу"
+                                                children: srv.price == null ? "По запросу" : srv.price === 0 ? "Бесплатно" : `${srv.price} ₽`
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/doctors/[slug]/page.tsx",
                                                 lineNumber: 104,

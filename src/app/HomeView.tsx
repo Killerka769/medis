@@ -101,7 +101,7 @@ export function HomeView({ data }: { data: any }) {
                                 </div>
                                 <div className={styles.serviceBottom}>
                                     <div className={styles.servicePrice}>
-                                        {service.price ? (service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽`) : "По запросу"}
+                                        {service.price == null ? "По запросу" : service.price === 0 ? "Бесплатно" : (service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽`)}
                                     </div>
                                     <span className={styles.serviceArrow}>→</span>
                                 </div>
@@ -130,7 +130,7 @@ export function HomeView({ data }: { data: any }) {
                                 <div className={styles.doctorInfo}>
                                     <h3 className={styles.doctorName}>{doctor.name}</h3>
                                     <p className={styles.doctorSpec}>{doctor.specialization}</p>
-                                    <p className={styles.doctorExp}>Стаж: {doctor.experienceYears} лет</p>
+                                    {doctor.experienceYears > 0 && <p className={styles.doctorExp}>Стаж: {doctor.experienceYears} лет</p>}
                                 </div>
                             </Link>
                         ))}

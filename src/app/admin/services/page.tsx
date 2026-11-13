@@ -95,7 +95,9 @@ export default function ServicesPage() {
                                 <th>Категория</th>
                                 <th>Врачи</th>
                                 <th>Цена</th>
+                                {/* Только платный приём — колонка ОМС скрыта
                                 <th>ОМС</th>
+                                */}
                                 <th>Статус</th>
                                 <th>Действия</th>
                             </tr>
@@ -112,8 +114,8 @@ export default function ServicesPage() {
                                         <td>{service.title}</td>
                                         <td>{catTitle}</td>
                                         <td>{doctorNames}</td>
-                                        <td>{service.price ? (service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽`) : "По запросу"}</td>
-                                        <td>{service.isOms ? "Да" : "Нет"}</td>
+                                        <td>{service.price == null ? "По запросу" : service.price === 0 ? "Бесплатно" : (service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽`)}</td>
+                                        {/* <td>{service.isOms ? "Да" : "Нет"}</td> */}
                                         <td>
                                             <span className={`${styles.status} ${service.isActive ? styles.statusActive : styles.statusInactive}`}>
                                                 {service.isActive ? "Активна" : "Скрыта"}
@@ -190,6 +192,7 @@ export default function ServicesPage() {
                         </select>
                         {errors.categoryId && <p className={styles.error}>{errors.categoryId.message}</p>}
                     </div>
+                    {/* Только платный приём — поле ОМС скрыто, при создании всегда false
                     <div className={styles.field}>
                         <label className={styles.label}>ОМС</label>
                         <select className={styles.select} {...register("isOms")}>
@@ -197,6 +200,7 @@ export default function ServicesPage() {
                             <option value="true">Да</option>
                         </select>
                     </div>
+                    */}
                     <div className={styles.field}>
                         <label className={styles.label}>Длительность (мин)</label>
                         <input className={styles.input} type="number" {...register("duration")} />
@@ -275,6 +279,7 @@ export default function ServicesPage() {
                         </select>
                         {errorsPut.categoryId && <p className={styles.error}>{errorsPut.categoryId.message}</p>}
                     </div>
+                    {/* Только платный приём — поле ОМС скрыто
                     <div className={styles.field}>
                         <label className={styles.label}>ОМС</label>
                         <select className={styles.select} {...registerPut("isOms")}>
@@ -282,6 +287,7 @@ export default function ServicesPage() {
                             <option value="true">Да</option>
                         </select>
                     </div>
+                    */}
                     <div className={styles.field}>
                         <label className={styles.label}>Длительность (мин)</label>
                         <input className={styles.input} type="number" {...registerPut("duration")} />

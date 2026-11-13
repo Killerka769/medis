@@ -17,7 +17,9 @@ export function Footer() {
                     
                     <div className={styles.col}>
                         <h4 className={styles.colTitle}>Информация</h4>
+                        {/* Только платный приём — страница ОМС скрыта
                         <Link href="/oms" className={styles.link}>Услуги по ОМС</Link>
+                        */}
                         <Link href="/licenses" className={styles.link}>Лицензии и реквизиты</Link>
                         <Link href="/contacts" className={styles.link}>Контакты</Link>
                     </div>
@@ -31,14 +33,16 @@ export function Footer() {
 
                     <div className={styles.col}>
                         <h4 className={styles.colTitle}>Контакты</h4>
-                        <a href="tel:+79285558818" className={styles.phone}>+7 (928) 555-88-18</a>
+                        <a href="tel:+79285558818" className={styles.phone}>+7 928 555-88-18</a>
+                        <a href="mailto:medis-medcentr@mail.ru" className={styles.email}>medis-medcentr@mail.ru</a>
                         <p className={styles.schedule}>Пн-вс: 09:00 – 23:00</p>
                         <p className={styles.address}>г. Махачкала, ул. Ахульго, 77</p>
                         
                         <div className={styles.socials}>
-                            <a href="https://t.me/medis" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Написать в мессенджер">TG</a>
                             <a href="https://wa.me/79285558818" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Написать в чат">WA</a>
-                            <a href="https://vk.com/medis" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="VK">VK</a>
+                            <a href="https://www.instagram.com/medis.medcentr" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Соцсеть клиники">IG</a>
+                            {/* <a href="https://t.me/medis" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Написать в мессенджер">TG</a> */}
+                            {/* <a href="https://vk.com/medis" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="VK">VK</a> */}
                         </div>
                     </div>
                 </div>
@@ -46,7 +50,8 @@ export function Footer() {
                 {/* Нижняя часть: копирайт и юр. инфа */}
                 <div className={styles.bottom}>
                     <div className={styles.legal}>
-                        <p>© {new Date().getFullYear()} Медицинский центр «Медис»</p>
+                        <p>© {new Date().getFullYear()} ООО «МЕДИС»</p>
+                        <p>ИНН 0573010778 · КПП 057301001 · ОГРН 1027700132195</p>
                         <p>Лицензия № Л041-01172-05/00377229 от 11.11.2020 г.</p>
                         <p>Имеются противопоказания. Необходима консультация специалиста.</p>
                         <p>Материалы, размещенные на сайте, носят информационный характер и предназначены для образовательных целей.</p>

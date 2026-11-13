@@ -59,7 +59,7 @@ export default function AppointmentsContent() {
                 <div className={styles.successCard}>
                     <h2>Войдите, чтобы записаться</h2>
                     <p>Запись на прием доступна в личном кабинете. Если аккаунта ещё нет — регистрация займёт минуту.</p>
-                    <a href="tel:+79285558818" className={styles.phone}>+7 (928) 555-88-18</a>
+                    <a href="tel:+79285558818" className={styles.phone}>+7 928 555-88-18</a>
                     <div className={styles.authActions}>
                         <Link href="/login" className={styles.btnPrimary}>Войти</Link>
                         <Link href="/register" className={styles.btnSecondary}>Создать аккаунт</Link>
@@ -90,7 +90,7 @@ export default function AppointmentsContent() {
                     <p className={styles.subtitle}>Выберите удобное время и специалиста. Мы позаботимся о вашем здоровье.</p>
                     <div className={styles.contacts}>
                         <p>Или запишитесь по телефону:</p>
-                        <a href="tel:+79285558818" className={styles.phone}>+7 (928) 555-88-18</a>
+                        <a href="tel:+79285558818" className={styles.phone}>+7 928 555-88-18</a>
                     </div>
                 </div>
 

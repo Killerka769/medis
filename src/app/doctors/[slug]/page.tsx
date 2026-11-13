@@ -56,7 +56,7 @@ export default async function DoctorDetailPage({ params }: Props) {
                     <p className={styles.spec}>{doctor.specialization}</p>
 
                     <div className={styles.badges}>
-                        <span className={styles.badge}>Стаж: {doctor.experienceYears} лет</span>
+                        {doctor.experienceYears > 0 && <span className={styles.badge}>Стаж: {doctor.experienceYears} лет</span>}
                         {doctor.specialization && (
                             <span className={styles.badge}>{doctor.specialization}</span>
                         )}
@@ -102,7 +102,7 @@ export default async function DoctorDetailPage({ params }: Props) {
                                 <Link href={`/services/${srv.slug}`} key={srv.id} className={styles.serviceLink}>
                                     <span>{srv.title}</span>
                                     <span className={styles.servicePrice}>
-                                        {srv.price ? `${srv.price} ₽` : "По запросу"}
+                                        {srv.price == null ? "По запросу" : srv.price === 0 ? "Бесплатно" : `${srv.price} ₽`}
                                     </span>
                                 </Link>
                             ))}

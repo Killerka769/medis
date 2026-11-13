@@ -580,7 +580,7 @@ function ServicesCatalog({ services, categories }) {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$services$2f$ServicesPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].price,
-                                        children: service.price ? service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽` : "По запросу"
+                                        children: service.price == null ? "По запросу" : service.price === 0 ? "Бесплатно" : service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽`
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/services/ServicesCatalog.tsx",
                                         lineNumber: 51,

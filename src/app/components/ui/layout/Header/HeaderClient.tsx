@@ -56,7 +56,9 @@ export function HeaderClient({ isAuth, isAdmin }: { isAuth: boolean, isAdmin: bo
                     <Link className={styles.navLink} href="/doctors" onClick={closeMenu}>Врачи</Link>
                     <Link className={styles.navLink} href="/shop" onClick={closeMenu}>Магазин</Link>
                     <Link className={styles.navLink} href="/blog" onClick={closeMenu}>Блог</Link>
+                    {/* Только платный приём — страница ОМС скрыта
                     <Link className={styles.navLink} href="/oms" onClick={closeMenu}>ОМС</Link>
+                    */}
                     <Link className={styles.navLink} href="/contacts" onClick={closeMenu}>Контакты</Link>
 
                     <div className={styles.authButtons}>

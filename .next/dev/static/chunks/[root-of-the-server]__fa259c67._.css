@@ -476,6 +476,19 @@ main {
   text-decoration: none;
 }
 
+.Footer-module-scss-module__izbZ2G__email {
+  color: #cbd5e1;
+  word-break: break-word;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.Footer-module-scss-module__izbZ2G__email:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .Footer-module-scss-module__izbZ2G__schedule {
   color: #94a3b8;
   font-size: 14px;
@@ -628,6 +641,10 @@ main {
 
 .FloatingContact-module-scss-module__YZvlwG__tg {
   background: #1e5f9e;
+}
+
+.FloatingContact-module-scss-module__YZvlwG__ig {
+  background: #7a3b6e;
 }
 
 .FloatingContact-module-scss-module__YZvlwG__wa {

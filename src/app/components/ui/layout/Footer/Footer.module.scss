@@ -54,6 +54,19 @@
     text-decoration: none;
     margin-bottom: 4px;
   }
+
+  .email {
+    font-size: 14px;
+    font-weight: 500;
+    color: #cbd5e1;
+    text-decoration: none;
+    word-break: break-word;
+
+    &:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  }
   
   .schedule {
     font-size: 14px;

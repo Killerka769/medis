@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
         }
         if(roleCurrentUser !== "admin") return NextResponse.json({ message: "Нет доступа" }, { status: 403 });
         
-        const { title, description, content, price, priceFrom, categoryId, isOms, duration, imageUrl, isActive, doctorIds } = await req.json();
+        const { title, description, content, price, priceFrom, categoryId, duration, imageUrl, isActive, doctorIds } = await req.json();
         if(!title || !categoryId) return NextResponse.json({ message: "Заполните название и категорию" }, { status: 400 });
         
         const slug = await generateSlug(title);
@@ -48,10 +48,10 @@ export async function POST(req: NextRequest) {
             slug, 
             description: description || null, 
             content: content || null, 
-            price: price ? Number(price) : null, 
+            price: price === "" || price == null ? null : Number(price),
             priceFrom: priceFrom === "true" || priceFrom === true, 
             categoryId, 
-            isOms: isOms === "true" || isOms === true, 
+            isOms: false, // только платный приём; поле isOms в БД сохранено
             duration: duration ? Number(duration) : null, 
             imageUrl: imageUrl || null, 
             isActive: isActive === "true" || isActive === true 
@@ -95,7 +95,7 @@ export async function PUT(req: NextRequest) {
             slug, 
             description: description || null, 
             content: content || null, 
-            price: price ? Number(price) : null, 
+            price: price === "" || price == null ? null : Number(price),
             priceFrom: priceFrom === "true" || priceFrom === true, 
             categoryId, 
             isOms: isOms === "true" || isOms === true, 

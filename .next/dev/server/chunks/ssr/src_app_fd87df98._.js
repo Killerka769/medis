@@ -96,7 +96,7 @@ const steps = [
     {
         num: "3",
         title: "Приём",
-        text: "Приходите в клинику к назначенному часу. Паспорт и полис возьмите с собой."
+        text: "Приходите в клинику к назначенному часу. Возьмите паспорт."
     }
 ];
 function VisitSteps() {
@@ -296,11 +296,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$
 const items = [
     {
         q: "Как подготовиться к анализам и приёму?",
-        a: "На большинство анализов крови приходите натощак (не есть 8–12 часов, воду можно). Паспорт и полис ОМС возьмите с собой. Если нужна особая подготовка — администратор подскажет при подтверждении записи."
+        a: "На большинство анализов крови приходите натощак (не есть 8–12 часов, воду можно). Возьмите паспорт. Если нужна особая подготовка — администратор подскажет при подтверждении записи."
     },
     {
         q: "Можно ли прийти с ребёнком?",
-        a: "Да. Детей можно привести на приём, а также подождать в зоне ожидания. Если нужен детский специалист — уточните по телефону +7 (928) 555-88-18."
+        a: "Да. Детей можно привести на приём, а также подождать в зоне ожидания. Если нужен детский специалист — уточните по телефону +7 928 555-88-18."
     },
     {
         q: "Есть ли парковка у клиники?",
@@ -1067,7 +1067,7 @@ function HomeView({ data }) {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].servicePrice,
-                                                children: service.price ? service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽` : "По запросу"
+                                                children: service.price == null ? "По запросу" : service.price === 0 ? "Бесплатно" : service.priceFrom ? `от ${service.price} ₽` : `${service.price} ₽`
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
                                                 lineNumber: 103,
@@ -1179,7 +1179,7 @@ function HomeView({ data }) {
                                                 lineNumber: 132,
                                                 columnNumber: 37
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            doctor.experienceYears > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$HomePage$2e$module$2e$scss__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].doctorExp,
                                                 children: [
                                                     "Стаж: ",
@@ -1189,7 +1189,7 @@ function HomeView({ data }) {
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/HomeView.tsx",
                                                 lineNumber: 133,
-                                                columnNumber: 37
+                                                columnNumber: 68
                                             }, this)
                                         ]
                                     }, void 0, true, {
