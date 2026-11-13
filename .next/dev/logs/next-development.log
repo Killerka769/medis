@@ -1,45 +1,5 @@
-[00:00:01.145] Server  LOG     ✓ Ready in 934ms
-[00:00:33.759] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:17.785] Server  LOG     ✓ Compiled in 47ms
-[00:01:18.292] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
-[00:01:18.293] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
-[00:01:18.293] Browser ERROR   uncaughtError: Error: Failed to parse src "public/uploads/hero/hero.webp" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
-[00:01:22.348] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:01:22.886] Server  LOG     ✓ Compiled in 8ms
-[00:01:23.165] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:27.260] Server  LOG     ✓ Compiled in 16ms
-[00:01:27.524] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
-[00:01:27.524] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
-[00:01:27.524] Browser ERROR   uncaughtError: Error: Failed to parse src "uploads/hero/hero.webp" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
-[00:01:29.155] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:01:29.238] Server  LOG     ✓ Compiled in 17ms
-[00:01:29.404] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:55.911] Server  LOG     ✓ Compiled in 18ms
-[00:02:58.281] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:10.167] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:11.176] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:11.715] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:12.115] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:12.483] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:24.953] Server  LOG     ✓ Compiled in 12ms
-[00:04:25.122] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/hero1.webp" "received" null
-[00:04:29.074] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:29.196] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/hero1.webp" "received" null
-[00:04:46.163] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:46.295] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/hero1.webp" "received" null
-[00:04:47.497] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:47.605] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/hero1.webp" "received" null
-[00:04:48.373] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:48.498] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/hero1.webp" "received" null
-[00:04:59.505] Server  LOG     ✓ Compiled in 15ms
-[00:04:59.512] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/hero/hero1.webp" "received" null
-[00:05:02.414] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:02.527] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/hero/hero1.webp" "received" null
-[00:05:04.106] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:04.241] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/hero/hero1.webp" "received" null
-[00:05:04.730] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:04.835] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/hero/hero1.webp" "received" null
-[00:05:09.740] Server  LOG     ✓ Compiled in 18ms
-[00:05:12.325] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:39.431] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:40.293] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:01.084] Server  LOG     ✓ Ready in 872ms
+[00:00:07.720] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:27.255] Server  LOG     ✓ Compiled in 47ms
+[00:00:27.425] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/heroPage.webp" "received" null
+[00:00:39.721] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

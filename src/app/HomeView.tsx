@@ -49,7 +49,7 @@ export function HomeView({ data }: { data: any }) {
                 <div className={styles.heroImage}>
                     <div className={styles.heroImageWrapper}>
                         <Image
-                            src="/hero.webp"
+                            src="/heroPage.webp"
                             width={960}
                             height={720}
                             priority
