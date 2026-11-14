@@ -3,25 +3,21 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
     try {
-        const [doctors, services, links] = await Promise.all([
-            db.orm.public.Doctor.where({ isActive: true }).orderBy((d) => d.name.asc()).all(),
-            db.orm.public.Service.where({ isActive: true }).include("category").all(),
-            db.orm.public.DoctorService.all(),
-        ]);
+        const doctors = await db.orm.public.Doctor.where({ isActive: true }).orderBy((d) => d.name.asc()).all();
+        const services = await db.orm.public.Service.where({ isActive: true }).include("category").all();
+        const links = await db.orm.public.DoctorService.all();
 
-        type DoctorRow = (typeof doctors)[number];
-        const doctorsById = new Map(doctors.map((doctor) => [doctor.id, doctor]));
-        const doctorsByService: Record<string, DoctorRow[]> = {};
-
+        const doctorsByService: Record<string, typeof doctors> = {};
         for (const link of links) {
-            const doctor = doctorsById.get(link.doctorId);
+            const doctor = doctors.find((item) => item.id === link.doctorId);
             if (!doctor) continue;
-            if (!doctorsByService[link.serviceId]) doctorsByService[link.serviceId] = [];
-            doctorsByService[link.serviceId].push(doctor);
+            const current = doctorsByService[link.serviceId] ?? [];
+            if (current.some((item) => item.id === doctor.id)) continue;
+            doctorsByService[link.serviceId] = current.concat(doctor);
         }
 
-        for (const list of Object.values(doctorsByService)) {
-            list.sort((a, b) => a.name.localeCompare(b.name, "ru"));
+        for (const serviceId of Object.keys(doctorsByService)) {
+            doctorsByService[serviceId] = [...doctorsByService[serviceId]].sort((a, b) => a.name.localeCompare(b.name, "ru"));
         }
 
         const servicesWithDoctors = [...services]
@@ -33,7 +29,7 @@ export async function GET() {
             })
             .map((service) => ({
                 ...service,
-                doctors: doctorsByService[service.id] || [],
+                doctors: doctorsByService[service.id] ?? [],
             }));
 
         return NextResponse.json({ doctors, services: servicesWithDoctors });
