@@ -54,7 +54,9 @@ export default function AppointmentsContent() {
     const doctorsForService = useMemo(() => {
         if (!selectedServiceId || !bookingData?.services) return [];
         const service = bookingData.services.find((item: { id: string }) => item.id === selectedServiceId);
-        return (service?.doctors || []).filter((doc: { isActive?: boolean }) => doc && doc.isActive !== false);
+        const linked = (service?.doctors || []).filter((doc: { isActive?: boolean }) => doc && doc.isActive !== false);
+        if (linked.length) return linked;
+        return (bookingData.doctors || []).filter((doc: { isActive?: boolean }) => doc && doc.isActive !== false);
     }, [bookingData, selectedServiceId]);
 
     useEffect(() => {

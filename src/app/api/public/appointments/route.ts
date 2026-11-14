@@ -24,8 +24,18 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ message: "Заполните все обязательные поля" }, { status: 400 });
         }
 
-        const link = await db.orm.public.DoctorService.where({ doctorId, serviceId }).first();
-        if (!link) {
+        const [doctor, service, link] = await Promise.all([
+            db.orm.public.Doctor.where({ id: doctorId, isActive: true }).first(),
+            db.orm.public.Service.where({ id: serviceId, isActive: true }).include("category").first(),
+            db.orm.public.DoctorService.where({ doctorId, serviceId }).first(),
+        ]);
+
+        if (!doctor || !service) {
+            return NextResponse.json({ message: "Врач или услуга не найдены" }, { status: 400 });
+        }
+
+        const linksForService = await db.orm.public.DoctorService.where({ serviceId }).all();
+        if (linksForService.length > 0 && !link) {
             return NextResponse.json({ message: "Этот врач не оказывает выбранную услугу" }, { status: 400 });
         }
 

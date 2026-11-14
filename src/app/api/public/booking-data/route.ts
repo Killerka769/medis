@@ -1,23 +1,29 @@
+import { matchDoctorsForService } from "@/src/lib/booking/matchDoctors";
 import { db } from "@/src/prisma/db";
 import { NextResponse } from "next/server";
 
+function asId(value: unknown) {
+    return String(value ?? "");
+}
+
 export async function GET() {
     try {
-        const doctors = await db.orm.public.Doctor.where({ isActive: true }).orderBy((d) => d.name.asc()).all();
-        const services = await db.orm.public.Service.where({ isActive: true }).include("category").all();
-        const links = await db.orm.public.DoctorService.all();
+        const [doctors, services, links] = await Promise.all([
+            db.orm.public.Doctor.where({ isActive: true }).orderBy((d) => d.name.asc()).all(),
+            db.orm.public.Service.where({ isActive: true }).include("category").all(),
+            db.orm.public.DoctorService.all(),
+        ]);
 
-        const doctorsByService: Record<string, typeof doctors> = {};
+        const doctorsById = new Map(doctors.map((doctor) => [asId(doctor.id), doctor]));
+        const doctorsByService = new Map<string, typeof doctors>();
+
         for (const link of links) {
-            const doctor = doctors.find((item) => item.id === link.doctorId);
-            if (!doctor) continue;
-            const current = doctorsByService[link.serviceId] ?? [];
-            if (current.some((item) => item.id === doctor.id)) continue;
-            doctorsByService[link.serviceId] = current.concat(doctor);
-        }
-
-        for (const serviceId of Object.keys(doctorsByService)) {
-            doctorsByService[serviceId] = [...doctorsByService[serviceId]].sort((a, b) => a.name.localeCompare(b.name, "ru"));
+            const doctor = doctorsById.get(asId(link.doctorId));
+            const serviceId = asId(link.serviceId);
+            if (!doctor || !serviceId) continue;
+            const current = doctorsByService.get(serviceId) ?? [];
+            if (current.some((item) => asId(item.id) === asId(doctor.id))) continue;
+            doctorsByService.set(serviceId, current.concat(doctor));
         }
 
         const servicesWithDoctors = [...services]
@@ -27,12 +33,51 @@ export async function GET() {
                 if (orderA !== orderB) return orderA - orderB;
                 return a.title.localeCompare(b.title, "ru");
             })
-            .map((service) => ({
-                ...service,
-                doctors: doctorsByService[service.id] ?? [],
-            }));
+            .map((service) => {
+                const linked = doctorsByService.get(asId(service.id)) ?? [];
+                const matched = linked.length
+                    ? linked
+                    : matchDoctorsForService(service.category?.title || "", service.title, doctors);
+                const serviceDoctors = [...(matched.length ? matched : doctors)].sort((a, b) =>
+                    a.name.localeCompare(b.name, "ru"),
+                );
 
-        return NextResponse.json({ doctors, services: servicesWithDoctors });
+                return {
+                    id: asId(service.id),
+                    title: service.title,
+                    slug: service.slug,
+                    price: service.price,
+                    priceFrom: service.priceFrom,
+                    isActive: service.isActive,
+                    category: service.category
+                        ? {
+                            id: asId(service.category.id),
+                            title: service.category.title,
+                            sortOrder: service.category.sortOrder,
+                        }
+                        : null,
+                    doctors: serviceDoctors.map((doctor) => ({
+                        id: asId(doctor.id),
+                        name: doctor.name,
+                        specialization: doctor.specialization,
+                        isActive: doctor.isActive,
+                        slug: doctor.slug,
+                        photoUrl: doctor.photoUrl,
+                    })),
+                };
+            });
+
+        return NextResponse.json({
+            doctors: doctors.map((doctor) => ({
+                id: asId(doctor.id),
+                name: doctor.name,
+                specialization: doctor.specialization,
+                isActive: doctor.isActive,
+                slug: doctor.slug,
+                photoUrl: doctor.photoUrl,
+            })),
+            services: servicesWithDoctors,
+        });
     } catch (error) {
         console.error(error);
         return NextResponse.json({ message: "Ошибка загрузки" }, { status: 500 });
