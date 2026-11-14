@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BA%D1%88%D0%B5%D0%BD%D1%8B/medis/src/app/register/layout.tsx"],"sourcesContent":["import type { Metadata } from \"next\";\n\nexport const metadata: Metadata = {\n    title: \"Регистрация\",\n    description: \"Регистрация в личном кабинете медицинского центра Медис.\",\n    robots: { index: false, follow: false },\n};\n\nexport default function RegisterLayout({ children }: { children: React.ReactNode }) {\n    return children;\n}\n"],"names":[],"mappings":";;;;;;AAEO,MAAM,WAAqB;IAC9B,OAAO;IACP,aAAa;IACb,QAAQ;QAAE,OAAO;QAAO,QAAQ;IAAM;AAC1C;AAEe,SAAS,eAAe,EAAE,QAAQ,EAAiC;IAC9E,OAAO;AACX"}}]
-}

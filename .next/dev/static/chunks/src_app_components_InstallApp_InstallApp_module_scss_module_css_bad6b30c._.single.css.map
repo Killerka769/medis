@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///D:/Продакшены/medis/src/app/components/InstallApp/InstallApp.module.scss"],"sourcesContent":[".wrap { margin-top: 12px; }\n.btn {\n  background: transparent;\n  border: 1px solid rgba(255, 255, 255, 0.35);\n  color: #fff;\n  padding: 8px 14px;\n  border-radius: 10px;\n  cursor: pointer;\n  font-size: 13px;\n  font-weight: 600;\n}\n.hint {\n  margin-top: 8px;\n  font-size: 12px;\n  color: #A8C08A;\n  max-width: 260px;\n  line-height: 1.4;\n}\n"],"names":[],"mappings":"AAAA;;;;AACA;;;;;;;;;;;AAUA"}}]
-}
