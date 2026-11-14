@@ -1,27 +1,38 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getPublicDoctor } from "@/src/lib/data/public";
+import { getPublicDoctor, getPublicDoctors } from "@/src/lib/data/public";
 import { DoctorAvatar } from "../../components/DoctorAvatar";
 import styles from "./DoctorDetail.module.scss";
 
 type Props = { params: Promise<{ slug: string }> };
 
+export async function generateStaticParams() {
+    try {
+        const { doctors } = await getPublicDoctors();
+        return doctors.map((doctor: { slug: string }) => ({ slug: doctor.slug }));
+    } catch {
+        return [];
+    }
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const data = await getPublicDoctor(slug).catch(() => null);
-    if (!data) return { title: "Врач не найден | Медис" };
+    if (!data) return { title: "Врач не найден" };
 
-    const title = `${data.doctor.name} — ${data.doctor.specialization} | Медис`;
+    const title = `${data.doctor.name} — ${data.doctor.specialization}`;
     const description = data.doctor.bio || `Запись к врачу ${data.doctor.name}, ${data.doctor.specialization}. Клиника Медис, Махачкала.`;
 
     return {
         title,
         description,
+        alternates: { canonical: `/doctors/${slug}` },
         openGraph: {
             title,
             description,
-            images: [{ url: data.doctor.photoUrl || "/hero.webp" }],
+            images: [{ url: data.doctor.photoUrl || "/hero-v2.webp" }],
+            url: `https://medis05.ru/doctors/${slug}`,
         },
     };
 }

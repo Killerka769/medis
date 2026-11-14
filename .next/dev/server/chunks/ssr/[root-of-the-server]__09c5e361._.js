@@ -50,10 +50,18 @@ async function getHomeData() {
     const articles = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["db"].orm.public.Article.where({
         status: "published"
     }).orderBy((a)=>a.publishedAt.desc()).include("category").limit(3).all();
+    const banners = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["db"].orm.public.Banner.where({
+        isActive: true
+    }).orderBy((b)=>b.sortOrder.asc()).all();
+    const homeBanners = banners.filter((banner)=>{
+        const list = (banner.pages || "/").split(",").map((item)=>item.trim());
+        return list.includes("/") || list.includes("*");
+    });
     return {
         doctors,
         services,
-        articles
+        articles,
+        banners: homeBanners
     };
 }
 async function getPublicServices() {
@@ -262,18 +270,24 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 ;
 ;
 const metadata = {
-    title: "Медис — клиника в Махачкале | Запись на прием",
-    description: "Медицинский центр «Медис» в Махачкале. Платный приём врачей, диагностика и процедуры. Запись онлайн, работаем ежедневно с 09:00 до 23:00.",
+    title: {
+        absolute: "Медицинский центр Медис в Махачкале"
+    },
+    description: "Платный приём врачей, УЗИ и процедуры в Махачкале. Запись онлайн, ежедневно с 09:00 до 23:00. ул. Ахульго, 77.",
+    alternates: {
+        canonical: "/"
+    },
     openGraph: {
-        title: "Медис — клиника в Махачкале",
+        title: "Медицинский центр Медис в Махачкале",
         description: "Запись к врачу онлайн. ул. Ахульго, 77. Ежедневно с 09:00 до 23:00.",
         images: [
             {
-                url: "/hero.webp"
+                url: "/hero-v2.webp"
             }
         ],
         locale: "ru_RU",
-        type: "website"
+        type: "website",
+        url: "https://medis05.ru"
     }
 };
 async function HomeContent() {
@@ -288,12 +302,12 @@ async function HomeContent() {
                 children: "Ошибка загрузки данных"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 25,
+                lineNumber: 27,
                 columnNumber: 46
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 25,
+            lineNumber: 27,
             columnNumber: 16
         }, this);
     }
@@ -301,7 +315,7 @@ async function HomeContent() {
         data: data
     }, void 0, false, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 28,
+        lineNumber: 30,
         columnNumber: 12
     }, this);
 }
@@ -309,17 +323,17 @@ function HomePage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Suspense"], {
         fallback: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$Skeleton$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["HomeLoading"], {}, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 33,
+            lineNumber: 35,
             columnNumber: 29
         }, void 0),
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(HomeContent, {}, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 34,
+            lineNumber: 36,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 33,
+        lineNumber: 35,
         columnNumber: 9
     }, this);
 }

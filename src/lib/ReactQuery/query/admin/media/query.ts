@@ -1,5 +1,4 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Rethink_Sans } from "next/font/google";
 
 export function useGetMedia(folder: string) {
     return useQuery({

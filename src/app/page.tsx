@@ -6,14 +6,16 @@ import { HomeLoading } from "./components/ui/Skeleton";
 import styles from "./HomePage.module.scss";
 
 export const metadata: Metadata = {
-    title: "Медис — клиника в Махачкале | Запись на прием",
-    description: "Медицинский центр «Медис» в Махачкале. Платный приём врачей, диагностика и процедуры. Запись онлайн, работаем ежедневно с 09:00 до 23:00.",
+    title: { absolute: "Медицинский центр Медис в Махачкале" },
+    description: "Платный приём врачей, УЗИ и процедуры в Махачкале. Запись онлайн, ежедневно с 09:00 до 23:00. ул. Ахульго, 77.",
+    alternates: { canonical: "/" },
     openGraph: {
-        title: "Медис — клиника в Махачкале",
+        title: "Медицинский центр Медис в Махачкале",
         description: "Запись к врачу онлайн. ул. Ахульго, 77. Ежедневно с 09:00 до 23:00.",
-        images: [{ url: "/hero.webp" }],
+        images: [{ url: "/hero-v2.webp" }],
         locale: "ru_RU",
         type: "website",
+        url: "https://medis05.ru",
     },
 };
 

@@ -90,7 +90,7 @@
 }
 
 .ArticleCategoriesPage-module-scss-module__RkYazW__createBtn {
-  color: var(--color-white);
+  color: var(--color-on-primary);
   background: var(--color-primary);
   cursor: pointer;
   border: none;
@@ -128,7 +128,7 @@
   border: 1px solid var(--color-border);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px #1e5f9e0f;
+  box-shadow: 0 4px 20px #5b8c3a0f;
 }
 
 .ArticleCategoriesPage-module-scss-module__RkYazW__table {
@@ -246,7 +246,7 @@
 
 .ArticleCategoriesPage-module-scss-module__RkYazW__input:focus, .ArticleCategoriesPage-module-scss-module__RkYazW__select:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px #1e5f9e1f;
+  box-shadow: 0 0 0 3px #5b8c3a1f;
 }
 
 .ArticleCategoriesPage-module-scss-module__RkYazW__error {
@@ -271,7 +271,7 @@
 }
 
 .ArticleCategoriesPage-module-scss-module__RkYazW__submitBtn {
-  color: var(--color-white);
+  color: var(--color-on-primary);
   background: var(--color-primary);
   cursor: pointer;
   border: none;

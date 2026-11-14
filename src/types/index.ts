@@ -126,6 +126,33 @@ export type TAppointments = {
     service?: { title: string };
 }
 
+export type TBanner = {
+    id: string;
+    imageUrl: string;
+    title: string | null;
+    subtitle: string | null;
+    buttonText: string | null;
+    buttonLink: string | null;
+    sortOrder: number;
+    isActive: boolean;
+    pages: string;
+    intervalMs: number;
+    createdAt: string;
+    updatedAt: string;
+}
+
+export type TNotification = {
+    id: string;
+    title: string;
+    text: string;
+    isFullScreen: boolean;
+    isActive: boolean;
+    expiresAt: string | null;
+    durationMs: number;
+    createdAt: string;
+    updatedAt: string;
+}
+
 export type TProductRequests = {
     id: string;
     productId: string;

@@ -1,7 +1,7 @@
 /* [project]/src/app/components/ui/layout/Footer/Footer.module.scss.module.css [app-client] (css) */
 .Footer-module-scss-module__izbZ2G__footer {
-  color: #f8fafc;
-  background: #1e293b;
+  color: #f0f7e6;
+  background: #1f3310;
   margin-top: 80px;
   padding: 60px 0 20px;
   position: relative;
@@ -37,7 +37,7 @@
 }
 
 .Footer-module-scss-module__izbZ2G__link {
-  color: #cbd5e1;
+  color: #d5e8c4;
   font-size: 15px;
   text-decoration: none;
   transition: color .2s;
@@ -57,7 +57,7 @@
 }
 
 .Footer-module-scss-module__izbZ2G__email {
-  color: #cbd5e1;
+  color: #d5e8c4;
   word-break: break-word;
   font-size: 14px;
   font-weight: 500;
@@ -70,12 +70,12 @@
 }
 
 .Footer-module-scss-module__izbZ2G__schedule {
-  color: #94a3b8;
+  color: #a8c08a;
   font-size: 14px;
 }
 
 .Footer-module-scss-module__izbZ2G__address {
-  color: #cbd5e1;
+  color: #d5e8c4;
   margin-top: 8px;
   font-size: 15px;
 }
@@ -118,7 +118,7 @@
 }
 
 .Footer-module-scss-module__izbZ2G__legal {
-  color: #94a3b8;
+  color: #a8c08a;
   max-width: 700px;
   font-size: 13px;
   line-height: 1.6;
@@ -136,7 +136,7 @@
 }
 
 .Footer-module-scss-module__izbZ2G__metaLink {
-  color: #94a3b8;
+  color: #a8c08a;
   font-size: 13px;
   text-decoration: none;
   transition: color .2s;

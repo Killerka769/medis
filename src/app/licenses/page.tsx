@@ -1,7 +1,9 @@
 import styles from "../(legal)/LegalPage.module.scss";
 
 export const metadata = {
-    title: "Лицензии и реквизиты | Медис",
+    title: "Лицензии и реквизиты",
+    description: "Лицензия, ИНН, ОГРН и реквизиты ООО МЕДИС. Медицинский центр в Махачкале.",
+    alternates: { canonical: "/licenses" },
 };
 
 export default function LicensesPage() {

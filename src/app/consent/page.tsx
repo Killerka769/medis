@@ -1,7 +1,9 @@
 import styles from "../(legal)/LegalPage.module.scss";
 
 export const metadata = {
-    title: "Согласие на обработку персональных данных | Медис",
+    title: "Согласие на обработку персональных данных",
+    description: "Согласие на обработку персональных данных пациентов клиники Медис.",
+    alternates: { canonical: "/consent" },
 };
 
 export default function ConsentPage() {

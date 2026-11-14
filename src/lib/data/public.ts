@@ -20,7 +20,17 @@ export async function getHomeData() {
         .limit(3)
         .all();
 
-    return { doctors, services, articles };
+    const banners = await db.orm.public.Banner
+        .where({ isActive: true })
+        .orderBy(b => b.sortOrder.asc())
+        .all();
+
+    const homeBanners = banners.filter((banner: { pages: string }) => {
+        const list = (banner.pages || "/").split(",").map((item: string) => item.trim());
+        return list.includes("/") || list.includes("*");
+    });
+
+    return { doctors, services, articles, banners: homeBanners };
 }
 
 export async function getPublicServices() {

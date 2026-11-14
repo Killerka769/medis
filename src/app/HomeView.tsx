@@ -9,6 +9,7 @@ import { TrustBlock } from "./components/home/TrustBlock";
 import { Faq } from "./components/home/Faq";
 import { MediaPlaceholder } from "./components/MediaPlaceholder";
 import { DoctorAvatar } from "./components/DoctorAvatar";
+import { BannerSlider } from "./components/BannerSlider/BannerSlider";
 
 export function HomeView({ data }: { data: any }) {
     useEffect(() => {
@@ -84,6 +85,10 @@ export function HomeView({ data }: { data: any }) {
                     </div>
                 </div>
             </section>
+
+            {data.banners && data.banners.length > 0 && (
+                <BannerSlider banners={data.banners} />
+            )}
 
             {data.services && data.services.length > 0 && (
                 <section className={`${styles.section} ${styles.reveal}`}>

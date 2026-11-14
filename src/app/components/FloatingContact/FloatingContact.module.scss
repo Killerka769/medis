@@ -29,8 +29,8 @@
   }
 }
 
-.phone { background: var(--color-primary); }
-.tg { background: #1e5f9e; }
+.phone { background: var(--color-primary); color: var(--color-on-primary); }
+.tg { background: var(--color-primary-dark); }
 .ig { background: #7a3b6e; }
 
 .wa {

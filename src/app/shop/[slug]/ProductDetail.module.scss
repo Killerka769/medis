@@ -29,20 +29,20 @@
 }
 
 .sidebar { position: sticky; top: 100px; }
-.formCard { background: white; padding: 30px; border-radius: 20px; border: 1px solid var(--color-border); box-shadow: 0 15px 40px rgba(30, 95, 158, 0.08); }
+.formCard { background: white; padding: 30px; border-radius: 20px; border: 1px solid var(--color-border); box-shadow: 0 15px 40px rgba(91, 140, 58, 0.08); }
 .formTitle { font-size: 22px; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 8px; }
 .formSubtitle { font-size: 14px; color: var(--color-text-muted); margin-bottom: 24px; }
 
 .form { display: flex; flex-direction: column; gap: 16px; }
 .field { display: flex; flex-direction: column; gap: 6px; }
 .input, .textarea { width: 100%; padding: 14px; font-size: 15px; background: #f8fafc; border: 1px solid var(--color-border); border-radius: 10px; outline: none; transition: all 0.2s; font-family: inherit;
-    &:focus { border-color: var(--color-primary); background: white; box-shadow: 0 0 0 3px rgba(30, 95, 158, 0.1); }
+    &:focus { border-color: var(--color-primary); background: white; box-shadow: 0 0 0 3px rgba(91, 140, 58, 0.1); }
 }
 .textarea { resize: vertical; }
 .error { font-size: 12px; color: var(--color-error); }
 .serverError { font-size: 13px; color: #dc2626; text-align: center; }
 
-.btnSubmit { width: 100%; padding: 16px; background: var(--color-primary); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.2s; margin-top: 8px;
+.btnSubmit { width: 100%; padding: 16px; background: var(--color-primary); color: var(--color-on-primary); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.2s; margin-top: 8px;
     &:hover:not(:disabled) { background: var(--color-primary-dark); transform: translateY(-2px); }
     &:disabled { opacity: 0.7; cursor: not-allowed; }
 }

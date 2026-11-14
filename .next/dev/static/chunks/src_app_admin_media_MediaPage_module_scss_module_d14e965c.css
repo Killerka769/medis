@@ -23,7 +23,7 @@
   min-height: 60vh;
   padding: 24px;
   display: flex;
-  box-shadow: 0 10px 40px #1e5f9e0d;
+  box-shadow: 0 10px 40px #5b8c3a0d;
 }
 
 .MediaPage-module-scss-module__ENyfTG__toolbar {
@@ -68,7 +68,7 @@
 
 .MediaPage-module-scss-module__ENyfTG__btn {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
   cursor: pointer;
   border: none;
   border-radius: 10px;
@@ -128,7 +128,7 @@
 .MediaPage-module-scss-module__ENyfTG__card:hover {
   border-color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px #1e5f9e1a;
+  box-shadow: 0 8px 24px #5b8c3a1a;
 }
 
 .MediaPage-module-scss-module__ENyfTG__deleteBtn {
@@ -220,7 +220,7 @@
 
 .MediaPage-module-scss-module__ENyfTG__copyBtn:hover {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
 }
 
 .MediaPage-module-scss-module__ENyfTG__loading, .MediaPage-module-scss-module__ENyfTG__empty {

@@ -1,7 +1,9 @@
 import styles from "../(legal)/LegalPage.module.scss";
 
 export const metadata = {
-    title: "Политика использования Cookie | Медис",
+    title: "Политика Cookie",
+    description: "Как медицинский центр Медис использует файлы cookie.",
+    alternates: { canonical: "/cookie" },
 };
 
 export default function CookiePage() {

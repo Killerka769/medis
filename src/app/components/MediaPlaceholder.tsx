@@ -19,7 +19,7 @@ function ArticleMark() {
         <svg className={styles.icon} viewBox="0 0 80 80" fill="none" aria-hidden>
             <rect x="20" y="14" width="40" height="52" rx="6" stroke="currentColor" strokeWidth="3" />
             <path d="M30 30h20M30 40h20M30 50h12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-            <circle cx="54" cy="56" r="10" fill="#e8f2fa" stroke="currentColor" strokeWidth="3" />
+            <circle cx="54" cy="56" r="10" fill="#F0F7E6" stroke="currentColor" strokeWidth="3" />
             <path d="M54 51v10M49 56h10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
         </svg>
     );

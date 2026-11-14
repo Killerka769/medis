@@ -86,6 +86,16 @@ const menuItems = [
         icon: "👥"
     },
     {
+        path: "/admin/banners",
+        label: "Баннеры",
+        icon: "🖼️"
+    },
+    {
+        path: "/admin/notifications",
+        label: "Уведомления",
+        icon: "🔔"
+    },
+    {
         path: "/admin/media",
         label: "Медиатека",
         icon: "📁"
@@ -107,18 +117,18 @@ function AdminSidebar() {
                             children: "Admin"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/AdminSidebar/AdminSidebar.tsx",
-                            lineNumber: 29,
+                            lineNumber: 31,
                             columnNumber: 27
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/AdminSidebar/AdminSidebar.tsx",
-                    lineNumber: 28,
+                    lineNumber: 30,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/AdminSidebar/AdminSidebar.tsx",
-                lineNumber: 27,
+                lineNumber: 29,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -134,20 +144,20 @@ function AdminSidebar() {
                                 children: item.icon
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/AdminSidebar/AdminSidebar.tsx",
-                                lineNumber: 42,
+                                lineNumber: 44,
                                 columnNumber: 29
                             }, this),
                             item.label
                         ]
                     }, item.path, true, {
                         fileName: "[project]/src/app/components/AdminSidebar/AdminSidebar.tsx",
-                        lineNumber: 37,
+                        lineNumber: 39,
                         columnNumber: 25
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "[project]/src/app/components/AdminSidebar/AdminSidebar.tsx",
-                lineNumber: 33,
+                lineNumber: 35,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -159,18 +169,18 @@ function AdminSidebar() {
                     children: "Открыть сайт ↗"
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/AdminSidebar/AdminSidebar.tsx",
-                    lineNumber: 50,
+                    lineNumber: 52,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/AdminSidebar/AdminSidebar.tsx",
-                lineNumber: 49,
+                lineNumber: 51,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/AdminSidebar/AdminSidebar.tsx",
-        lineNumber: 26,
+        lineNumber: 28,
         columnNumber: 9
     }, this);
 }

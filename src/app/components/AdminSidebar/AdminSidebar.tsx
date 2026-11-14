@@ -16,6 +16,8 @@ const menuItems = [
     { path: "/admin/articles", label: "Статьи", icon: "📝" },
     { path: "/admin/article-categories", label: "Категории статей", icon: "📁" },
     { path: "/admin/users", label: "Пользователи", icon: "👥" },
+    { path: "/admin/banners", label: "Баннеры", icon: "🖼️" },
+    { path: "/admin/notifications", label: "Уведомления", icon: "🔔" },
     { path: "/admin/media", label: "Медиатека", icon: "📁" },
 ];
 

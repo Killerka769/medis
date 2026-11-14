@@ -34,9 +34,9 @@ import type {
 } from '@prisma/orm-postgres/contract/types';
 
 export type StorageHash =
-  StorageHashBase<'78460f88eb315358de2316e1f914d417aa6388f97a4adc996a799f98c1e729f7'>;
+  StorageHashBase<'c0c83a5a9781dac00f96f6ec9bc3f84c00f9f3d67635a6c62a699a6cf05ddd8c'>;
 export type ExecutionHash =
-  ExecutionHashBase<'996a7370a2563473a3a7c41076b82400fd8fa1817b870e4e1034cff58252967a'>;
+  ExecutionHashBase<'5f75724a1d7b731ce3535cfaf2f4ab52bb3b9f5db7f8c7ed33d66eeeebe41e44'>;
 export type ProfileHash =
   ProfileHashBase<'3916f444a8a17ad749191acf9e08dad97d1a327b88c2f1d45d12f240296aa8b2'>;
 
@@ -284,6 +284,20 @@ export type FieldOutputTypes = {
       readonly title: CodecTypes['pg/text@1']['output'];
       readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['output'];
     };
+    readonly Banner: {
+      readonly buttonLink: CodecTypes['pg/text@1']['output'] | null;
+      readonly buttonText: CodecTypes['pg/text@1']['output'] | null;
+      readonly createdAt: CodecTypes['pg/timestamptz-string@1']['output'];
+      readonly id: CodecTypes['pg/uuid@1']['output'];
+      readonly imageUrl: CodecTypes['pg/text@1']['output'];
+      readonly intervalMs: CodecTypes['pg/int4@1']['output'];
+      readonly isActive: CodecTypes['pg/bool@1']['output'];
+      readonly pages: CodecTypes['pg/text@1']['output'];
+      readonly sortOrder: CodecTypes['pg/int4@1']['output'];
+      readonly subtitle: CodecTypes['pg/text@1']['output'] | null;
+      readonly title: CodecTypes['pg/text@1']['output'] | null;
+      readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['output'];
+    };
     readonly Doctor: {
       readonly bio: CodecTypes['pg/text@1']['output'] | null;
       readonly certificates: ReadonlyArray<CodecTypes['pg/text@1']['output']>;
@@ -301,6 +315,17 @@ export type FieldOutputTypes = {
     readonly DoctorService: {
       readonly doctorId: CodecTypes['pg/uuid@1']['output'];
       readonly serviceId: CodecTypes['pg/uuid@1']['output'];
+    };
+    readonly Notification: {
+      readonly createdAt: CodecTypes['pg/timestamptz-string@1']['output'];
+      readonly durationMs: CodecTypes['pg/int4@1']['output'];
+      readonly expiresAt: CodecTypes['pg/timestamptz-string@1']['output'] | null;
+      readonly id: CodecTypes['pg/uuid@1']['output'];
+      readonly isActive: CodecTypes['pg/bool@1']['output'];
+      readonly isFullScreen: CodecTypes['pg/bool@1']['output'];
+      readonly text: CodecTypes['pg/text@1']['output'];
+      readonly title: CodecTypes['pg/text@1']['output'];
+      readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['output'];
     };
     readonly Product: {
       readonly categoryId: CodecTypes['pg/uuid@1']['output'];
@@ -413,6 +438,20 @@ export type FieldInputTypes = {
       readonly title: CodecTypes['pg/text@1']['input'];
       readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['input'];
     };
+    readonly Banner: {
+      readonly buttonLink: CodecTypes['pg/text@1']['input'] | null;
+      readonly buttonText: CodecTypes['pg/text@1']['input'] | null;
+      readonly createdAt: CodecTypes['pg/timestamptz-string@1']['input'];
+      readonly id: CodecTypes['pg/uuid@1']['input'];
+      readonly imageUrl: CodecTypes['pg/text@1']['input'];
+      readonly intervalMs: CodecTypes['pg/int4@1']['input'];
+      readonly isActive: CodecTypes['pg/bool@1']['input'];
+      readonly pages: CodecTypes['pg/text@1']['input'];
+      readonly sortOrder: CodecTypes['pg/int4@1']['input'];
+      readonly subtitle: CodecTypes['pg/text@1']['input'] | null;
+      readonly title: CodecTypes['pg/text@1']['input'] | null;
+      readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['input'];
+    };
     readonly Doctor: {
       readonly bio: CodecTypes['pg/text@1']['input'] | null;
       readonly certificates: ReadonlyArray<CodecTypes['pg/text@1']['input']>;
@@ -430,6 +469,17 @@ export type FieldInputTypes = {
     readonly DoctorService: {
       readonly doctorId: CodecTypes['pg/uuid@1']['input'];
       readonly serviceId: CodecTypes['pg/uuid@1']['input'];
+    };
+    readonly Notification: {
+      readonly createdAt: CodecTypes['pg/timestamptz-string@1']['input'];
+      readonly durationMs: CodecTypes['pg/int4@1']['input'];
+      readonly expiresAt: CodecTypes['pg/timestamptz-string@1']['input'] | null;
+      readonly id: CodecTypes['pg/uuid@1']['input'];
+      readonly isActive: CodecTypes['pg/bool@1']['input'];
+      readonly isFullScreen: CodecTypes['pg/bool@1']['input'];
+      readonly text: CodecTypes['pg/text@1']['input'];
+      readonly title: CodecTypes['pg/text@1']['input'];
+      readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['input'];
     };
     readonly Product: {
       readonly categoryId: CodecTypes['pg/uuid@1']['input'];
@@ -542,6 +592,20 @@ export type StorageColumnTypes = {
       readonly title: CodecTypes['pg/text@1']['output'];
       readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['output'];
     };
+    readonly banners: {
+      readonly buttonLink: CodecTypes['pg/text@1']['output'] | null;
+      readonly buttonText: CodecTypes['pg/text@1']['output'] | null;
+      readonly createdAt: CodecTypes['pg/timestamptz-string@1']['output'];
+      readonly id: CodecTypes['pg/uuid@1']['output'];
+      readonly imageUrl: CodecTypes['pg/text@1']['output'];
+      readonly intervalMs: CodecTypes['pg/int4@1']['output'];
+      readonly isActive: CodecTypes['pg/bool@1']['output'];
+      readonly pages: CodecTypes['pg/text@1']['output'];
+      readonly sortOrder: CodecTypes['pg/int4@1']['output'];
+      readonly subtitle: CodecTypes['pg/text@1']['output'] | null;
+      readonly title: CodecTypes['pg/text@1']['output'] | null;
+      readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['output'];
+    };
     readonly doctor_services: {
       readonly doctorId: CodecTypes['pg/uuid@1']['output'];
       readonly serviceId: CodecTypes['pg/uuid@1']['output'];
@@ -558,6 +622,17 @@ export type StorageColumnTypes = {
       readonly photoUrl: CodecTypes['pg/text@1']['output'] | null;
       readonly slug: CodecTypes['pg/text@1']['output'];
       readonly specialization: CodecTypes['pg/text@1']['output'];
+      readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['output'];
+    };
+    readonly notifications: {
+      readonly createdAt: CodecTypes['pg/timestamptz-string@1']['output'];
+      readonly durationMs: CodecTypes['pg/int4@1']['output'];
+      readonly expiresAt: CodecTypes['pg/timestamptz-string@1']['output'] | null;
+      readonly id: CodecTypes['pg/uuid@1']['output'];
+      readonly isActive: CodecTypes['pg/bool@1']['output'];
+      readonly isFullScreen: CodecTypes['pg/bool@1']['output'];
+      readonly text: CodecTypes['pg/text@1']['output'];
+      readonly title: CodecTypes['pg/text@1']['output'];
       readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['output'];
     };
     readonly product_categories: {
@@ -671,6 +746,20 @@ export type StorageColumnInputTypes = {
       readonly title: CodecTypes['pg/text@1']['input'];
       readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['input'];
     };
+    readonly banners: {
+      readonly buttonLink: CodecTypes['pg/text@1']['input'] | null;
+      readonly buttonText: CodecTypes['pg/text@1']['input'] | null;
+      readonly createdAt: CodecTypes['pg/timestamptz-string@1']['input'];
+      readonly id: CodecTypes['pg/uuid@1']['input'];
+      readonly imageUrl: CodecTypes['pg/text@1']['input'];
+      readonly intervalMs: CodecTypes['pg/int4@1']['input'];
+      readonly isActive: CodecTypes['pg/bool@1']['input'];
+      readonly pages: CodecTypes['pg/text@1']['input'];
+      readonly sortOrder: CodecTypes['pg/int4@1']['input'];
+      readonly subtitle: CodecTypes['pg/text@1']['input'] | null;
+      readonly title: CodecTypes['pg/text@1']['input'] | null;
+      readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['input'];
+    };
     readonly doctor_services: {
       readonly doctorId: CodecTypes['pg/uuid@1']['input'];
       readonly serviceId: CodecTypes['pg/uuid@1']['input'];
@@ -687,6 +776,17 @@ export type StorageColumnInputTypes = {
       readonly photoUrl: CodecTypes['pg/text@1']['input'] | null;
       readonly slug: CodecTypes['pg/text@1']['input'];
       readonly specialization: CodecTypes['pg/text@1']['input'];
+      readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['input'];
+    };
+    readonly notifications: {
+      readonly createdAt: CodecTypes['pg/timestamptz-string@1']['input'];
+      readonly durationMs: CodecTypes['pg/int4@1']['input'];
+      readonly expiresAt: CodecTypes['pg/timestamptz-string@1']['input'] | null;
+      readonly id: CodecTypes['pg/uuid@1']['input'];
+      readonly isActive: CodecTypes['pg/bool@1']['input'];
+      readonly isFullScreen: CodecTypes['pg/bool@1']['input'];
+      readonly text: CodecTypes['pg/text@1']['input'];
+      readonly title: CodecTypes['pg/text@1']['input'];
       readonly updatedAt: CodecTypes['pg/timestamptz-string@1']['input'];
     };
     readonly product_categories: {
@@ -808,6 +908,21 @@ export namespace Models {
     articles: public_Article[];
     readonly [RelationKeys]?: 'articles';
   };
+  export type public_Banner = {
+    buttonLink: CodecTypes['pg/text@1']['output'] | null;
+    buttonText: CodecTypes['pg/text@1']['output'] | null;
+    createdAt: CodecTypes['pg/timestamptz-string@1']['output'];
+    id: CodecTypes['pg/uuid@1']['output'];
+    imageUrl: CodecTypes['pg/text@1']['output'];
+    intervalMs: CodecTypes['pg/int4@1']['output'];
+    isActive: CodecTypes['pg/bool@1']['output'];
+    pages: CodecTypes['pg/text@1']['output'];
+    sortOrder: CodecTypes['pg/int4@1']['output'];
+    subtitle: CodecTypes['pg/text@1']['output'] | null;
+    title: CodecTypes['pg/text@1']['output'] | null;
+    updatedAt: CodecTypes['pg/timestamptz-string@1']['output'];
+    readonly [RelationKeys]?: never;
+  };
   export type public_Doctor = {
     bio: CodecTypes['pg/text@1']['output'] | null;
     certificates: ReadonlyArray<CodecTypes['pg/text@1']['output']>;
@@ -831,6 +946,18 @@ export namespace Models {
     doctor: public_Doctor;
     service: public_Service;
     readonly [RelationKeys]?: 'doctor' | 'service';
+  };
+  export type public_Notification = {
+    createdAt: CodecTypes['pg/timestamptz-string@1']['output'];
+    durationMs: CodecTypes['pg/int4@1']['output'];
+    expiresAt: CodecTypes['pg/timestamptz-string@1']['output'] | null;
+    id: CodecTypes['pg/uuid@1']['output'];
+    isActive: CodecTypes['pg/bool@1']['output'];
+    isFullScreen: CodecTypes['pg/bool@1']['output'];
+    text: CodecTypes['pg/text@1']['output'];
+    title: CodecTypes['pg/text@1']['output'];
+    updatedAt: CodecTypes['pg/timestamptz-string@1']['output'];
+    readonly [RelationKeys]?: never;
   };
   export type public_Product = {
     categoryId: CodecTypes['pg/uuid@1']['output'];
@@ -929,8 +1056,10 @@ export declare const models: {
     Appointment: Models.public_Appointment;
     Article: Models.public_Article;
     ArticleCategory: Models.public_ArticleCategory;
+    Banner: Models.public_Banner;
     Doctor: Models.public_Doctor;
     DoctorService: Models.public_DoctorService;
+    Notification: Models.public_Notification;
     Product: Models.public_Product;
     ProductCategory: Models.public_ProductCategory;
     ProductRequest: Models.public_ProductRequest;
@@ -1260,6 +1389,104 @@ type ContractBase = Omit<
                 },
               ];
             };
+            readonly banners: {
+              columns: {
+                readonly buttonLink: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: true;
+                };
+                readonly buttonText: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: true;
+                };
+                readonly createdAt: {
+                  readonly nativeType: 'timestamptz';
+                  readonly codecId: 'pg/timestamptz-string@1';
+                  readonly nullable: false;
+                  readonly default: { readonly kind: 'function'; readonly expression: 'now()' };
+                };
+                readonly id: {
+                  readonly nativeType: 'uuid';
+                  readonly codecId: 'pg/uuid@1';
+                  readonly nullable: false;
+                };
+                readonly imageUrl: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: false;
+                };
+                readonly intervalMs: {
+                  readonly nativeType: 'int4';
+                  readonly codecId: 'pg/int4@1';
+                  readonly nullable: false;
+                  readonly default: {
+                    readonly kind: 'literal';
+                    readonly value: DefaultLiteralValue<'pg/int4@1', 5000>;
+                  };
+                };
+                readonly isActive: {
+                  readonly nativeType: 'bool';
+                  readonly codecId: 'pg/bool@1';
+                  readonly nullable: false;
+                  readonly default: {
+                    readonly kind: 'literal';
+                    readonly value: DefaultLiteralValue<'pg/bool@1', true>;
+                  };
+                };
+                readonly pages: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: false;
+                  readonly default: {
+                    readonly kind: 'literal';
+                    readonly value: DefaultLiteralValue<'pg/text@1', '/'>;
+                  };
+                };
+                readonly sortOrder: {
+                  readonly nativeType: 'int4';
+                  readonly codecId: 'pg/int4@1';
+                  readonly nullable: false;
+                  readonly default: {
+                    readonly kind: 'literal';
+                    readonly value: DefaultLiteralValue<'pg/int4@1', 0>;
+                  };
+                };
+                readonly subtitle: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: true;
+                };
+                readonly title: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: true;
+                };
+                readonly updatedAt: {
+                  readonly nativeType: 'timestamptz';
+                  readonly codecId: 'pg/timestamptz-string@1';
+                  readonly nullable: false;
+                };
+              };
+              primaryKey: { readonly columns: readonly ['id'] };
+              uniques: readonly [];
+              indexes: readonly [
+                {
+                  readonly name: 'banners_isActive_idx_77fe3ba1';
+                  readonly prefix: 'banners_isActive_idx';
+                  readonly columns: readonly ['isActive'];
+                  readonly unique: false;
+                },
+                {
+                  readonly name: 'banners_sortOrder_idx_ebf2eac2';
+                  readonly prefix: 'banners_sortOrder_idx';
+                  readonly columns: readonly ['sortOrder'];
+                  readonly unique: false;
+                },
+              ];
+              foreignKeys: readonly [];
+            };
             readonly doctor_services: {
               columns: {
                 readonly doctorId: {
@@ -1401,6 +1628,79 @@ type ContractBase = Omit<
                   readonly name: 'doctors_specialization_idx_6166aa06';
                   readonly prefix: 'doctors_specialization_idx';
                   readonly columns: readonly ['specialization'];
+                  readonly unique: false;
+                },
+              ];
+              foreignKeys: readonly [];
+            };
+            readonly notifications: {
+              columns: {
+                readonly createdAt: {
+                  readonly nativeType: 'timestamptz';
+                  readonly codecId: 'pg/timestamptz-string@1';
+                  readonly nullable: false;
+                  readonly default: { readonly kind: 'function'; readonly expression: 'now()' };
+                };
+                readonly durationMs: {
+                  readonly nativeType: 'int4';
+                  readonly codecId: 'pg/int4@1';
+                  readonly nullable: false;
+                  readonly default: {
+                    readonly kind: 'literal';
+                    readonly value: DefaultLiteralValue<'pg/int4@1', 10000>;
+                  };
+                };
+                readonly expiresAt: {
+                  readonly nativeType: 'timestamptz';
+                  readonly codecId: 'pg/timestamptz-string@1';
+                  readonly nullable: true;
+                };
+                readonly id: {
+                  readonly nativeType: 'uuid';
+                  readonly codecId: 'pg/uuid@1';
+                  readonly nullable: false;
+                };
+                readonly isActive: {
+                  readonly nativeType: 'bool';
+                  readonly codecId: 'pg/bool@1';
+                  readonly nullable: false;
+                  readonly default: {
+                    readonly kind: 'literal';
+                    readonly value: DefaultLiteralValue<'pg/bool@1', true>;
+                  };
+                };
+                readonly isFullScreen: {
+                  readonly nativeType: 'bool';
+                  readonly codecId: 'pg/bool@1';
+                  readonly nullable: false;
+                  readonly default: {
+                    readonly kind: 'literal';
+                    readonly value: DefaultLiteralValue<'pg/bool@1', false>;
+                  };
+                };
+                readonly text: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: false;
+                };
+                readonly title: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: false;
+                };
+                readonly updatedAt: {
+                  readonly nativeType: 'timestamptz';
+                  readonly codecId: 'pg/timestamptz-string@1';
+                  readonly nullable: false;
+                };
+              };
+              primaryKey: { readonly columns: readonly ['id'] };
+              uniques: readonly [];
+              indexes: readonly [
+                {
+                  readonly name: 'notifications_isActive_idx_77fe3ba1';
+                  readonly prefix: 'notifications_isActive_idx';
+                  readonly columns: readonly ['isActive'];
                   readonly unique: false;
                 },
               ];
@@ -1995,11 +2295,16 @@ type ContractBase = Omit<
       readonly model: 'ArticleCategory';
     };
     readonly articles: { readonly namespace: 'public' & NamespaceId; readonly model: 'Article' };
+    readonly banners: { readonly namespace: 'public' & NamespaceId; readonly model: 'Banner' };
     readonly doctor_services: {
       readonly namespace: 'public' & NamespaceId;
       readonly model: 'DoctorService';
     };
     readonly doctors: { readonly namespace: 'public' & NamespaceId; readonly model: 'Doctor' };
+    readonly notifications: {
+      readonly namespace: 'public' & NamespaceId;
+      readonly model: 'Notification';
+    };
     readonly product_categories: {
       readonly namespace: 'public' & NamespaceId;
       readonly model: 'ProductCategory';
@@ -2279,6 +2584,83 @@ type ContractBase = Omit<
               };
             };
           };
+          readonly Banner: {
+            readonly fields: {
+              readonly buttonLink: {
+                readonly nullable: true;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly buttonText: {
+                readonly nullable: true;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly createdAt: {
+                readonly nullable: false;
+                readonly type: {
+                  readonly kind: 'scalar';
+                  readonly codecId: 'pg/timestamptz-string@1';
+                };
+              };
+              readonly id: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/uuid@1' };
+              };
+              readonly imageUrl: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly intervalMs: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/int4@1' };
+              };
+              readonly isActive: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/bool@1' };
+              };
+              readonly pages: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly sortOrder: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/int4@1' };
+              };
+              readonly subtitle: {
+                readonly nullable: true;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly title: {
+                readonly nullable: true;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly updatedAt: {
+                readonly nullable: false;
+                readonly type: {
+                  readonly kind: 'scalar';
+                  readonly codecId: 'pg/timestamptz-string@1';
+                };
+              };
+            };
+            readonly relations: Record<string, never>;
+            readonly storage: {
+              readonly table: 'banners';
+              readonly namespaceId: 'public';
+              readonly fields: {
+                readonly buttonLink: { readonly column: 'buttonLink' };
+                readonly buttonText: { readonly column: 'buttonText' };
+                readonly createdAt: { readonly column: 'createdAt' };
+                readonly id: { readonly column: 'id' };
+                readonly imageUrl: { readonly column: 'imageUrl' };
+                readonly intervalMs: { readonly column: 'intervalMs' };
+                readonly isActive: { readonly column: 'isActive' };
+                readonly pages: { readonly column: 'pages' };
+                readonly sortOrder: { readonly column: 'sortOrder' };
+                readonly subtitle: { readonly column: 'subtitle' };
+                readonly title: { readonly column: 'title' };
+                readonly updatedAt: { readonly column: 'updatedAt' };
+              };
+            };
+          };
           readonly Doctor: {
             readonly fields: {
               readonly bio: {
@@ -2423,6 +2805,71 @@ type ContractBase = Omit<
               readonly fields: {
                 readonly doctorId: { readonly column: 'doctorId' };
                 readonly serviceId: { readonly column: 'serviceId' };
+              };
+            };
+          };
+          readonly Notification: {
+            readonly fields: {
+              readonly createdAt: {
+                readonly nullable: false;
+                readonly type: {
+                  readonly kind: 'scalar';
+                  readonly codecId: 'pg/timestamptz-string@1';
+                };
+              };
+              readonly durationMs: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/int4@1' };
+              };
+              readonly expiresAt: {
+                readonly nullable: true;
+                readonly type: {
+                  readonly kind: 'scalar';
+                  readonly codecId: 'pg/timestamptz-string@1';
+                };
+              };
+              readonly id: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/uuid@1' };
+              };
+              readonly isActive: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/bool@1' };
+              };
+              readonly isFullScreen: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/bool@1' };
+              };
+              readonly text: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly title: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly updatedAt: {
+                readonly nullable: false;
+                readonly type: {
+                  readonly kind: 'scalar';
+                  readonly codecId: 'pg/timestamptz-string@1';
+                };
+              };
+            };
+            readonly relations: Record<string, never>;
+            readonly storage: {
+              readonly table: 'notifications';
+              readonly namespaceId: 'public';
+              readonly fields: {
+                readonly createdAt: { readonly column: 'createdAt' };
+                readonly durationMs: { readonly column: 'durationMs' };
+                readonly expiresAt: { readonly column: 'expiresAt' };
+                readonly id: { readonly column: 'id' };
+                readonly isActive: { readonly column: 'isActive' };
+                readonly isFullScreen: { readonly column: 'isFullScreen' };
+                readonly text: { readonly column: 'text' };
+                readonly title: { readonly column: 'title' };
+                readonly updatedAt: { readonly column: 'updatedAt' };
               };
             };
           };
@@ -3087,6 +3534,23 @@ type ContractBase = Omit<
           readonly ref: {
             readonly column: 'id';
             readonly namespace: 'public';
+            readonly table: 'banners';
+          };
+        },
+        {
+          readonly onCreate: { readonly id: 'timestampNow'; readonly kind: 'generator' };
+          readonly onUpdate: { readonly id: 'timestampNow'; readonly kind: 'generator' };
+          readonly ref: {
+            readonly column: 'updatedAt';
+            readonly namespace: 'public';
+            readonly table: 'banners';
+          };
+        },
+        {
+          readonly onCreate: { readonly id: 'uuidv4'; readonly kind: 'generator' };
+          readonly ref: {
+            readonly column: 'id';
+            readonly namespace: 'public';
             readonly table: 'doctors';
           };
         },
@@ -3097,6 +3561,23 @@ type ContractBase = Omit<
             readonly column: 'updatedAt';
             readonly namespace: 'public';
             readonly table: 'doctors';
+          };
+        },
+        {
+          readonly onCreate: { readonly id: 'uuidv4'; readonly kind: 'generator' };
+          readonly ref: {
+            readonly column: 'id';
+            readonly namespace: 'public';
+            readonly table: 'notifications';
+          };
+        },
+        {
+          readonly onCreate: { readonly id: 'timestampNow'; readonly kind: 'generator' };
+          readonly onUpdate: { readonly id: 'timestampNow'; readonly kind: 'generator' };
+          readonly ref: {
+            readonly column: 'updatedAt';
+            readonly namespace: 'public';
+            readonly table: 'notifications';
           };
         },
         {

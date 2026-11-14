@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InstallApp } from "../../../InstallApp/InstallApp";
 import styles from "./Footer.module.scss";
 
 export function Footer() {
@@ -44,6 +45,7 @@ export function Footer() {
                             {/* <a href="https://t.me/medis" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Написать в мессенджер">TG</a> */}
                             {/* <a href="https://vk.com/medis" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="VK">VK</a> */}
                         </div>
+                        <InstallApp />
                     </div>
                 </div>
 

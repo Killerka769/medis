@@ -1,12 +1,13 @@
 :root {
-  --color-primary: #1e5f9e;
-  --color-primary-dark: #164a7a;
-  --color-primary-light: #e8f2fa;
-  --color-accent: #2b8fd9;
+  --color-primary: #93C572;
+  --color-primary-dark: #5B8C3A;
+  --color-primary-light: #F0F7E6;
+  --color-accent: #7CB35A;
+  --color-on-primary: #1F3310;
   --color-white: #ffffff;
   --color-text: #1a1a1a;
   --color-text-muted: #6b7280;
-  --color-border: #dbeafe;
+  --color-border: #D5E8C4;
   --color-error: #dc2626;
 }
 
@@ -23,7 +24,7 @@ html {
 body {
   font-family: 'Inter', -apple-system, sans-serif;
   color: var(--color-text);
-  background: #f7fafc;
+  background: #F7FAF2;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;

@@ -4,12 +4,14 @@ import { ServicesCatalog } from "./ServicesCatalog";
 import styles from "./ServicesPage.module.scss";
 
 export const metadata: Metadata = {
-    title: "Услуги клиники Медис в Махачкале",
-    description: "Приёмы, диагностика и анализы в медицинском центре «Медис». Цены открыты, запись онлайн.",
+    title: "Услуги медицинского центра в Махачкале",
+    description: "Прайс на консультации, УЗИ, амбулаторные и физиопроцедуры клиники Медис. Запись онлайн.",
+    alternates: { canonical: "/services" },
     openGraph: {
         title: "Услуги клиники Медис",
-        description: "Приёмы, диагностика и анализы. Запись онлайн в Махачкале.",
-        images: [{ url: "/hero.webp" }],
+        description: "Приёмы, диагностика и процедуры. Запись онлайн в Махачкале.",
+        images: [{ url: "/hero-v2.webp" }],
+        url: "https://medis05.ru/services",
     },
 };
 

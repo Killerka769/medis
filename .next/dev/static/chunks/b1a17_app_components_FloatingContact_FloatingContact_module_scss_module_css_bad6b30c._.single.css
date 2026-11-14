@@ -32,10 +32,11 @@
 
 .FloatingContact-module-scss-module__YZvlwG__phone {
   background: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 .FloatingContact-module-scss-module__YZvlwG__tg {
-  background: #1e5f9e;
+  background: var(--color-primary-dark);
 }
 
 .FloatingContact-module-scss-module__YZvlwG__ig {

@@ -5,12 +5,14 @@ import { DoctorAvatar } from "../components/DoctorAvatar";
 import styles from "./DoctorsPage.module.scss";
 
 export const metadata: Metadata = {
-    title: "Врачи клиники Медис в Махачкале",
-    description: "Опытные специалисты медицинского центра «Медис». Запись на приём онлайн.",
+    title: "Врачи клиники в Махачкале",
+    description: "Урологи, гинекологи, УЗИ-специалисты и другие врачи медицинского центра Медис. Запись на приём онлайн.",
+    alternates: { canonical: "/doctors" },
     openGraph: {
         title: "Врачи клиники Медис",
         description: "Опытные специалисты. Запись на приём онлайн в Махачкале.",
-        images: [{ url: "/hero.webp" }],
+        images: [{ url: "/hero-v2.webp" }],
+        url: "https://medis05.ru/doctors",
     },
 };
 

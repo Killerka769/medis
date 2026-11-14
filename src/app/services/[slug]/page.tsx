@@ -1,27 +1,38 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getPublicService } from "@/src/lib/data/public";
+import { getPublicService, getPublicServices } from "@/src/lib/data/public";
 import { DoctorMiniAvatar, MediaPlaceholder } from "../../components/MediaPlaceholder";
 import styles from "./ServiceDetail.module.scss";
 
 type Props = { params: Promise<{ slug: string }> };
 
+export async function generateStaticParams() {
+    try {
+        const { services } = await getPublicServices();
+        return services.map((service: { slug: string }) => ({ slug: service.slug }));
+    } catch {
+        return [];
+    }
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const data = await getPublicService(slug).catch(() => null);
-    if (!data) return { title: "Услуга не найдена | Медис" };
+    if (!data) return { title: "Услуга не найдена" };
 
-    const title = `${data.service.title} | Медис`;
+    const title = data.service.title;
     const description = data.service.description || `Запись на услугу «${data.service.title}» в клинике Медис, Махачкала.`;
 
     return {
         title,
         description,
+        alternates: { canonical: `/services/${slug}` },
         openGraph: {
             title,
             description,
-            images: [{ url: data.service.imageUrl || "/hero.webp" }],
+            images: [{ url: data.service.imageUrl || "/hero-v2.webp" }],
+            url: `https://medis05.ru/services/${slug}`,
         },
     };
 }

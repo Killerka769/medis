@@ -10,7 +10,7 @@
 }
 
 .Header-module-scss-module__wxeC6q__scrolled {
-  box-shadow: 0 8px 24px #1e5f9e14;
+  box-shadow: 0 8px 24px #5b8c3a14;
 }
 
 .Header-module-scss-module__wxeC6q__container {
@@ -84,7 +84,7 @@
 }
 
 .Header-module-scss-module__wxeC6q__btn {
-  color: #fff;
+  color: var(--color-on-primary);
   background: var(--color-primary);
   white-space: nowrap;
   border-radius: 12px;
@@ -93,12 +93,12 @@
   font-weight: 600;
   text-decoration: none;
   transition: background .2s, box-shadow .2s;
-  box-shadow: 0 4px 12px #1e5f9e2e;
+  box-shadow: 0 4px 12px #5b8c3a2e;
 }
 
 .Header-module-scss-module__wxeC6q__btn:hover {
   background: var(--color-primary-dark);
-  box-shadow: 0 6px 16px #1e5f9e3d;
+  box-shadow: 0 6px 16px #5b8c3a3d;
 }
 
 .Header-module-scss-module__wxeC6q__btnOutline {

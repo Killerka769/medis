@@ -418,7 +418,7 @@ function SiteChrome({ header, footer, children }) {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/app/components/ui/layout/SiteChrome.tsx",
-                lineNumber: 21,
+                lineNumber: 23,
                 columnNumber: 13
             }, this),
             !isAdmin && footer

@@ -1,28 +1,39 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getPublicArticle } from "@/src/lib/data/public";
+import { getPublicArticle, getPublicArticles } from "@/src/lib/data/public";
 import { ShareButtons } from "./ShareButtons";
 import { MediaPlaceholder } from "../../components/MediaPlaceholder";
 import styles from "./ArticleDetail.module.scss";
 
 type Props = { params: Promise<{ slug: string }> };
 
+export async function generateStaticParams() {
+    try {
+        const { articles } = await getPublicArticles();
+        return articles.map((article: { slug: string }) => ({ slug: article.slug }));
+    } catch {
+        return [];
+    }
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const data = await getPublicArticle(slug).catch(() => null);
-    if (!data) return { title: "Статья не найдена | Медис" };
+    if (!data) return { title: "Статья не найдена" };
 
-    const title = `${data.article.title} | Блог Медис`;
+    const title = data.article.title;
     const description = data.article.excerpt || data.article.title;
 
     return {
         title,
         description,
+        alternates: { canonical: `/blog/${slug}` },
         openGraph: {
             title,
             description,
-            images: [{ url: data.article.coverUrl || "/hero.webp" }],
+            images: [{ url: data.article.coverUrl || "/hero-v2.webp" }],
+            url: `https://medis05.ru/blog/${slug}`,
         },
     };
 }

@@ -78,14 +78,15 @@
 
 /* [project]/src/app/globals.css [app-client] (css) */
 :root {
-  --color-primary: #1e5f9e;
-  --color-primary-dark: #164a7a;
-  --color-primary-light: #e8f2fa;
-  --color-accent: #2b8fd9;
+  --color-primary: #93c572;
+  --color-primary-dark: #5b8c3a;
+  --color-primary-light: #f0f7e6;
+  --color-accent: #7cb35a;
+  --color-on-primary: #1f3310;
   --color-white: #fff;
   --color-text: #1a1a1a;
   --color-text-muted: #6b7280;
-  --color-border: #dbeafe;
+  --color-border: #d5e8c4;
   --color-error: #dc2626;
 }
 
@@ -101,7 +102,7 @@ html {
 
 body {
   color: var(--color-text);
-  background: #f7fafc;
+  background: #f7faf2;
   flex-direction: column;
   min-height: 100vh;
   font-family: Inter, -apple-system, sans-serif;
@@ -187,7 +188,7 @@ main {
 }
 
 .Header-module-scss-module__wxeC6q__scrolled {
-  box-shadow: 0 8px 24px #1e5f9e14;
+  box-shadow: 0 8px 24px #5b8c3a14;
 }
 
 .Header-module-scss-module__wxeC6q__container {
@@ -261,7 +262,7 @@ main {
 }
 
 .Header-module-scss-module__wxeC6q__btn {
-  color: #fff;
+  color: var(--color-on-primary);
   background: var(--color-primary);
   white-space: nowrap;
   border-radius: 12px;
@@ -270,12 +271,12 @@ main {
   font-weight: 600;
   text-decoration: none;
   transition: background .2s, box-shadow .2s;
-  box-shadow: 0 4px 12px #1e5f9e2e;
+  box-shadow: 0 4px 12px #5b8c3a2e;
 }
 
 .Header-module-scss-module__wxeC6q__btn:hover {
   background: var(--color-primary-dark);
-  box-shadow: 0 6px 16px #1e5f9e3d;
+  box-shadow: 0 6px 16px #5b8c3a3d;
 }
 
 .Header-module-scss-module__wxeC6q__btnOutline {
@@ -637,10 +638,11 @@ main {
 
 .FloatingContact-module-scss-module__YZvlwG__phone {
   background: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 .FloatingContact-module-scss-module__YZvlwG__tg {
-  background: #1e5f9e;
+  background: var(--color-primary-dark);
 }
 
 .FloatingContact-module-scss-module__YZvlwG__ig {

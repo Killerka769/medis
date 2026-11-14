@@ -282,3 +282,45 @@ model DoctorService {
   @@index([serviceId])
   @@map("doctor_services")
 }
+
+// ============================================================
+// БАННЕРЫ
+// ============================================================
+
+model Banner {
+  id         Uuid     @id @default(uuid())
+  imageUrl   String
+  title      String?
+  subtitle   String?
+  buttonText String?
+  buttonLink String?
+  sortOrder  Int      @default(0)
+  isActive   Boolean  @default(true)
+  pages      String   @default("/")
+  intervalMs Int      @default(5000)
+  createdAt  TimestamptzString @default(now())
+  updatedAt  temporal.updatedAtString()
+
+  @@index([isActive])
+  @@index([sortOrder])
+  @@map("banners")
+}
+
+// ============================================================
+// УВЕДОМЛЕНИЯ
+// ============================================================
+
+model Notification {
+  id           Uuid     @id @default(uuid())
+  title        String
+  text         String
+  isFullScreen Boolean  @default(false)
+  isActive     Boolean  @default(true)
+  expiresAt    TimestamptzString?
+  durationMs   Int      @default(10000)
+  createdAt    TimestamptzString @default(now())
+  updatedAt    temporal.updatedAtString()
+
+  @@index([isActive])
+  @@map("notifications")
+}

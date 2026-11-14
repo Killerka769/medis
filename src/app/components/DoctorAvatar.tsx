@@ -25,8 +25,8 @@ export function DoctorAvatar({ name, className = "" }: { name: string; className
         >
             <defs>
                 <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#1e5f9e" />
-                    <stop offset="100%" stopColor="#164a7a" />
+                    <stop offset="0%" stopColor="#93C572" />
+                    <stop offset="100%" stopColor="#5B8C3A" />
                 </linearGradient>
             </defs>
             <rect width="240" height="300" fill={`url(#${gradId})`} />
@@ -37,7 +37,7 @@ export function DoctorAvatar({ name, className = "" }: { name: string; className
                 x="120"
                 y="162"
                 textAnchor="middle"
-                fill="#ffffff"
+                fill="#1F3310"
                 fontSize="52"
                 fontWeight="700"
                 fontFamily="Inter, system-ui, sans-serif"

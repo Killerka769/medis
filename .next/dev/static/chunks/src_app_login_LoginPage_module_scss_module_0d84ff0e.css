@@ -16,7 +16,7 @@
   width: 100%;
   max-width: 480px;
   padding: 40px 32px;
-  box-shadow: 0 10px 40px #1e5f9e1a;
+  box-shadow: 0 10px 40px #5b8c3a1a;
 }
 
 .LoginPage-module-scss-module__GYTbVa__title {
@@ -71,7 +71,7 @@
 
 .LoginPage-module-scss-module__GYTbVa__input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px #1e5f9e1f;
+  box-shadow: 0 0 0 3px #5b8c3a1f;
 }
 
 .LoginPage-module-scss-module__GYTbVa__error {
@@ -92,7 +92,7 @@
 
 .LoginPage-module-scss-module__GYTbVa__button {
   width: 100%;
-  color: var(--color-white);
+  color: var(--color-on-primary);
   background: var(--color-primary);
   cursor: pointer;
   border: none;

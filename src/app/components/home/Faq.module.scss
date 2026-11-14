@@ -1,4 +1,4 @@
-.list {
+﻿.list {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -17,7 +17,7 @@
   }
 
   &.open {
-    box-shadow: 0 8px 20px rgba(30, 95, 158, 0.06);
+    box-shadow: 0 8px 20px rgba(91, 140, 58, 0.06);
   }
 }
 

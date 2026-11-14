@@ -1,7 +1,9 @@
 import styles from "../(legal)/LegalPage.module.scss";
 
 export const metadata = {
-    title: "Пользовательское соглашение | Медис",
+    title: "Пользовательское соглашение",
+    description: "Пользовательское соглашение сайта медицинского центра Медис.",
+    alternates: { canonical: "/agreement" },
 };
 
 export default function AgreementPage() {

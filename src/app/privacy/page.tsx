@@ -2,8 +2,9 @@ import Link from "next/link";
 import styles from "../(legal)/LegalPage.module.scss";
 
 export const metadata = {
-    title: "Политика конфиденциальности | Медис",
+    title: "Политика конфиденциальности",
     description: "Политика в отношении обработки персональных данных медицинского центра Медис.",
+    alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPolicyPage() {

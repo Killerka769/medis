@@ -1,0 +1,26 @@
+.wrap { display: flex; flex-direction: column; gap: 8px; }
+.label { font-size: 14px; font-weight: 600; color: var(--color-text); }
+.row { display: flex; gap: 8px; }
+.input {
+  flex: 1;
+  padding: 11px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font-size: 15px;
+}
+.pickBtn {
+  padding: 11px 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.preview { width: 100%; max-height: 140px; object-fit: cover; border-radius: 12px; }
+.picker { border: 1px solid var(--color-border); border-radius: 12px; padding: 12px; background: #fff; }
+.pickerHead { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.pickerHead button { background: none; border: none; color: var(--color-primary-dark); cursor: pointer; font-weight: 600; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; max-height: 220px; overflow: auto; }
+.cell { text-align: left; padding: 8px; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-primary-light); cursor: pointer; font-size: 13px; }

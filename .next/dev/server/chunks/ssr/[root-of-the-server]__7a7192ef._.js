@@ -54,10 +54,18 @@ async function getHomeData() {
     const articles = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["db"].orm.public.Article.where({
         status: "published"
     }).orderBy((a)=>a.publishedAt.desc()).include("category").limit(3).all();
+    const banners = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$prisma$2f$db$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["db"].orm.public.Banner.where({
+        isActive: true
+    }).orderBy((b)=>b.sortOrder.asc()).all();
+    const homeBanners = banners.filter((banner)=>{
+        const list = (banner.pages || "/").split(",").map((item)=>item.trim());
+        return list.includes("/") || list.includes("*");
+    });
     return {
         doctors,
         services,
-        articles
+        articles,
+        banners: homeBanners
     };
 }
 async function getPublicServices() {
@@ -178,7 +186,7 @@ function DoctorAvatar({ name, className = "" }) {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
                             offset: "0%",
-                            stopColor: "#1e5f9e"
+                            stopColor: "#93C572"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/DoctorAvatar.tsx",
                             lineNumber: 28,
@@ -186,7 +194,7 @@ function DoctorAvatar({ name, className = "" }) {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
                             offset: "100%",
-                            stopColor: "#164a7a"
+                            stopColor: "#5B8C3A"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/DoctorAvatar.tsx",
                             lineNumber: 29,
@@ -246,7 +254,7 @@ function DoctorAvatar({ name, className = "" }) {
                 x: "120",
                 y: "162",
                 textAnchor: "middle",
-                fill: "#ffffff",
+                fill: "#1F3310",
                 fontSize: "52",
                 fontWeight: "700",
                 fontFamily: "Inter, system-ui, sans-serif",
@@ -312,16 +320,20 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 ;
 ;
 const metadata = {
-    title: "Врачи клиники Медис в Махачкале",
-    description: "Опытные специалисты медицинского центра «Медис». Запись на приём онлайн.",
+    title: "Врачи клиники в Махачкале",
+    description: "Урологи, гинекологи, УЗИ-специалисты и другие врачи медицинского центра Медис. Запись на приём онлайн.",
+    alternates: {
+        canonical: "/doctors"
+    },
     openGraph: {
         title: "Врачи клиники Медис",
         description: "Опытные специалисты. Запись на приём онлайн в Махачкале.",
         images: [
             {
-                url: "/hero.webp"
+                url: "/hero-v2.webp"
             }
-        ]
+        ],
+        url: "https://medis05.ru/doctors"
     }
 };
 async function DoctorsCatalogPage() {
@@ -337,12 +349,12 @@ async function DoctorsCatalogPage() {
                 children: "Ошибка загрузки"
             }, void 0, false, {
                 fileName: "[project]/src/app/doctors/page.tsx",
-                lineNumber: 23,
+                lineNumber: 25,
                 columnNumber: 46
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/doctors/page.tsx",
-            lineNumber: 23,
+            lineNumber: 25,
             columnNumber: 16
         }, this);
     }
@@ -357,7 +369,7 @@ async function DoctorsCatalogPage() {
                         children: "Команда"
                     }, void 0, false, {
                         fileName: "[project]/src/app/doctors/page.tsx",
-                        lineNumber: 29,
+                        lineNumber: 31,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -365,7 +377,7 @@ async function DoctorsCatalogPage() {
                         children: "Наши специалисты"
                     }, void 0, false, {
                         fileName: "[project]/src/app/doctors/page.tsx",
-                        lineNumber: 30,
+                        lineNumber: 32,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -373,13 +385,13 @@ async function DoctorsCatalogPage() {
                         children: "Опытные врачи клиники «Медис». Выберите специалиста и запишитесь онлайн"
                     }, void 0, false, {
                         fileName: "[project]/src/app/doctors/page.tsx",
-                        lineNumber: 31,
+                        lineNumber: 33,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/doctors/page.tsx",
-                lineNumber: 28,
+                lineNumber: 30,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -395,19 +407,19 @@ async function DoctorsCatalogPage() {
                                     alt: doctor.name
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/doctors/page.tsx",
-                                    lineNumber: 39,
+                                    lineNumber: 41,
                                     columnNumber: 33
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$DoctorAvatar$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["DoctorAvatar"], {
                                     name: doctor.name,
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$doctors$2f$DoctorsPage$2e$module$2e$scss__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].avatarSvg
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/doctors/page.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 43,
                                     columnNumber: 33
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/doctors/page.tsx",
-                                lineNumber: 37,
+                                lineNumber: 39,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -418,7 +430,7 @@ async function DoctorsCatalogPage() {
                                         children: doctor.name
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/doctors/page.tsx",
-                                        lineNumber: 45,
+                                        lineNumber: 47,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -426,7 +438,7 @@ async function DoctorsCatalogPage() {
                                         children: doctor.specialization
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/doctors/page.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 48,
                                         columnNumber: 29
                                     }, this),
                                     doctor.experienceYears > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -438,7 +450,7 @@ async function DoctorsCatalogPage() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/doctors/page.tsx",
-                                        lineNumber: 47,
+                                        lineNumber: 49,
                                         columnNumber: 60
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -446,30 +458,30 @@ async function DoctorsCatalogPage() {
                                         children: "Записаться"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/doctors/page.tsx",
-                                        lineNumber: 48,
+                                        lineNumber: 50,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/doctors/page.tsx",
-                                lineNumber: 44,
+                                lineNumber: 46,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, doctor.id, true, {
                         fileName: "[project]/src/app/doctors/page.tsx",
-                        lineNumber: 36,
+                        lineNumber: 38,
                         columnNumber: 21
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/doctors/page.tsx",
-                lineNumber: 34,
+                lineNumber: 36,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/doctors/page.tsx",
-        lineNumber: 27,
+        lineNumber: 29,
         columnNumber: 9
     }, this);
 }

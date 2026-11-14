@@ -4,12 +4,14 @@ import { BlogCatalog } from "./BlogCatalog";
 import styles from "./BlogPage.module.scss";
 
 export const metadata: Metadata = {
-    title: "Блог о здоровье | Медис",
-    description: "Полезные статьи от врачей клиники «Медис» в Махачкале.",
+    title: "Блог о здоровье",
+    description: "Статьи врачей медицинского центра Медис в Махачкале: профилактика, диагностика и лечение.",
+    alternates: { canonical: "/blog" },
     openGraph: {
-        title: "Блог о здоровье | Медис",
-        description: "Полезные статьи от врачей клиники «Медис».",
-        images: [{ url: "/hero.webp" }],
+        title: "Блог о здоровье",
+        description: "Полезные статьи от врачей клиники Медис.",
+        images: [{ url: "/hero-v2.webp" }],
+        url: "https://medis05.ru/blog",
     },
 };
 

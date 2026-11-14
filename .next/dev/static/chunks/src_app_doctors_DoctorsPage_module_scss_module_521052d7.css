@@ -145,7 +145,7 @@
 
 .DoctorsPage-module-scss-module__gDTGkq__card:hover .DoctorsPage-module-scss-module__gDTGkq__btn {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
 }
 
 @media (max-width: 768px) {

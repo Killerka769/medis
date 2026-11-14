@@ -1,0 +1,95 @@
+/* [project]/src/app/components/NotificationsHost/NotificationsHost.module.scss.module.css [app-client] (css) */
+.NotificationsHost-module-scss-module__dj_ChW__backdrop {
+  z-index: 1200;
+  background: #1f331073;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+  position: fixed;
+  inset: 0;
+}
+
+.NotificationsHost-module-scss-module__dj_ChW__modal {
+  background: #fff;
+  border-radius: 20px;
+  width: min(520px, 100%);
+  padding: 32px;
+  box-shadow: 0 24px 60px #5b8c3a33;
+}
+
+.NotificationsHost-module-scss-module__dj_ChW__modalTitle {
+  color: var(--color-primary-dark);
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.NotificationsHost-module-scss-module__dj_ChW__modalText {
+  color: var(--color-text);
+  white-space: pre-wrap;
+  margin-bottom: 24px;
+}
+
+.NotificationsHost-module-scss-module__dj_ChW__closeBtn {
+  background: var(--color-primary);
+  width: 100%;
+  color: var(--color-on-primary);
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 700;
+}
+
+.NotificationsHost-module-scss-module__dj_ChW__toasts {
+  z-index: 1100;
+  flex-direction: column;
+  gap: 12px;
+  width: calc(100% - 40px);
+  max-width: 360px;
+  display: flex;
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+}
+
+.NotificationsHost-module-scss-module__dj_ChW__toast {
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 36px 16px 16px;
+  position: relative;
+  box-shadow: 0 12px 32px #5b8c3a29;
+}
+
+.NotificationsHost-module-scss-module__dj_ChW__toast strong {
+  color: var(--color-primary-dark);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.NotificationsHost-module-scss-module__dj_ChW__toast p {
+  color: var(--color-text);
+  margin: 0;
+  font-size: 14px;
+}
+
+.NotificationsHost-module-scss-module__dj_ChW__toastClose {
+  cursor: pointer;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+@media (max-width: 600px) {
+  .NotificationsHost-module-scss-module__dj_ChW__toasts {
+    bottom: 80px;
+  }
+}
+
+/*# sourceMappingURL=c80d1_components_NotificationsHost_NotificationsHost_module_scss_module_css_bad6b30c._.single.css.map*/

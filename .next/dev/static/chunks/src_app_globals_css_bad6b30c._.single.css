@@ -1,13 +1,14 @@
 /* [project]/src/app/globals.css [app-client] (css) */
 :root {
-  --color-primary: #1e5f9e;
-  --color-primary-dark: #164a7a;
-  --color-primary-light: #e8f2fa;
-  --color-accent: #2b8fd9;
+  --color-primary: #93c572;
+  --color-primary-dark: #5b8c3a;
+  --color-primary-light: #f0f7e6;
+  --color-accent: #7cb35a;
+  --color-on-primary: #1f3310;
   --color-white: #fff;
   --color-text: #1a1a1a;
   --color-text-muted: #6b7280;
-  --color-border: #dbeafe;
+  --color-border: #d5e8c4;
   --color-error: #dc2626;
 }
 
@@ -23,7 +24,7 @@ html {
 
 body {
   color: var(--color-text);
-  background: #f7fafc;
+  background: #f7faf2;
   flex-direction: column;
   min-height: 100vh;
   font-family: Inter, -apple-system, sans-serif;

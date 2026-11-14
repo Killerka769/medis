@@ -4,12 +4,15 @@ import AppointmentsContent from "./AppointmentsContent";
 import styles from "./AppointmentsPage.module.scss";
 
 export const metadata: Metadata = {
-    title: "Запись на прием | Медис",
-    description: "Запишитесь к врачу клиники «Медис» в Махачкале онлайн или по телефону +7 928 555-88-18.",
+    title: "Запись на прием",
+    description: "Онлайн-запись к врачу клиники Медис в Махачкале. Телефон +7 928 555-88-18.",
+    alternates: { canonical: "/appointments" },
+    robots: { index: true, follow: true },
     openGraph: {
-        title: "Запись на прием | Медис",
+        title: "Запись на прием",
         description: "Онлайн-запись в клинику Медис, Махачкала.",
-        images: [{ url: "/hero.webp" }],
+        images: [{ url: "/hero-v2.webp" }],
+        url: "https://medis05.ru/appointments",
     },
 };
 
