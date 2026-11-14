@@ -242,6 +242,75 @@ async function upsertService(categoryId: string, service: SeedService) {
     return created.id as string;
 }
 
+function doctorIdsByNames(doctorIds: Record<string, string>, names: string[]) {
+    return names.map((name) => doctorIds[name]).filter(Boolean);
+}
+
+function doctorsForSeedService(
+    categoryTitle: string,
+    serviceTitle: string,
+    doctorIds: Record<string, string>,
+): string[] {
+    const title = serviceTitle.toLowerCase();
+    const urologists = doctorIdsByNames(doctorIds, [
+        "Исмаилов Абдул Абакарович",
+        "Качаев Эмин Рагимович",
+        "Курбанов Руслан Аладинович",
+    ]);
+    const gynecologist = doctorIdsByNames(doctorIds, ["Таирова Марина Абдуловна"]);
+    const phlebologist = doctorIdsByNames(doctorIds, ["Идрисов Хаджимурад Абдулаевич"]);
+    const dermatologist = doctorIdsByNames(doctorIds, ["Исмаилова Земфира Латифовна"]);
+    const geneticist = doctorIdsByNames(doctorIds, ["Каласов Нурмагомед Магомедович"]);
+    const endocrinologist = doctorIdsByNames(doctorIds, ["Исаева Ханума Вазировна"]);
+    const sonographer = doctorIdsByNames(doctorIds, ["Раджабова Женнет Мурадагаевна"]);
+
+    if (categoryTitle === "Консультации") {
+        if (title.includes("уролог") || title.includes("андролог") || title.includes("бесплод")) return urologists;
+        if (title.includes("гинеколог")) return gynecologist;
+        if (title.includes("флеболог")) return phlebologist;
+        if (title.includes("дерматолог")) return dermatologist;
+        if (title.includes("генетик")) return geneticist;
+        if (title.includes("эндокрин")) return endocrinologist;
+        return [];
+    }
+
+    if (categoryTitle === "УЗИ-диагностика") {
+        if (title.includes("трансвагиналь") || title.includes("молочн")) {
+            return [...new Set([...sonographer, ...gynecologist])];
+        }
+        if (
+            title.includes("предстатель") ||
+            title.includes("мошонк") ||
+            title.includes("трузи") ||
+            title.includes("трансректаль") ||
+            title.includes("почек")
+        ) {
+            return [...new Set([...sonographer, ...urologists])];
+        }
+        if (title.includes("щитовидн")) {
+            return [...new Set([...sonographer, ...endocrinologist])];
+        }
+        return sonographer;
+    }
+
+    if (categoryTitle === "Амбулаторные процедуры") {
+        if (title.includes("атером")) return dermatologist;
+        if (title.includes("плевраль")) return [];
+        return urologists;
+    }
+
+    if (categoryTitle === "Физиопроцедуры") return urologists;
+
+    return [];
+}
+
+async function linkDoctorToService(doctorId: string, serviceId: string) {
+    const existing = await db.orm.public.DoctorService.where({ doctorId, serviceId }).first();
+    if (existing) return false;
+    await db.orm.public.DoctorService.create({ doctorId, serviceId });
+    return true;
+}
+
 async function main() {
     await connectDatabase();
 
@@ -252,22 +321,32 @@ async function main() {
         console.log(`Категория: ${category.title}`);
     }
 
+    const doctorIds: Record<string, string> = {};
     for (const doctor of DOCTORS) {
-        await upsertDoctor(doctor);
+        const id = await upsertDoctor(doctor);
+        doctorIds[doctor.name] = id;
         console.log(`Врач: ${doctor.name}`);
     }
 
+    let linkedCount = 0;
     for (const [categoryTitle, services] of Object.entries(SERVICES)) {
         const categoryId = categoryIds[categoryTitle];
         if (!categoryId) {
             throw new Error(`Категория не найдена: ${categoryTitle}`);
         }
         for (const service of services) {
-            await upsertService(categoryId, service);
+            const serviceId = await upsertService(categoryId, service);
             console.log(`Услуга: ${service.title}`);
+
+            const linkedDoctors = doctorsForSeedService(categoryTitle, service.title, doctorIds);
+            for (const doctorId of linkedDoctors) {
+                const created = await linkDoctorToService(doctorId, serviceId);
+                if (created) linkedCount += 1;
+            }
         }
     }
 
+    console.log(`Связей врач–услуга создано: ${linkedCount}`);
     console.log("Сиды успешно применены.");
 }
 

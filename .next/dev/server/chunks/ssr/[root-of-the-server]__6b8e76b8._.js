@@ -64,6 +64,7 @@ __turbopack_context__.v({
   "field": "AppointmentsPage-module-scss-module__qUn0nG__field",
   "form": "AppointmentsPage-module-scss-module__qUn0nG__form",
   "formSection": "AppointmentsPage-module-scss-module__qUn0nG__formSection",
+  "hint": "AppointmentsPage-module-scss-module__qUn0nG__hint",
   "infoSection": "AppointmentsPage-module-scss-module__qUn0nG__infoSection",
   "input": "AppointmentsPage-module-scss-module__qUn0nG__input",
   "label": "AppointmentsPage-module-scss-module__qUn0nG__label",
@@ -96,16 +97,24 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2
 ;
 ;
 const metadata = {
-    title: "Запись на прием | Медис",
-    description: "Запишитесь к врачу клиники «Медис» в Махачкале онлайн или по телефону +7 (928) 555-88-18.",
+    title: "Запись на прием",
+    description: "Онлайн-запись к врачу клиники Медис в Махачкале. Телефон +7 928 555-88-18.",
+    alternates: {
+        canonical: "/appointments"
+    },
+    robots: {
+        index: true,
+        follow: true
+    },
     openGraph: {
-        title: "Запись на прием | Медис",
+        title: "Запись на прием",
         description: "Онлайн-запись в клинику Медис, Махачкала.",
         images: [
             {
-                url: "/hero.webp"
+                url: "/hero-v2.webp"
             }
-        ]
+        ],
+        url: "https://medis05.ru/appointments"
     }
 };
 function AppointmentsPage() {
@@ -115,17 +124,17 @@ function AppointmentsPage() {
             children: "Загрузка формы..."
         }, void 0, false, {
             fileName: "[project]/src/app/appointments/page.tsx",
-            lineNumber: 18,
+            lineNumber: 21,
             columnNumber: 29
         }, void 0),
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsContent$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
             fileName: "[project]/src/app/appointments/page.tsx",
-            lineNumber: 19,
+            lineNumber: 22,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/appointments/page.tsx",
-        lineNumber: 18,
+        lineNumber: 21,
         columnNumber: 9
     }, this);
 }

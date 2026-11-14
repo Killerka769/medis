@@ -24,6 +24,11 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ message: "Заполните все обязательные поля" }, { status: 400 });
         }
 
+        const link = await db.orm.public.DoctorService.where({ doctorId, serviceId }).first();
+        if (!link) {
+            return NextResponse.json({ message: "Этот врач не оказывает выбранную услугу" }, { status: 400 });
+        }
+
         // 3. Создаем запись
         const newAppointment = await db.orm.public.Appointment.create({
             patientId,

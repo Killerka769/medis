@@ -78,6 +78,7 @@ __turbopack_context__.v({
   "field": "AppointmentsPage-module-scss-module__qUn0nG__field",
   "form": "AppointmentsPage-module-scss-module__qUn0nG__form",
   "formSection": "AppointmentsPage-module-scss-module__qUn0nG__formSection",
+  "hint": "AppointmentsPage-module-scss-module__qUn0nG__hint",
   "infoSection": "AppointmentsPage-module-scss-module__qUn0nG__infoSection",
   "input": "AppointmentsPage-module-scss-module__qUn0nG__input",
   "label": "AppointmentsPage-module-scss-module__qUn0nG__label",
@@ -134,7 +135,7 @@ function AppointmentsContent() {
     const createMutation = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$ReactQuery$2f$query$2f$public$2f$appointments$2f$query$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCreateAppointment"])();
     const [isSuccess, setIsSuccess] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isAuth, setIsAuth] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const { register, handleSubmit, formState: { errors }, setValue } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useForm"])({
+    const { register, handleSubmit, formState: { errors }, setValue, watch } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useForm"])({
         resolver: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$hookform$2f$resolvers$2f$zod$2f$dist$2f$zod$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["zodResolver"])(bookingSchema),
         defaultValues: {
             doctorId: "",
@@ -144,6 +145,46 @@ function AppointmentsContent() {
             agree: false
         }
     });
+    const selectedServiceId = watch("serviceId");
+    const selectedDoctorId = watch("doctorId");
+    const servicesByCategory = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "AppointmentsContent.useMemo[servicesByCategory]": ()=>{
+            const groups = [];
+            const indexByTitle = new Map();
+            for (const service of bookingData?.services || []){
+                const title = service.category?.title || "Услуги";
+                const existing = indexByTitle.get(title);
+                if (existing === undefined) {
+                    indexByTitle.set(title, groups.length);
+                    groups.push({
+                        title,
+                        services: [
+                            service
+                        ]
+                    });
+                } else {
+                    groups[existing].services.push(service);
+                }
+            }
+            return groups;
+        }
+    }["AppointmentsContent.useMemo[servicesByCategory]"], [
+        bookingData
+    ]);
+    const doctorsForService = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "AppointmentsContent.useMemo[doctorsForService]": ()=>{
+            if (!selectedServiceId || !bookingData?.services) return [];
+            const service = bookingData.services.find({
+                "AppointmentsContent.useMemo[doctorsForService].service": (item)=>item.id === selectedServiceId
+            }["AppointmentsContent.useMemo[doctorsForService].service"]);
+            return (service?.doctors || []).filter({
+                "AppointmentsContent.useMemo[doctorsForService]": (doc)=>doc && doc.isActive !== false
+            }["AppointmentsContent.useMemo[doctorsForService]"]);
+        }
+    }["AppointmentsContent.useMemo[doctorsForService]"], [
+        bookingData,
+        selectedServiceId
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AppointmentsContent.useEffect": ()=>{
             fetch("/api/profile").then({
@@ -155,12 +196,40 @@ function AppointmentsContent() {
     }["AppointmentsContent.useEffect"], []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AppointmentsContent.useEffect": ()=>{
-            const doc = searchParams.get("doctor");
             const srv = searchParams.get("service");
-            if (doc) setValue("doctorId", doc);
             if (srv) setValue("serviceId", srv);
         }
     }["AppointmentsContent.useEffect"], [
+        searchParams,
+        setValue
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "AppointmentsContent.useEffect": ()=>{
+            if (!selectedServiceId) {
+                setValue("doctorId", "");
+                return;
+            }
+            const allowed = new Set(doctorsForService.map({
+                "AppointmentsContent.useEffect": (doc)=>doc.id
+            }["AppointmentsContent.useEffect"]));
+            const fromUrl = searchParams.get("doctor");
+            if (fromUrl && allowed.has(fromUrl)) {
+                setValue("doctorId", fromUrl);
+                return;
+            }
+            if (selectedDoctorId && allowed.has(selectedDoctorId)) return;
+            if (doctorsForService.length === 1) {
+                setValue("doctorId", doctorsForService[0].id);
+                return;
+            }
+            if (selectedDoctorId && !allowed.has(selectedDoctorId)) {
+                setValue("doctorId", "");
+            }
+        }
+    }["AppointmentsContent.useEffect"], [
+        selectedServiceId,
+        doctorsForService,
+        selectedDoctorId,
         searchParams,
         setValue
     ]);
@@ -175,7 +244,7 @@ function AppointmentsContent() {
         children: "Загрузка формы..."
     }, void 0, false, {
         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-        lineNumber: 54,
+        lineNumber: 99,
         columnNumber: 46
     }, this);
     if (!isAuth) {
@@ -188,23 +257,23 @@ function AppointmentsContent() {
                         children: "Войдите, чтобы записаться"
                     }, void 0, false, {
                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                        lineNumber: 60,
+                        lineNumber: 105,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: "Запись на прием доступна в личном кабинете. Если аккаунта ещё нет — регистрация займёт минуту."
                     }, void 0, false, {
                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                        lineNumber: 61,
+                        lineNumber: 106,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                         href: "tel:+79285558818",
                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].phone,
-                        children: "+7 (928) 555-88-18"
+                        children: "+7 928 555-88-18"
                     }, void 0, false, {
                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                        lineNumber: 62,
+                        lineNumber: 107,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -216,7 +285,7 @@ function AppointmentsContent() {
                                 children: "Войти"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                lineNumber: 64,
+                                lineNumber: 109,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -225,24 +294,24 @@ function AppointmentsContent() {
                                 children: "Создать аккаунт"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                lineNumber: 65,
+                                lineNumber: 110,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                        lineNumber: 63,
+                        lineNumber: 108,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                lineNumber: 59,
+                lineNumber: 104,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-            lineNumber: 58,
+            lineNumber: 103,
             columnNumber: 13
         }, this);
     }
@@ -257,21 +326,21 @@ function AppointmentsContent() {
                         children: "✓"
                     }, void 0, false, {
                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                        lineNumber: 76,
+                        lineNumber: 121,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                         children: "Заявка принята"
                     }, void 0, false, {
                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                        lineNumber: 77,
+                        lineNumber: 122,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: "Администратор свяжется с вами, чтобы подтвердить удобное время приёма."
                     }, void 0, false, {
                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                        lineNumber: 78,
+                        lineNumber: 123,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -280,18 +349,18 @@ function AppointmentsContent() {
                         children: "Перейти в профиль"
                     }, void 0, false, {
                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                        lineNumber: 79,
+                        lineNumber: 124,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                lineNumber: 75,
+                lineNumber: 120,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-            lineNumber: 74,
+            lineNumber: 119,
             columnNumber: 13
         }, this);
     }
@@ -308,15 +377,15 @@ function AppointmentsContent() {
                             children: "Запись на прием"
                         }, void 0, false, {
                             fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                            lineNumber: 89,
+                            lineNumber: 134,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].subtitle,
-                            children: "Выберите удобное время и специалиста. Мы позаботимся о вашем здоровье."
+                            children: "Сначала выберите услугу, затем врача, который её оказывает, и оставьте комментарий при необходимости."
                         }, void 0, false, {
                             fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                            lineNumber: 90,
+                            lineNumber: 135,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -326,28 +395,28 @@ function AppointmentsContent() {
                                     children: "Или запишитесь по телефону:"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 137,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                     href: "tel:+79285558818",
                                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].phone,
-                                    children: "+7 (928) 555-88-18"
+                                    children: "+7 928 555-88-18"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                    lineNumber: 93,
+                                    lineNumber: 138,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                            lineNumber: 91,
+                            lineNumber: 136,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                    lineNumber: 88,
+                    lineNumber: 133,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -361,25 +430,84 @@ function AppointmentsContent() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].label,
-                                        children: "Специалист"
+                                        children: "1. Услуга"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 145,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].input,
+                                        ...register("serviceId"),
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                value: "",
+                                                children: "— Сначала выберите услугу —"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
+                                                lineNumber: 147,
+                                                columnNumber: 33
+                                            }, this),
+                                            servicesByCategory.map((group)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("optgroup", {
+                                                    label: group.title,
+                                                    children: group.services.map((srv)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                            value: srv.id,
+                                                            children: srv.title
+                                                        }, srv.id, false, {
+                                                            fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
+                                                            lineNumber: 151,
+                                                            columnNumber: 45
+                                                        }, this))
+                                                }, group.title, false, {
+                                                    fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
+                                                    lineNumber: 149,
+                                                    columnNumber: 37
+                                                }, this))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
+                                        lineNumber: 146,
+                                        columnNumber: 29
+                                    }, this),
+                                    errors.serviceId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].error,
+                                        children: errors.serviceId.message
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
+                                        lineNumber: 156,
+                                        columnNumber: 50
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
+                                lineNumber: 144,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].field,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].label,
+                                        children: "2. Врач по этой услуге"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
+                                        lineNumber: 160,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].input,
                                         ...register("doctorId"),
+                                        disabled: !selectedServiceId || doctorsForService.length === 0,
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                 value: "",
-                                                children: "— Выберите врача —"
+                                                children: !selectedServiceId ? "— Сначала выберите услугу —" : doctorsForService.length ? "— Выберите врача —" : "— Для этой услуги врачи не назначены —"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                                lineNumber: 102,
+                                                lineNumber: 162,
                                                 columnNumber: 33
                                             }, this),
-                                            bookingData?.doctors.map((doc)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            doctorsForService.map((doc)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                     value: doc.id,
                                                     children: [
                                                         doc.name,
@@ -389,27 +517,35 @@ function AppointmentsContent() {
                                                     ]
                                                 }, doc.id, true, {
                                                     fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                                    lineNumber: 104,
+                                                    lineNumber: 170,
                                                     columnNumber: 37
                                                 }, this))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 101,
+                                        lineNumber: 161,
                                         columnNumber: 29
+                                    }, this),
+                                    selectedServiceId && doctorsForService.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].hint,
+                                        children: "Для этой услуги пока нет врача. Позвоните по телефону +7 928 555-88-18."
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
+                                        lineNumber: 174,
+                                        columnNumber: 33
                                     }, this),
                                     errors.doctorId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].error,
                                         children: errors.doctorId.message
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 107,
+                                        lineNumber: 176,
                                         columnNumber: 49
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                lineNumber: 99,
+                                lineNumber: 159,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -417,50 +553,26 @@ function AppointmentsContent() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].label,
-                                        children: "Услуга"
+                                        children: "3. Комментарий (необязательно)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 180,
                                         columnNumber: 29
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].input,
-                                        ...register("serviceId"),
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                value: "",
-                                                children: "— Выберите услугу —"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                                lineNumber: 113,
-                                                columnNumber: 33
-                                            }, this),
-                                            bookingData?.services.map((srv)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                    value: srv.id,
-                                                    children: srv.title
-                                                }, srv.id, false, {
-                                                    fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                                    lineNumber: 115,
-                                                    columnNumber: 37
-                                                }, this))
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 112,
-                                        columnNumber: 29
-                                    }, this),
-                                    errors.serviceId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].error,
-                                        children: errors.serviceId.message
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].textarea,
+                                        rows: 3,
+                                        placeholder: "Опишите жалобы или пожелания",
+                                        ...register("comment")
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 118,
-                                        columnNumber: 50
+                                        lineNumber: 181,
+                                        columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                lineNumber: 110,
+                                lineNumber: 179,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -471,7 +583,7 @@ function AppointmentsContent() {
                                         children: "Желаемая дата и время"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 185,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -480,7 +592,7 @@ function AppointmentsContent() {
                                         ...register("date")
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 123,
+                                        lineNumber: 186,
                                         columnNumber: 29
                                     }, this),
                                     errors.date && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -488,40 +600,13 @@ function AppointmentsContent() {
                                         children: errors.date.message
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 187,
                                         columnNumber: 45
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                lineNumber: 121,
-                                columnNumber: 25
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].field,
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].label,
-                                        children: "Комментарий (необязательно)"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 128,
-                                        columnNumber: 29
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].textarea,
-                                        rows: 3,
-                                        placeholder: "Опишите жалобы или пожелания",
-                                        ...register("comment")
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 129,
-                                        columnNumber: 29
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                lineNumber: 127,
+                                lineNumber: 184,
                                 columnNumber: 25
                             }, this),
                             createMutation.isError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -529,7 +614,7 @@ function AppointmentsContent() {
                                 children: createMutation.error.message
                             }, void 0, false, {
                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                lineNumber: 133,
+                                lineNumber: 191,
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -541,7 +626,7 @@ function AppointmentsContent() {
                                         ...register("agree")
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 137,
+                                        lineNumber: 195,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -555,7 +640,7 @@ function AppointmentsContent() {
                                                 children: "Политики конфиденциальности"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                                lineNumber: 140,
+                                                lineNumber: 198,
                                                 columnNumber: 33
                                             }, this),
                                             " и",
@@ -566,20 +651,20 @@ function AppointmentsContent() {
                                                 children: "Согласия на обработку ПД"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                                lineNumber: 141,
+                                                lineNumber: 199,
                                                 columnNumber: 33
                                             }, this),
                                             "."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                        lineNumber: 138,
+                                        lineNumber: 196,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                lineNumber: 136,
+                                lineNumber: 194,
                                 columnNumber: 25
                             }, this),
                             errors.agree && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -587,43 +672,43 @@ function AppointmentsContent() {
                                 children: errors.agree.message
                             }, void 0, false, {
                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                lineNumber: 144,
+                                lineNumber: 202,
                                 columnNumber: 42
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "submit",
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$appointments$2f$AppointmentsPage$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].btnPrimary,
-                                disabled: createMutation.isPending,
+                                disabled: createMutation.isPending || !selectedServiceId || doctorsForService.length === 0,
                                 children: createMutation.isPending ? "Отправка..." : "Записаться на прием"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                                lineNumber: 146,
+                                lineNumber: 204,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                        lineNumber: 98,
+                        lineNumber: 143,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-                    lineNumber: 97,
+                    lineNumber: 142,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-            lineNumber: 87,
+            lineNumber: 132,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/appointments/AppointmentsContent.tsx",
-        lineNumber: 86,
+        lineNumber: 131,
         columnNumber: 9
     }, this);
 }
-_s(AppointmentsContent, "RKD1SRo/LQ3weLLdZhn6EonPF1c=", false, function() {
+_s(AppointmentsContent, "6N/dZ1PaWQEETKsOHIywiPlCz24=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"],

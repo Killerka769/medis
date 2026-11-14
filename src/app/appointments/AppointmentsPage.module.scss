@@ -120,6 +120,18 @@
       border-color: var(--color-primary);
       box-shadow: 0 0 0 4px rgba(91, 140, 58, 0.1);
     }
+
+    &:disabled {
+      background: #f3f4f6;
+      color: var(--color-text-muted);
+      cursor: not-allowed;
+    }
+  }
+
+  .hint {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-left: 4px;
   }
   
   .textarea {
