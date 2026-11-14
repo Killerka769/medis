@@ -1,0 +1,3 @@
+module.exports=[44848,a=>{"use strict";function b({children:a}){return a}a.s(["default",()=>b,"metadata",0,{title:"Магазин",description:"Товары медицинского центра Медис в Махачкале. Заявка без онлайн-оплаты.",alternates:{canonical:"/shop"},openGraph:{title:"Магазин клиники Медис",description:"Товары клиники Медис. Заявка онлайн.",images:[{url:"/hero-v2.webp"}],url:"https://medis05.ru/shop"}}])}];
+
+//# sourceMappingURL=src_app_shop_layout_tsx_749a6d66._.js.map

@@ -1,0 +1,3 @@
+module.exports=[8625,a=>{"use strict";function b({children:a}){return a}a.s(["default",()=>b,"metadata",0,{title:"Контакты",description:"Адрес, телефон и режим работы медицинского центра Медис в Махачкале. ул. Ахульго, 77.",alternates:{canonical:"/contacts"},openGraph:{title:"Контакты клиники Медис",description:"ул. Ахульго, 77. Телефон +7 928 555-88-18.",images:[{url:"/hero-v2.webp"}],url:"https://medis05.ru/contacts"}}])}];
+
+//# sourceMappingURL=src_app_contacts_layout_tsx_59a221c7._.js.map

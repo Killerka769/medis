@@ -9,10 +9,11 @@ export async function GET() {
             db.orm.public.DoctorService.all(),
         ]);
 
-        const doctorsById = new Map(doctors.map((doctor: { id: string }) => [doctor.id, doctor]));
-        const doctorsByService: Record<string, typeof doctors> = {};
+        type DoctorRow = (typeof doctors)[number];
+        const doctorsById = new Map(doctors.map((doctor) => [doctor.id, doctor]));
+        const doctorsByService: Record<string, DoctorRow[]> = {};
 
-        for (const link of links as { serviceId: string; doctorId: string }[]) {
+        for (const link of links) {
             const doctor = doctorsById.get(link.doctorId);
             if (!doctor) continue;
             if (!doctorsByService[link.serviceId]) doctorsByService[link.serviceId] = [];
@@ -20,17 +21,17 @@ export async function GET() {
         }
 
         for (const list of Object.values(doctorsByService)) {
-            list.sort((a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name, "ru"));
+            list.sort((a, b) => a.name.localeCompare(b.name, "ru"));
         }
 
         const servicesWithDoctors = [...services]
-            .sort((a: any, b: any) => {
+            .sort((a, b) => {
                 const orderA = a.category?.sortOrder ?? 999;
                 const orderB = b.category?.sortOrder ?? 999;
                 if (orderA !== orderB) return orderA - orderB;
-                return String(a.title).localeCompare(String(b.title), "ru");
+                return a.title.localeCompare(b.title, "ru");
             })
-            .map((service: { id: string }) => ({
+            .map((service) => ({
                 ...service,
                 doctors: doctorsByService[service.id] || [],
             }));
