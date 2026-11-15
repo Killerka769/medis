@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { FEATURED_SERVICE_SLUG } from "@/src/lib/content/featured";
 import { getPublicService, getPublicServices } from "@/src/lib/data/public";
 import { DoctorMiniAvatar, MediaPlaceholder } from "../../components/MediaPlaceholder";
 import styles from "./ServiceDetail.module.scss";
@@ -43,6 +44,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     if (!data) notFound();
 
     const { service, doctors } = data;
+    const isUnique = service.slug === FEATURED_SERVICE_SLUG;
 
     return (
         <main className={styles.page}>
@@ -52,6 +54,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
             <div className={styles.layout}>
                 <div className={styles.mainContent}>
+                    {isUnique && <span className={styles.uniquePlaque}>Уникальная методика</span>}
                     <h1 className={styles.title}>{service.title}</h1>
                     <p className={styles.category}>{service.category?.title}</p>
 
@@ -67,6 +70,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                         {service.content || service.description || "Описание услуги скоро появится."}
                     </div>
 
+                    {!isUnique && (
                     <div className={styles.infoBlocks}>
                         <div className={styles.infoBlock}>
                             <h2>Что входит</h2>
@@ -81,15 +85,18 @@ export default async function ServiceDetailPage({ params }: Props) {
                             </p>
                         </div>
                     </div>
+                    )}
 
                     {doctors.length > 0 && (
-                        <div className={styles.doctorsBlock}>
-                            <h2 className={styles.subTitle}>Эту услугу оказывают:</h2>
+                        <div className={`${styles.doctorsBlock} ${isUnique ? styles.uniqueDoctor : ""}`}>
+                            <h2 className={styles.subTitle}>
+                                {isUnique ? "Проводит врач" : "Эту услугу оказывают:"}
+                            </h2>
                             <div className={styles.doctorsGrid}>
                                 {doctors.map((doc: any) => (
                                     <Link href={`/doctors/${doc.slug}`} key={doc.id} className={styles.doctorMini}>
                                         {doc.photoUrl ? <img src={doc.photoUrl} alt={doc.name} /> : <DoctorMiniAvatar name={doc.name} />}
-                                        <div>
+                                        <div className={styles.docMeta}>
                                             <p className={styles.docName}>{doc.name}</p>
                                             <p className={styles.docSpec}>{doc.specialization}</p>
                                         </div>

@@ -20,7 +20,7 @@ export function usePostDoctors() {
     const client = useQueryClient();
     return useMutation({
         mutationKey: ["doctorsPost"],
-        mutationFn: async (data: { name: string, specialization: string, experienceYears: string, education: string, certificates: string, bio: string, photoUrl: string, isActive: string }) => {
+        mutationFn: async (data: { name: string, specialization: string, experienceYears: string, education: string, tags: string, certificates: string, bio: string, photoUrl: string, isActive: string }) => {
             const response = await fetch("/api/admin/doctors", {
                 method: "POST",
                 headers: { "Content-Type" : "application/json" },
@@ -40,7 +40,7 @@ export function usePutDoctors() {
     const client = useQueryClient();
     return useMutation({
         mutationKey: ["doctorsPut"],
-        mutationFn: async (data: { id: string, name: string, specialization: string, experienceYears: string, education: string, certificates: string, bio: string, photoUrl: string, isActive: string }) => {
+        mutationFn: async (data: { id: string, name: string, specialization: string, experienceYears: string, education: string, tags: string, certificates: string, bio: string, photoUrl: string, isActive: string }) => {
             const response = await fetch("/api/admin/doctors", {
                 method: "PUT",
                 headers: { "Content-Type" : "application/json" },

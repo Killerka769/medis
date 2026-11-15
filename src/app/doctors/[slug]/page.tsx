@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPublicDoctor, getPublicDoctors } from "@/src/lib/data/public";
+import { getDoctorTags } from "@/src/lib/content/doctorTags";
 import { DoctorAvatar } from "../../components/DoctorAvatar";
 import styles from "./DoctorDetail.module.scss";
 
@@ -46,6 +47,7 @@ export default async function DoctorDetailPage({ params }: Props) {
     const certificates = Array.isArray(doctor.certificates) ? doctor.certificates : [];
     const educationRaw = doctor.education as any;
     const education = typeof educationRaw === "string" ? educationRaw : (educationRaw?.text || "");
+    const tags = getDoctorTags(doctor);
 
     return (
         <main className={styles.page}>
@@ -68,10 +70,12 @@ export default async function DoctorDetailPage({ params }: Props) {
 
                     <div className={styles.badges}>
                         {doctor.experienceYears > 0 && <span className={styles.badge}>Стаж: {doctor.experienceYears} лет</span>}
-                        {doctor.specialization && (
-                            <span className={styles.badge}>{doctor.specialization}</span>
-                        )}
+                        {tags.map((tag) => (
+                            <span key={tag} className={styles.tag}>{tag}</span>
+                        ))}
                     </div>
+
+                    {doctor.bio && <p className={styles.cardBio}>{doctor.bio}</p>}
 
                     <Link href={`/appointments?doctor=${doctor.id}`} className={styles.btnPrimary}>
                         Записаться к врачу
@@ -80,13 +84,6 @@ export default async function DoctorDetailPage({ params }: Props) {
             </div>
 
             <div className={styles.detailsGrid}>
-                {doctor.bio && (
-                    <div className={styles.block}>
-                        <h2>О враче</h2>
-                        <p>{doctor.bio}</p>
-                    </div>
-                )}
-
                 {education && (
                     <div className={styles.block}>
                         <h2>Образование</h2>

@@ -25,9 +25,11 @@ function slugify(text: string) {
 
 type SeedService = {
     title: string;
-    price: number;
+    price?: number | null;
     priceFrom?: boolean;
     description?: string | null;
+    content?: string | null;
+    duration?: number | null;
 };
 
 const CATEGORIES = [
@@ -36,6 +38,7 @@ const CATEGORIES = [
     { title: "Амбулаторные процедуры", sortOrder: 3 },
     { title: "Физиопроцедуры", sortOrder: 4 },
     { title: "Процедурный кабинет", sortOrder: 5 },
+    { title: "Урология/Операции", sortOrder: 6 },
 ];
 
 const DOCTORS = [
@@ -48,10 +51,11 @@ const DOCTORS = [
     },
     {
         name: "Качаев Эмин Рагимович",
-        specialization: "Врач-уролог",
-        experienceYears: 0,
+        specialization: "Врач-уролог высшей категории, андролог",
+        experienceYears: 29,
         photoUrl: null as string | null,
-        bio: null as string | null,
+        bio: "Урологическая патология, лечение воспалительных заболеваний (уретриты, циститы, простатиты, включая ФТЛ), ИППП (урогенитальные инфекции), консервативное лечение недержания мочи у женщин, диагностика и лечение различных форм бесплодия, предгравидарная подготовка, подготовка пациентов к вспомогательным репродуктивным технологиям, андрология (исключение сексология).",
+        tags: ["Мужское здоровье", "Бесплодие", "Простатит", "Урогенитальные инфекции"],
     },
     {
         name: "Курбанов Руслан Аладинович",
@@ -167,6 +171,15 @@ const SERVICES: Record<string, SeedService[]> = {
         { title: "ЭКГ", price: 350, description: "с расшифровкой - 700" },
         { title: "Инъекция внутривенная", price: 200 },
     ],
+    "Урология/Операции": [
+        {
+            title: "Фаллопротезирование",
+            price: null,
+            duration: null,
+            description: "В нашем центре Исмаилов Абдул Абакарович проводит уникальную операцию — фаллопротезирование. В Махачкале и Республике Дагестан больше нигде эту операцию не делают.",
+            content: "Фаллопротезирование — операция при эректильной дисфункции, когда консервативное лечение уже не даёт результата. В медицинском центре «Медис» её проводит врач-уролог Исмаилов Абдул Абакарович.\n\nЭто единственная клиника в Махачкале и Республике Дагестан, где выполняют фаллопротезирование. Пациентам из региона не нужно уезжать в другие города: консультация, обследование и операция доступны на месте.\n\nВид протеза и объём вмешательства врач подбирает индивидуально после очного осмотра. Стоимость уточняется на консультации.",
+        },
+    ],
 };
 
 async function upsertCategory(title: string, sortOrder: number) {
@@ -192,27 +205,33 @@ async function upsertCategory(title: string, sortOrder: number) {
     return created.id as string;
 }
 
-async function upsertDoctor(doctor: (typeof DOCTORS)[number]) {
+async function upsertDoctor(doctor: (typeof DOCTORS)[number] & { tags?: string[] }) {
     const slug = slugify(doctor.name);
+    const existing = await db.orm.public.Doctor.where({ slug }).first();
+    const education = doctor.tags
+        ? { text: typeof existing?.education === "object" && existing?.education && "text" in (existing.education as object) ? String((existing.education as { text?: string }).text || "") : "", tags: doctor.tags }
+        : existing?.education ?? null;
+
     const payload = {
         name: doctor.name,
         slug,
         specialization: doctor.specialization,
         experienceYears: doctor.experienceYears,
-        education: null,
-        certificates: [] as string[],
-        bio: doctor.bio,
-        photoUrl: doctor.photoUrl,
+        bio: doctor.bio ?? existing?.bio ?? null,
+        photoUrl: existing?.photoUrl || doctor.photoUrl,
         isActive: true,
+        education,
     };
 
-    const existing = await db.orm.public.Doctor.where({ slug }).first();
     if (existing) {
         await db.orm.public.Doctor.where({ id: existing.id }).update(payload);
         return existing.id as string;
     }
 
-    const created = await db.orm.public.Doctor.create(payload);
+    const created = await db.orm.public.Doctor.create({
+        ...payload,
+        certificates: [],
+    });
     return created.id as string;
 }
 
@@ -222,12 +241,12 @@ async function upsertService(categoryId: string, service: SeedService) {
         title: service.title,
         slug,
         description: service.description ?? null,
-        content: null,
-        price: service.price,
+        content: service.content ?? null,
+        price: service.price ?? null,
         priceFrom: service.priceFrom === true,
         categoryId,
         isOms: false,
-        duration: 30,
+        duration: service.duration === undefined ? 30 : service.duration,
         imageUrl: null,
         isActive: true,
     };
@@ -300,6 +319,10 @@ function doctorsForSeedService(
     }
 
     if (categoryTitle === "Физиопроцедуры") return urologists;
+
+    if (categoryTitle === "Урология/Операции" || title.includes("фаллопротез")) {
+        return doctorIdsByNames(doctorIds, ["Исмаилов Абдул Абакарович"]);
+    }
 
     return [];
 }

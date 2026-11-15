@@ -10,6 +10,7 @@ import { Faq } from "./components/home/Faq";
 import { MediaPlaceholder } from "./components/MediaPlaceholder";
 import { DoctorAvatar } from "./components/DoctorAvatar";
 import { BannerSlider } from "./components/BannerSlider/BannerSlider";
+import { FEATURED_HOME_TITLE } from "@/src/lib/content/featured";
 
 export function HomeView({ data }: { data: any }) {
     useEffect(() => {
@@ -85,6 +86,24 @@ export function HomeView({ data }: { data: any }) {
                     </div>
                 </div>
             </section>
+
+            {data.featuredService && (
+                <section className={`${styles.uniqueBlock} ${styles.reveal}`}>
+                    <p className={styles.uniqueEyebrow}>Уникальная методика</p>
+                    <h2 className={styles.uniqueTitle}>{FEATURED_HOME_TITLE}</h2>
+                    <p className={styles.uniqueText}>
+                        {data.featuredService.description || "В нашем центре проводят уникальную операцию — фаллопротезирование."}
+                    </p>
+                    <div className={styles.uniqueActions}>
+                        <Link href={`/services/${data.featuredService.slug}`} className={styles.btnPrimary}>
+                            Узнать подробнее
+                        </Link>
+                        <Link href={`/appointments?service=${data.featuredService.id}`} className={styles.btnSecondary}>
+                            Записаться на консультацию
+                        </Link>
+                    </div>
+                </section>
+            )}
 
             {data.banners && data.banners.length > 0 && (
                 <BannerSlider banners={data.banners} />

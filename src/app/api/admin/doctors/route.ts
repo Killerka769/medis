@@ -1,3 +1,4 @@
+import { parseTagLines } from "@/src/lib/content/doctorTags";
 import { db } from "@/src/prisma/db";
 import { generateSlug } from "@/src/utils/generateSlug";
 import { jwtVerify } from "jose";
@@ -36,10 +37,12 @@ export async function POST(req: NextRequest) {
     }
     if(roleCurrentUser !== "admin") return NextResponse.json({ message: "Нет доступа" }, { status: 403 });
     try {
-        const { name, specialization, experienceYears, education, certificates, bio, photoUrl, isActive } = await req.json();
+        const { name, specialization, experienceYears, education, tags, certificates, bio, photoUrl, isActive } = await req.json();
         if(!name || !specialization) return NextResponse.json({ message: "Заполните имя и специализацию" }, { status: 400 });
         const slug = await generateSlug(name);
-        const newDoctor = await db.orm.public.Doctor.create({ name, slug, bio: bio || null, photoUrl: photoUrl || null, isActive: isActive === true || isActive === "true", experienceYears: Number(experienceYears) || 0, specialization, education: education ? { text: education.trim() } : null, certificates: certificates ? certificates.split("\n").map((s: string) => s.trim()).filter(Boolean) : [] });
+        const tagList = parseTagLines(typeof tags === "string" ? tags : "");
+        const educationText = typeof education === "string" ? education.trim() : "";
+        const newDoctor = await db.orm.public.Doctor.create({ name, slug, bio: bio || null, photoUrl: photoUrl || null, isActive: isActive === true || isActive === "true", experienceYears: Number(experienceYears) || 0, specialization, education: (educationText || tagList.length) ? { text: educationText, tags: tagList } : null, certificates: certificates ? certificates.split("\n").map((s: string) => s.trim()).filter(Boolean) : [] });
         return NextResponse.json({ message: "Доктор успешно создан", doctor: newDoctor }, { status: 201 });
     } catch (error) {
         console.error(error);
@@ -59,10 +62,12 @@ export async function PUT(req: NextRequest) {
     }
     if(roleCurrentUser !== "admin") return NextResponse.json({ message: "Нет доступа" }, { status: 403 });
     try {
-        const { id, name, specialization, experienceYears, education, certificates, bio, photoUrl, isActive } = await req.json();
+        const { id, name, specialization, experienceYears, education, tags, certificates, bio, photoUrl, isActive } = await req.json();
         if(!id || !name || !specialization) return NextResponse.json({ message: "Заполните имя и специализацию" }, { status: 400 });
         const slug = await generateSlug(name);
-        const updateDoctor = await db.orm.public.Doctor.where({ id }).update({ name, slug, bio: bio || null, photoUrl: photoUrl || null, isActive: isActive === true || isActive === "true", experienceYears: Number(experienceYears) || 0, specialization, education: education ? { text: education.trim() } : null, certificates: certificates ? certificates.split("\n").map((s: string) => s.trim()).filter(Boolean) : [] });
+        const tagList = parseTagLines(typeof tags === "string" ? tags : "");
+        const educationText = typeof education === "string" ? education.trim() : "";
+        const updateDoctor = await db.orm.public.Doctor.where({ id }).update({ name, slug, bio: bio || null, photoUrl: photoUrl || null, isActive: isActive === true || isActive === "true", experienceYears: Number(experienceYears) || 0, specialization, education: (educationText || tagList.length) ? { text: educationText, tags: tagList } : null, certificates: certificates ? certificates.split("\n").map((s: string) => s.trim()).filter(Boolean) : [] });
         return NextResponse.json({ message: "Доктор успешно обновлен", doctor: updateDoctor }, { status: 200 });
     } catch (error) {
         console.error(error);

@@ -4,6 +4,18 @@
 @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .sidebar { order: -1; position: static; } }
 
 .mainContent { background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--color-border); }
+.uniquePlaque {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 .title { font-size: 32px; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 8px; text-align: left; overflow-wrap: anywhere; }
 .category { font-size: 15px; color: var(--color-primary); margin-bottom: 24px; font-weight: 500; }
 .image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 24px; }
@@ -28,14 +40,16 @@
 .omsNo { color: #334155; background: #f1f5f9; }
 
 .doctorsBlock { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--color-border); }
+.uniqueDoctor .doctorMini { background: #F0F7E6; border-color: var(--color-primary); }
 .subTitle { font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--color-text); }
 .doctorsGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 16px; }
 .doctorMini { display: flex; gap: 16px; align-items: center; padding: 12px; border: 1px solid var(--color-border); border-radius: 12px; text-decoration: none; transition: border-color 0.3s ease, box-shadow 0.3s ease;
     &:hover { border-color: var(--color-primary); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-      img, > div { transform: scale(1.05); }
+      img { transform: scale(1.05); }
     }
-    img, > div { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; flex-shrink: 0; transition: transform 0.3s ease; }
+    img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; flex-shrink: 0; transition: transform 0.3s ease; }
 }
+.docMeta { min-width: 0; }
 .docName { font-size: 15px; font-weight: 600; color: var(--color-text); margin-bottom: 2px; }
 .docSpec { font-size: 12px; color: var(--color-text-muted); }
 

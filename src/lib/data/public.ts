@@ -1,3 +1,4 @@
+import { FEATURED_SERVICE_SLUG } from "@/src/lib/content/featured";
 import { db } from "@/src/prisma/db";
 
 export async function getHomeData() {
@@ -30,7 +31,11 @@ export async function getHomeData() {
         return list.includes("/") || list.includes("*");
     });
 
-    return { doctors, services, articles, banners: homeBanners };
+    const featuredService = await db.orm.public.Service
+        .where({ slug: FEATURED_SERVICE_SLUG, isActive: true })
+        .first();
+
+    return { doctors, services, articles, banners: homeBanners, featuredService };
 }
 
 export async function getPublicServices() {

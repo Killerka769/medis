@@ -80,6 +80,11 @@ export function matchDoctorsForService<T extends DoctorLike>(
 
     if (category.includes("физио")) return urologists;
 
+    if (title.includes("фаллопротез") || category.includes("операц")) {
+        const surgeon = active.filter((doctor) => doctor.name.toLowerCase().includes("исмаилов абдул"));
+        return surgeon.length ? surgeon : urologists;
+    }
+
     if (category.includes("процедурн")) return active;
 
     return active;

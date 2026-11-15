@@ -616,6 +616,54 @@
 }
 
 /* =========================
+   УНИКАЛЬНАЯ ОПЕРАЦИЯ
+   ========================= */
+.uniqueBlock {
+  margin: 0 0 72px;
+  padding: 40px 48px;
+  background: linear-gradient(135deg, #F0F7E6 0%, #ffffff 45%, #E4F2D4 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 28px;
+  box-shadow: 0 16px 40px rgba(91, 140, 58, 0.08);
+  text-align: left;
+}
+
+.uniqueEyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.uniqueTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 12px;
+  letter-spacing: -0.4px;
+}
+
+.uniqueText {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-text);
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.uniqueActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* =========================
    АДАПТИВ
    ========================= */
 @media (max-width: 1024px) {
@@ -672,4 +720,8 @@
     padding-right: 64px;
   }
   .featuresGrid, .doctorsGrid, .servicesGrid, .articlesGrid { grid-template-columns: 1fr; }
+  .uniqueBlock { margin: 0 0 40px; padding: 24px 16px; }
+  .uniqueTitle { font-size: 24px; }
+  .uniqueText { font-size: 15px; margin-bottom: 20px; }
+  .uniqueActions { flex-direction: column; }
 }

@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod"
 import Modal from "../../components/ui/Modal/Modal";
 import { useState } from "react";
+import { getDoctorTags } from "@/src/lib/content/doctorTags";
 import { TDoctors } from "@/src/types";
 import styles from "./DoctorsPage.module.scss";
 import { useRouter } from "next/navigation";
@@ -15,6 +16,7 @@ const doctorsSchema = z.object({
     specialization: z.string().min(1, "Специализация обязательна"),
     experienceYears: z.string().regex(/^\d+$/, "Только цифры"),
     education: z.string(),
+    tags: z.string(),
     certificates: z.string(),
     bio: z.string(),
     photoUrl: z.string(),
@@ -28,6 +30,7 @@ const doctorsUpdateSchema = z.object({
     specialization: z.string().min(1, "Специализация обязательна"),
     experienceYears: z.string().regex(/^\d+$/, "Только цифры"),
     education: z.string(),
+    tags: z.string(),
     certificates: z.string(),
     bio: z.string(),
     photoUrl: z.string(),
@@ -48,7 +51,7 @@ export default function DoctorsPage() {
         resolver: zodResolver(doctorsUpdateSchema),
         defaultValues: {
             id: "", name: "", specialization: "", experienceYears: "",
-            education: "", certificates: "", bio: "", photoUrl: "", isActive: "true"
+            education: "", tags: "", certificates: "", bio: "", photoUrl: "", isActive: "true"
         }
     })
 
@@ -65,7 +68,7 @@ export default function DoctorsPage() {
         resolver: zodResolver(doctorsSchema),
         defaultValues: {
             name: "", specialization: "", experienceYears: "",
-            education: "", certificates: "", bio: "", photoUrl: "", isActive: "true"
+            education: "", tags: "", certificates: "", bio: "", photoUrl: "", isActive: "true"
         }
     })
 
@@ -125,6 +128,7 @@ export default function DoctorsPage() {
                                                     experienceYears: String(doctor.experienceYears ?? ""),
                                                     certificates: Array.isArray(doctor.certificates) ? doctor.certificates.join("\n") : (doctor.certificates ?? ""),
                                                     education: (doctor.education as unknown as { text: string })?.text ?? "",
+                                                    tags: getDoctorTags(doctor).join("\n"),
                                                     bio: doctor.bio ?? "",
                                                     photoUrl: doctor.photoUrl ?? "",
                                                     isActive: String(doctor.isActive) as "true" | "false"
@@ -164,6 +168,10 @@ export default function DoctorsPage() {
                     <div className={styles.field}>
                         <label className={styles.label} htmlFor="education">Образование</label>
                         <textarea className={styles.textarea} id="education" rows={3} {...register("education")} />
+                    </div>
+                    <div className={styles.field}>
+                        <label className={styles.label} htmlFor="tags">Теги на карточке (каждый с новой строки)</label>
+                        <textarea className={styles.textarea} id="tags" rows={3} {...register("tags")} />
                     </div>
                     <div className={styles.field}>
                         <label className={styles.label} htmlFor="certificates">Сертификаты (каждый с новой строки)</label>
@@ -218,6 +226,10 @@ export default function DoctorsPage() {
                     <div className={styles.field}>
                         <label className={styles.label} htmlFor="educationPut">Образование</label>
                         <textarea className={styles.textarea} id="educationPut" rows={3} {...registerPut("education")} />
+                    </div>
+                    <div className={styles.field}>
+                        <label className={styles.label} htmlFor="tagsPut">Теги на карточке (каждый с новой строки)</label>
+                        <textarea className={styles.textarea} id="tagsPut" rows={3} {...registerPut("tags")} />
                     </div>
                     <div className={styles.field}>
                         <label className={styles.label} htmlFor="certificatesPut">Сертификаты (каждый с новой строки)</label>
