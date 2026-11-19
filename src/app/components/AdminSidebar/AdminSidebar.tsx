@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import styles from "./AdminSidebar.module.scss";
 
@@ -23,36 +24,50 @@ const menuItems = [
 
 export function AdminSidebar() {
     const pathname = usePathname();
+    const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        setOpen(false);
+    }, [pathname]);
 
     return (
-        <aside className={styles.sidebar}>
-            <div className={styles.logoWrap}>
-                <Link href="/" className={styles.logo}>
-                    Медис <span>Admin</span>
-                </Link>
-            </div>
+        <>
+            <button type="button" className={styles.menuBtn} onClick={() => setOpen(true)} aria-label="Открыть меню">
+                ☰
+            </button>
+            {open && <button type="button" className={styles.backdrop} onClick={() => setOpen(false)} aria-label="Закрыть меню" />}
+            <aside className={`${styles.sidebar} ${open ? styles.open : ""}`}>
+                <div className={styles.logoWrap}>
+                    <Link href="/" className={styles.logo}>
+                        Медис <span>Admin</span>
+                    </Link>
+                    <button type="button" className={styles.closeBtn} onClick={() => setOpen(false)} aria-label="Закрыть меню">
+                        ×
+                    </button>
+                </div>
 
-            <nav className={styles.nav}>
-                {menuItems.map((item) => {
-                    const isActive = pathname === item.path || (pathname.startsWith(item.path) && item.path !== "/admin");
-                    return (
-                        <Link 
-                            key={item.path} 
-                            href={item.path} 
-                            className={`${styles.navItem} ${isActive ? styles.active : ""}`}
-                        >
-                            <span className={styles.icon}>{item.icon}</span>
-                            {item.label}
-                        </Link>
-                    )
-                })}
-            </nav>
+                <nav className={styles.nav}>
+                    {menuItems.map((item) => {
+                        const isActive = pathname === item.path || (pathname.startsWith(item.path) && item.path !== "/admin");
+                        return (
+                            <Link 
+                                key={item.path} 
+                                href={item.path} 
+                                className={`${styles.navItem} ${isActive ? styles.active : ""}`}
+                            >
+                                <span className={styles.icon}>{item.icon}</span>
+                                {item.label}
+                            </Link>
+                        )
+                    })}
+                </nav>
 
-            <div className={styles.bottom}>
-                <Link href="/" className={styles.siteLink} target="_blank">
-                    Открыть сайт ↗
-                </Link>
-            </div>
-        </aside>
+                <div className={styles.bottom}>
+                    <Link href="/" className={styles.siteLink} target="_blank">
+                        Открыть сайт ↗
+                    </Link>
+                </div>
+            </aside>
+        </>
     );
 }

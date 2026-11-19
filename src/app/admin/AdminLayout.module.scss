@@ -16,12 +16,13 @@
     margin: 0 auto;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .adminLayout {
       flex-direction: column;
     }
     .content {
-      padding: 20px;
+      padding: 68px 16px 24px;
       height: auto;
+      min-height: 100vh;
     }
   }
