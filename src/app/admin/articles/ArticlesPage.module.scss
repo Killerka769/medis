@@ -87,12 +87,16 @@
     background: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: 16px;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
     box-shadow: 0 4px 20px rgba(91, 140, 58, 0.06);
   }
   
   .table {
     width: 100%;
+    min-width: 720px;
     border-collapse: collapse;
   
     thead {
@@ -107,6 +111,7 @@
       color: var(--color-primary);
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
   
     td {
@@ -114,6 +119,7 @@
       font-size: 15px;
       color: var(--color-text);
       border-top: 1px solid var(--color-border);
+      white-space: nowrap;
     }
   
     tbody tr {
