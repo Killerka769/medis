@@ -25,9 +25,9 @@ export function FloatingContact() {
             <a href="https://wa.me/79285558818" target="_blank" rel="noreferrer" className={`${styles.btn} ${styles.wa}`} aria-label="Написать в чат">
                 WA
             </a>
-            <a href="https://www.instagram.com/medis.medcentr" target="_blank" rel="noreferrer" className={`${styles.btn} ${styles.ig}`} aria-label="Соцсеть клиники">
+            {/* <a href="https://www.instagram.com/medis.medcentr" target="_blank" rel="noreferrer" className={`${styles.btn} ${styles.ig}`} aria-label="Соцсеть клиники">
                 IG
-            </a>
+            </a> */}
         </div>
     );
 }
