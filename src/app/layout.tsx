@@ -6,7 +6,8 @@ import { Header } from "./components/ui/layout/Header/Header";
 import { Footer } from "./components/ui/layout/Footer/Footer";
 import { FloatingContact } from "./components/FloatingContact/FloatingContact";
 import { SiteChrome } from "./components/ui/layout/SiteChrome";
-import { OG_IMAGE, SITE_DESCRIPTION, SITE_TITLE, SITE_URL, jsonLd } from "@/src/lib/seo";
+import { YandexMetrika } from "./components/YandexMetrika/YandexMetrika";
+import { OG_IMAGE, SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/src/lib/seo";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -38,6 +39,7 @@ export const metadata: Metadata = {
     creator: "ООО МЕДИС",
     publisher: "ООО МЕДИС",
     robots: { index: true, follow: true },
+    verification: { yandex: "8c61ad6064277264" },
     alternates: { canonical: "/" },
     icons: {
         icon: [{ url: "/logo.webp", type: "image/webp" }, { url: "/icon-192.webp", sizes: "192x192" }],
@@ -70,17 +72,12 @@ export default function RootLayout({
     return (
         <html lang="ru">
             <head>
-                <link rel="manifest" href="/manifest.json" />
-                <meta name="theme-color" content="#93C572" />
                 <meta name="geo.region" content="RU-DA" />
                 <meta name="geo.placename" content="Махачкала" />
                 <meta name="format-detection" content="telephone=yes" />
             </head>
             <body className={inter.className}>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                />
+                <YandexMetrika />
                 <ReactQueryProvider>
                     <SiteChrome header={<Header />} footer={<Footer />}>
                         {children}

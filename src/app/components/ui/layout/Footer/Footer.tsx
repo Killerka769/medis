@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { InstallApp } from "../../../InstallApp/InstallApp";
+import { TrackedContactLink } from "../../../TrackedContactLink";
 import styles from "./Footer.module.scss";
 
 export function Footer() {
@@ -34,13 +35,13 @@ export function Footer() {
 
                     <div className={styles.col}>
                         <h4 className={styles.colTitle}>Контакты</h4>
-                        <a href="tel:+79285558818" className={styles.phone}>+7 928 555-88-18</a>
+                        <TrackedContactLink href="tel:+79285558818" className={styles.phone}>+7 928 555-88-18</TrackedContactLink>
                         <a href="mailto:medis-medcentr@mail.ru" className={styles.email}>medis-medcentr@mail.ru</a>
                         <p className={styles.schedule}>Пн-вс: 09:00 – 23:00</p>
                         <p className={styles.address}>г. Махачкала, ул. Ахульго, 77</p>
                         
                         <div className={styles.socials}>
-                            <a href="https://wa.me/79285558818" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Написать в чат">WA</a>
+                            <TrackedContactLink href="https://wa.me/79285558818" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Написать в чат">WA</TrackedContactLink>
                             <a href="https://www.instagram.com/medis.medcentr" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Соцсеть клиники">IG</a>
                             {/* <a href="https://t.me/medis" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="Написать в мессенджер">TG</a> */}
                             {/* <a href="https://vk.com/medis" target="_blank" rel="noreferrer" className={styles.socialBtn} aria-label="VK">VK</a> */}

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "../components/JsonLd";
+import { jsonLd } from "@/src/lib/seo";
 
 export const metadata: Metadata = {
     title: "Контакты",
@@ -13,5 +15,10 @@ export const metadata: Metadata = {
 };
 
 export default function ContactsLayout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <>
+            <JsonLd data={jsonLd} />
+            {children}
+        </>
+    );
 }

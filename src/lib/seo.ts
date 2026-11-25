@@ -11,11 +11,12 @@ export const ADDRESS = "г. Махачкала, ул. Ахульго, 77";
 export const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
-    name: "Медицинский центр Медис",
+    name: "Медицинский центр «Медис»",
+    legalName: "ООО «МЕДИС»",
     url: SITE_URL,
     image: `${SITE_URL}${OG_IMAGE}`,
     logo: `${SITE_URL}/logo.webp`,
-    telephone: PHONE_DISPLAY,
+    telephone: "+7-928-555-88-18",
     email: EMAIL,
     address: {
         "@type": "PostalAddress",
@@ -24,6 +25,59 @@ export const jsonLd = {
         addressRegion: "Республика Дагестан",
         addressCountry: "RU",
     },
-    openingHours: "Mo-Su 09:00-23:00",
+    openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "09:00",
+        closes: "23:00",
+    },
+    medicalSpecialty: ["Urology", "Gynecology", "Diagnostic"],
+    identifier: {
+        "@type": "PropertyValue",
+        name: "Лицензия",
+        value: "№ ЛО-05-01-002258 от 21.11.2019 г.",
+    },
+    additionalProperty: [
+        {
+            "@type": "PropertyValue",
+            name: "Лицензия",
+            value: "№ ЛО-05-01-002258 от 21.11.2019 г.",
+        },
+        {
+            "@type": "PropertyValue",
+            name: "ИНН",
+            value: "0573010778",
+        },
+    ],
     priceRange: "₽₽",
 };
+
+export function physicianJsonLd(doctor: {
+    name: string;
+    slug: string;
+    specialization: string;
+    photoUrl?: string | null;
+    bio?: string | null;
+    experienceYears?: number | null;
+}) {
+    const image = doctor.photoUrl
+        ? (doctor.photoUrl.startsWith("http") ? doctor.photoUrl : `${SITE_URL}${doctor.photoUrl.startsWith("/") ? "" : "/"}${doctor.photoUrl}`)
+        : undefined;
+
+    return {
+        "@context": "https://schema.org",
+        "@type": "Physician",
+        name: doctor.name,
+        medicalSpecialty: doctor.specialization,
+        description: doctor.bio || undefined,
+        image,
+        url: `${SITE_URL}/doctors/${doctor.slug}`,
+        ...(doctor.experienceYears ? { yearsOfExperience: doctor.experienceYears } : {}),
+        worksFor: {
+            "@type": "MedicalClinic",
+            name: "Медицинский центр «Медис»",
+            url: SITE_URL,
+            telephone: "+7-928-555-88-18",
+        },
+    };
+}

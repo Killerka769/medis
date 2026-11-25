@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { getHomeData } from "@/src/lib/data/public";
 import { HomeView } from "./HomeView";
 import { HomeLoading } from "./components/ui/Skeleton";
+import { JsonLd } from "./components/JsonLd";
+import { jsonLd } from "@/src/lib/seo";
 import styles from "./HomePage.module.scss";
 
 export const metadata: Metadata = {
@@ -32,8 +34,11 @@ async function HomeContent() {
 
 export default function HomePage() {
     return (
-        <Suspense fallback={<HomeLoading />}>
-            <HomeContent />
-        </Suspense>
+        <>
+            <JsonLd data={jsonLd} />
+            <Suspense fallback={<HomeLoading />}>
+                <HomeContent />
+            </Suspense>
+        </>
     );
 }

@@ -1,5 +1,6 @@
 "use client"
 
+import { TrackedContactLink } from "../components/TrackedContactLink";
 import styles from "./ContactsPage.module.scss";
 
 export default function ContactsPage() {
@@ -25,7 +26,7 @@ export default function ContactsPage() {
                         <span className={styles.icon}>📞</span>
                         <div>
                             <h3>Телефон</h3>
-                            <a href="tel:+79285558818" className={styles.phone}>+7 928 555-88-18</a>
+                            <TrackedContactLink href="tel:+79285558818" className={styles.phone}>+7 928 555-88-18</TrackedContactLink>
                         </div>
                     </div>
 
@@ -47,7 +48,7 @@ export default function ContactsPage() {
                     </div>
 
                     <div className={styles.socials}>
-                        <a href="https://wa.me/79285558818" target="_blank" rel="noreferrer" className={styles.socialBtn}>WA</a>
+                        <TrackedContactLink href="https://wa.me/79285558818" target="_blank" rel="noreferrer" className={styles.socialBtn}>WA</TrackedContactLink>
                         <a href="https://www.instagram.com/medis.medcentr" target="_blank" rel="noreferrer" className={styles.socialBtn}>IG</a>
                         {/* <a href="https://t.me/medis" target="_blank" rel="noreferrer" className={styles.socialBtn}>TG</a> */}
                     </div>

@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { CatalogLoading } from "../../components/ui/Skeleton";
 import { MediaPlaceholder } from "../../components/MediaPlaceholder";
+import { reachGoal } from "@/src/lib/metrika";
 import styles from "./ProductDetail.module.scss";
 
 const requestSchema = z.object({
@@ -40,7 +41,10 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             phone: formData.phone, 
             comment: formData.comment 
         }, {
-            onSuccess: () => setIsSuccess(true)
+            onSuccess: () => {
+                reachGoal("appointment_success", { form: "callback" });
+                setIsSuccess(true);
+            }
         });
     }
 

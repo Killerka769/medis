@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FEATURED_SERVICE_SLUG } from "@/src/lib/content/featured";
 import { getPublicService, getPublicServices } from "@/src/lib/data/public";
 import { DoctorMiniAvatar, MediaPlaceholder } from "../../components/MediaPlaceholder";
+import { TrackedContactLink } from "../../components/TrackedContactLink";
 import styles from "./ServiceDetail.module.scss";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -118,7 +119,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                         <Link href={`/appointments?service=${service.id}`} className={styles.btnPrimary}>
                             Записаться на прием
                         </Link>
-                        <a href="tel:+79285558818" className={styles.btnCall}>Позвонить</a>
+                        <TrackedContactLink href="tel:+79285558818" className={styles.btnCall}>Позвонить</TrackedContactLink>
 
                         {/* Только платный приём — блок ОМС скрыт
                         <p className={`${styles.omsInfo} ${service.isOms ? styles.omsYes : styles.omsNo}`}>

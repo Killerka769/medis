@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/logo.webp";
+import { TrackedContactLink } from "../../../TrackedContactLink";
 import styles from "./Header.module.scss";
 
 export function HeaderClient({ isAuth, isAdmin }: { isAuth: boolean, isAdmin: boolean }) {
@@ -62,6 +63,9 @@ export function HeaderClient({ isAuth, isAdmin }: { isAuth: boolean, isAdmin: bo
                     <Link className={styles.navLink} href="/contacts" onClick={closeMenu}>Контакты</Link>
 
                     <div className={styles.authButtons}>
+                        <TrackedContactLink className={styles.btnOutline} href="tel:+79285558818" onClick={closeMenu}>
+                            +7 928 555-88-18
+                        </TrackedContactLink>
                         <Link className={styles.btn} href="/appointments" onClick={closeMenu}>
                             Записаться на прием
                         </Link>

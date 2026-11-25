@@ -4,6 +4,9 @@ import Link from "next/link";
 import { getPublicDoctor, getPublicDoctors } from "@/src/lib/data/public";
 import { getDoctorTags } from "@/src/lib/content/doctorTags";
 import { DoctorAvatar } from "../../components/DoctorAvatar";
+import { JsonLd } from "../../components/JsonLd";
+import { TrackedContactLink } from "../../components/TrackedContactLink";
+import { physicianJsonLd } from "@/src/lib/seo";
 import styles from "./DoctorDetail.module.scss";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -51,6 +54,7 @@ export default async function DoctorDetailPage({ params }: Props) {
 
     return (
         <main className={styles.page}>
+            <JsonLd data={physicianJsonLd(doctor)} />
             <div className={styles.breadcrumbs}>
                 <Link href="/">Главная</Link> / <Link href="/doctors">Врачи</Link> / <span>{doctor.name}</span>
             </div>
@@ -77,9 +81,14 @@ export default async function DoctorDetailPage({ params }: Props) {
 
                     {doctor.bio && <p className={styles.cardBio}>{doctor.bio}</p>}
 
-                    <Link href={`/appointments?doctor=${doctor.id}`} className={styles.btnPrimary}>
-                        Записаться к врачу
-                    </Link>
+                    <div className={styles.actions}>
+                        <Link href={`/appointments?doctor=${doctor.id}`} className={styles.btnPrimary}>
+                            Записаться к врачу
+                        </Link>
+                        <TrackedContactLink href="tel:+79285558818" className={styles.phoneLink}>
+                            +7 928 555-88-18
+                        </TrackedContactLink>
+                    </div>
                 </div>
             </div>
 
@@ -122,9 +131,14 @@ export default async function DoctorDetailPage({ params }: Props) {
             <div className={styles.bottomCta}>
                 <h2>Записаться к врачу</h2>
                 <p>Оставьте заявку — администратор подтвердит удобное время приёма.</p>
-                <Link href={`/appointments?doctor=${doctor.id}`} className={styles.btnPrimary}>
-                    Записаться к {doctor.name}
-                </Link>
+                <div className={styles.actions}>
+                    <Link href={`/appointments?doctor=${doctor.id}`} className={styles.btnPrimary}>
+                        Записаться к {doctor.name}
+                    </Link>
+                    <TrackedContactLink href="tel:+79285558818" className={styles.phoneLink}>
+                        +7 928 555-88-18
+                    </TrackedContactLink>
+                </div>
             </div>
         </main>
     );

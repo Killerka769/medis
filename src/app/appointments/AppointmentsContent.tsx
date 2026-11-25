@@ -7,6 +7,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { useGetBookingData, useCreateAppointment } from "@/src/lib/ReactQuery/query/public/appointments/query";
+import { reachGoal } from "@/src/lib/metrika";
+import { TrackedContactLink } from "../components/TrackedContactLink";
 import styles from "./AppointmentsPage.module.scss";
 
 const bookingSchema = z.object({
@@ -94,7 +96,10 @@ export default function AppointmentsContent() {
     async function onSubmit(data: TBookingSchema) {
         const { agree: _agree, ...payload } = data;
         createMutation.mutate(payload, {
-            onSuccess: () => setIsSuccess(true)
+            onSuccess: () => {
+                reachGoal("appointment_success", { form: "appointment" });
+                setIsSuccess(true);
+            }
         });
     }
 
@@ -106,7 +111,7 @@ export default function AppointmentsContent() {
                 <div className={styles.successCard}>
                     <h2>Войдите, чтобы записаться</h2>
                     <p>Запись на прием доступна в личном кабинете. Если аккаунта ещё нет — регистрация займёт минуту.</p>
-                    <a href="tel:+79285558818" className={styles.phone}>+7 928 555-88-18</a>
+                    <TrackedContactLink href="tel:+79285558818" className={styles.phone}>+7 928 555-88-18</TrackedContactLink>
                     <div className={styles.authActions}>
                         <Link href="/login" className={styles.btnPrimary}>Войти</Link>
                         <Link href="/register" className={styles.btnSecondary}>Создать аккаунт</Link>
@@ -137,7 +142,7 @@ export default function AppointmentsContent() {
                     <p className={styles.subtitle}>Сначала выберите услугу, затем врача, который её оказывает, и оставьте комментарий при необходимости.</p>
                     <div className={styles.contacts}>
                         <p>Или запишитесь по телефону:</p>
-                        <a href="tel:+79285558818" className={styles.phone}>+7 928 555-88-18</a>
+                        <TrackedContactLink href="tel:+79285558818" className={styles.phone}>+7 928 555-88-18</TrackedContactLink>
                     </div>
                 </div>
 
