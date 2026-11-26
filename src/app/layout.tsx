@@ -39,7 +39,10 @@ export const metadata: Metadata = {
     creator: "ООО МЕДИС",
     publisher: "ООО МЕДИС",
     robots: { index: true, follow: true },
-    verification: { yandex: "8c61ad6064277264" },
+    verification: {
+        yandex: "8c61ad6064277264",
+        google: "b77N_8Kd6CSVi2KN0oexc1pZ_v0PCVxZuPtAUP9tNWo",
+    },
     alternates: { canonical: "/" },
     icons: {
         icon: [{ url: "/logo.webp", type: "image/webp" }, { url: "/icon-192.webp", sizes: "192x192" }],
